@@ -2,4 +2,60 @@
 
 .wrapper {
   display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  width: 100%;
+  max-width: 1750px;
+  margin: 0 auto;
+
+  @media screen and (min-width: $desktop) {
+    margin-top: 25vh;
+    padding: 0 $spacing13;
+  }
+
+  .left {
+    display: grid;
+    max-width: 510px;
+
+    .title {
+      margin-bottom: $spacing5;
+    }
+
+    h1 {
+      margin-bottom: $spacing4;
+    }
+
+    h3 {
+      font-size: 22px;
+      margin-bottom: $spacing3;
+
+      span {
+        color: $green;
+      }
+    }
+
+    .name {
+      justify-self: end;
+      margin-bottom: $spacing6;
+    }
+  }
+
+  .image {
+    display: grid;
+    position: relative;
+
+    @media screen and (min-width: $desktop-large) {
+      margin-right: $spacing14;
+    }
+
+    .square {
+      position: absolute;
+      z-index: -1;
+      top: $spacing6;
+      left: $spacing6;
+      width: 100%;
+      height: 100%;
+      background-color: $off-white;
+    }
+  }
 }

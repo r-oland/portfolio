@@ -1,0 +1,36 @@
+@import "styles/Variables";
+
+.wrapper {
+  display: grid;
+  gap: $spacing1;
+
+  p {
+    font-size: $font-large;
+    font-weight: $weight-semi-bold;
+  }
+
+  .bar {
+    width: 170px;
+    height: 1px;
+  }
+
+  &.grey {
+    p {
+      color: $grey;
+    }
+
+    .bar {
+      background-color: $grey;
+    }
+  }
+
+  &.white {
+    p {
+      color: $off-white;
+    }
+
+    .bar {
+      background-color: $off-white;
+    }
+  }
+}
