@@ -1,7 +1,6 @@
 // Components==============
-import { faLanguage } from '@fortawesome/pro-regular-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { navItems } from 'database/navItems';
+import LocaleSwitcher from 'global_components/LocaleSwitcher/LocaleSwitcher';
 import { useLocale } from 'hooks/useLocale';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
@@ -37,14 +36,7 @@ export default function DesktopNav() {
             </div>
           ))}
         </div>
-        <FontAwesomeIcon
-          icon={faLanguage}
-          onClick={() =>
-            push(pathname, pathname, {
-              locale: locale === 'en' ? 'nl' : 'en',
-            })
-          }
-        />
+        <LocaleSwitcher />
       </div>
     </div>
   );
