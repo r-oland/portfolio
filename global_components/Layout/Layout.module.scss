@@ -1,0 +1,16 @@
+@import "styles/Variables";
+
+.wrapper {
+  display: grid;
+
+  .app {
+    width: 100%;
+  }
+
+  @media screen and (min-width: $tablet) {
+    .app {
+      height: calc($app-height - 65px);
+      overflow: auto;
+    }
+  }
+}

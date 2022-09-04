@@ -1,0 +1,44 @@
+{
+  "name": "Roland Branten",
+  "short_name": "Roland Branten",
+  "icons": [
+    {
+      "src": "/logo/logo@192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo/logo-masked@192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/logo/logo@384.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo/logo-masked@384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/logo/logo@512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo/logo-masked@512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "theme_color": "#3F6C5B",
+  "background_color": "#3F6C5B",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait"
+}

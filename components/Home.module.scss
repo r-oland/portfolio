@@ -1,0 +1,8 @@
+@import "styles/Variables";
+
+.wrapper {
+  display: grid;
+  h1 {
+    color: $green;
+  }
+}
