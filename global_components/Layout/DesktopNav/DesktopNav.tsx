@@ -1,5 +1,4 @@
 // Components==============
-import React from 'react';
 import styles from './DesktopNav.module.scss';
 // =========================
 

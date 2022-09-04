@@ -1,6 +1,5 @@
 // Components==============
 import { motion } from 'framer-motion';
-import React from 'react';
 import styles from './HardShadow.module.scss';
 // =========================
 
@@ -38,7 +37,7 @@ export default function HardShadow({
       whileTap={animations ? 'tap' : undefined}
       variants={variants}
       style={{
-        width: stretch ? 'calc(100% - 4px)' : '',
+        width: stretch ? 'calc(100% - 4px)' : undefined,
         cursor: animations ? 'pointer' : 'initial',
       }}
     >

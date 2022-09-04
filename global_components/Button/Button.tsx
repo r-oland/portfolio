@@ -1,7 +1,6 @@
 // Components==============
 import HardShadow from 'global_components/HardShadow/HardShadow';
 import { useRouter } from 'next/router';
-import React from 'react';
 import styles from './Button.module.scss';
 // =========================
 
@@ -46,7 +45,7 @@ export default function Button({
           type={submit ? 'submit' : 'button'}
           className={`${styles.wrapper} ${styles[color]}`}
           style={{
-            width: stretch ? '100%' : '',
+            width: stretch ? '100%' : undefined,
           }}
         >
           {children}

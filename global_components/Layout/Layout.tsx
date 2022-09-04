@@ -1,6 +1,5 @@
 // Components==============
 import { useMediaQ } from 'hooks/useMediaQ';
-import React from 'react';
 import DesktopNav from './DesktopNav/DesktopNav';
 import styles from './Layout.module.scss';
 import MobileNav from './MobileNav/MobileNav';

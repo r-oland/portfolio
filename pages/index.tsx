@@ -2,7 +2,7 @@
 import Hero from 'components/Hero/Hero';
 import styles from 'components/Home.module.scss';
 import Head from 'next/head';
-import React, { createContext, useMemo } from 'react';
+import { createContext, useMemo } from 'react';
 // =========================
 
 type HomeContextType = {

@@ -1,10 +1,9 @@
 // Components==============
-import React from 'react';
 import Layout from 'global_components/Layout/Layout';
+import { useAppHeight } from 'hooks/useAppHeight';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import 'styles/App.scss';
-import { useAppHeight } from 'hooks/useAppHeight';
 // =========================
 
 export default function MyApp({ Component, pageProps }: AppProps) {
