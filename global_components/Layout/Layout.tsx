@@ -6,7 +6,7 @@ import MobileNav from './MobileNav/MobileNav';
 // =========================
 
 function Component({ children }: { children: JSX.Element }) {
-  const query = useMediaQ('min', 768);
+  const query = useMediaQ('min', 1024);
 
   return (
     <div className={styles.wrapper}>

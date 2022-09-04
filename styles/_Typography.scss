@@ -22,11 +22,13 @@ li,
 input,
 textarea,
 button {
+  font-weight: $weight-normal;
   font-size: $font-paragraph;
 }
 
 input,
 textarea,
 select {
+  font-weight: $weight-normal;
   font-family: $font;
 }

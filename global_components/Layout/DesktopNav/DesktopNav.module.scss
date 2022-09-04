@@ -2,7 +2,32 @@
 
 .wrapper {
   display: grid;
+  align-items: center;
+  grid-template-columns: 1fr auto;
+  padding: 0 $spacing12;
   width: 100%;
-  height: 65px;
-  background-color: $off-white;
+  height: 60px;
+  background-color: transparent;
+
+  .logo {
+    cursor: pointer;
+    width: max-content;
+  }
+
+  .items {
+    display: grid;
+    grid-auto-flow: column;
+    gap: $spacing9;
+
+    p {
+      cursor: pointer;
+      font-size: $font-large;
+    }
+
+    .active {
+      p {
+        font-weight: $weight-semi-bold;
+      }
+    }
+  }
 }

@@ -7,9 +7,9 @@
     width: 100%;
   }
 
-  @media screen and (min-width: $tablet) {
+  @media screen and (min-width: $desktop) {
     .app {
-      height: calc($app-height - 65px);
+      height: calc($app-height - 60px);
       overflow: auto;
     }
   }
