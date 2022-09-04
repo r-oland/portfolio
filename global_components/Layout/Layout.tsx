@@ -1,17 +1,14 @@
 // Components==============
-import { useMediaQ } from 'hooks/useMediaQ';
 import DesktopNav from './DesktopNav/DesktopNav';
 import styles from './Layout.module.scss';
 import MobileNav from './MobileNav/MobileNav';
 // =========================
 
 function Component({ children }: { children: JSX.Element }) {
-  const query = useMediaQ('min', 1024);
-
   return (
     <div className={styles.wrapper}>
-      {query && <DesktopNav />}
-      {!query && <MobileNav />}
+      <DesktopNav />
+      <MobileNav />
       <div className={styles.app}>{children}</div>
     </div>
   );

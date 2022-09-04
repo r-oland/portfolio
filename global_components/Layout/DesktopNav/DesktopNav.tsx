@@ -1,4 +1,6 @@
 // Components==============
+import { faLanguage } from '@fortawesome/pro-regular-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { navItems } from 'database/navItems';
 import { useRouter } from 'next/router';
 import styles from './DesktopNav.module.scss';
@@ -15,18 +17,21 @@ export default function DesktopNav() {
       >
         <h3>RO.</h3>
       </div>
-      <div className={styles.items}>
-        {navItems.map((item) => (
-          <div
-            onClick={() => router.push(item.link)}
-            key={item.name}
-            className={
-              router.asPath.includes(item.link) ? styles.active : undefined
-            }
-          >
-            <p>{item.name}</p>
-          </div>
-        ))}
+      <div className={styles.right}>
+        <div className={styles.items}>
+          {navItems.map((item) => (
+            <div
+              onClick={() => router.push(item.link)}
+              key={item.name}
+              className={
+                router.asPath.includes(item.link) ? styles.active : undefined
+              }
+            >
+              <p>{item.name}</p>
+            </div>
+          ))}
+        </div>
+        <FontAwesomeIcon icon={faLanguage} />
       </div>
     </div>
   );

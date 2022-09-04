@@ -1,33 +1,50 @@
 @import "styles/Variables";
 
 .wrapper {
-  display: grid;
   align-items: center;
   grid-template-columns: 1fr auto;
   padding: 0 $spacing13;
   width: 100%;
   height: 60px;
   background-color: transparent;
+  display: none;
+
+  @media screen and (min-width: $desktop) {
+    display: grid;
+  }
 
   .logo {
     cursor: pointer;
     width: max-content;
   }
 
-  .items {
+  .right {
     display: grid;
     grid-auto-flow: column;
-    gap: $spacing9;
+    align-items: center;
+    gap: $spacing6;
 
-    p {
-      cursor: pointer;
-      font-size: $font-large;
+    .items {
+      display: grid;
+      grid-auto-flow: column;
+      align-items: center;
+      gap: $spacing9;
+
+      p {
+        cursor: pointer;
+        font-size: $font-large;
+      }
+
+      .active {
+        p {
+          font-weight: $weight-semi-bold;
+        }
+      }
     }
 
-    .active {
-      p {
-        font-weight: $weight-semi-bold;
-      }
+    svg {
+      cursor: pointer;
+      font-size: $font-large;
     }
   }
 }

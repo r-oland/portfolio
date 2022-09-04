@@ -5,6 +5,7 @@ export type ProjectType = {
   startYear: number;
   endYear?: number;
   client: string;
+  color: string;
   github?: string;
   url: string;
   logo: string;
@@ -20,6 +21,24 @@ export const projects: ProjectType[] = [
     startYear: 2020,
     endYear: 2022,
     client: 'Studio Tast',
+    color: '#0827E9',
+    url: 'https://learntogroow.com',
+    logo: '/projects/groow/logo.svg',
+    images: [
+      '/projects/groow/groow-1.png',
+      '/projects/groow/groow-2.png',
+      '/projects/groow/groow-3.png',
+    ],
+  },
+  {
+    name: 'Groow',
+    functionality: 'Frontend lead',
+    description:
+      'An open-source tool that brings attention and understanding to how color contrast can affect different people with visual impairments.',
+    startYear: 2020,
+    endYear: 2022,
+    client: 'Studio Tast',
+    color: '#0827E9',
     url: 'https://learntogroow.com',
     logo: '/projects/groow/logo.svg',
     images: [
