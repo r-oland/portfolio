@@ -1,7 +1,10 @@
 export const navItems = [
-  { name: '01. Introduction', link: '/#introduction' },
-  { name: '02. Work', link: '/#work' },
-  { name: '03. Tech', link: '/#tech' },
-  { name: '04. About', link: '/#about' },
-  { name: '05. Contact', link: '/#contact' },
+  {
+    name: { en: '01. Introduction', nl: '01. Introductie' },
+    link: '/#introduction',
+  },
+  { name: { en: '02. Work', nl: '02. Werk' }, link: '/#work' },
+  { name: { en: '03. Tech', nl: '03. Tech' }, link: '/#tech' },
+  { name: { en: '04. About', nl: '04. Over mij' }, link: '/#about' },
+  { name: { en: '05. Contact', nl: '05. Contact' }, link: '/#contact' },
 ];

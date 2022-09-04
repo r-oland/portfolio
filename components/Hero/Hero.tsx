@@ -1,5 +1,6 @@
 // Components==============
 import ChapterTitle from 'global_components/ChapterTitle/ChapterTitle';
+import { useLocale } from 'hooks/useLocale';
 import Image from 'next/image';
 import heroImage from 'public/images/hero.jpg';
 import Curl from './Curl/Curl';
@@ -7,18 +8,20 @@ import styles from './Hero.module.scss';
 // =========================
 
 export default function Hero() {
+  const { t } = useLocale();
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.left}>
-        <ChapterTitle
-          color="grey"
-          name="01. Introduction"
-          marginBottom="1.25rem"
-        />
-        <h1>I am</h1>
+        <ChapterTitle id={0} color="grey" marginBottom="1.25rem" />
+        <h1>{t('I am', 'Ik ben')}</h1>
         <h3>
-          a <span>front-end</span> developer who enjoys building unique
-          experiences for creatives with taste.
+          {t('a', 'een')} <span>front-end</span>{' '}
+          {t(
+            'developer who enjoys building unique experiences for creatives with taste',
+            'developer die graag unieke ervaringen bouwt voor creatives met smaak'
+          )}
+          .
         </h3>
         <h1 className={styles.name}>Roland Branten</h1>
         <Curl />

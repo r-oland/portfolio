@@ -1,7 +1,7 @@
 export type ProjectType = {
   name: string;
-  functionality: string;
-  description: string;
+  functionality: { en: string; nl: string };
+  description: { en: string; nl: string };
   startYear: number;
   endYear?: number;
   client: string;
@@ -15,9 +15,11 @@ export type ProjectType = {
 export const projects: ProjectType[] = [
   {
     name: 'Groow',
-    functionality: 'Frontend lead',
-    description:
-      'An open-source tool that brings attention and understanding to how color contrast can affect different people with visual impairments.',
+    functionality: { en: 'Frontend lead', nl: '' },
+    description: {
+      en: 'An open-source tool that brings attention and understanding to how color contrast can affect different people with visual impairments.',
+      nl: '',
+    },
     startYear: 2020,
     endYear: 2022,
     client: 'Studio Tast',
@@ -32,9 +34,11 @@ export const projects: ProjectType[] = [
   },
   {
     name: 'Groow',
-    functionality: 'Frontend lead',
-    description:
-      'An open-source tool that brings attention and understanding to how color contrast can affect different people with visual impairments.',
+    functionality: { en: 'Frontend lead', nl: '' },
+    description: {
+      en: 'An open-source tool that brings attention and understanding to how color contrast can affect different people with visual impairments.',
+      nl: '',
+    },
     startYear: 2020,
     endYear: 2022,
     client: 'Studio Tast',

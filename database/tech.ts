@@ -3,19 +3,25 @@ type RankKeyType = 'S' | 'A' | 'B' | 'D' | 'E';
 export const ranks = [
   {
     key: 'S' as RankKeyType,
-    description: 'You can wake me up for this stuff!',
+    description: { en: 'You can wake me up for this stuff!', nl: '' },
   },
-  { key: 'A' as RankKeyType, description: 'Could not live without it' },
+  {
+    key: 'A' as RankKeyType,
+    description: { en: 'Could not live without it', nl: '' },
+  },
   {
     key: 'B' as RankKeyType,
-    description: 'I mean, it’s a standard for a reason',
+    description: { en: 'I mean, it’s a standard for a reason', nl: '' },
   },
-  { key: 'C' as RankKeyType, description: 'I like all dit' },
+  { key: 'C' as RankKeyType, description: { en: 'I like all dit', nl: '' } },
   {
     key: 'D' as RankKeyType,
-    description: 'It was nice, but I found something better',
+    description: { en: 'It was nice, but I found something better', nl: '' },
   },
-  { key: 'E' as RankKeyType, description: 'Hate it, yet I love it' },
+  {
+    key: 'E' as RankKeyType,
+    description: { en: 'Hate it, yet I love it', nl: '' },
+  },
 ];
 
 export const techItems = [
