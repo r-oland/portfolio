@@ -2,21 +2,23 @@
 
 .wrapper {
   display: grid;
-  grid-template-columns: 1fr auto;
   width: 100%;
   max-width: 1750px;
   margin: 0 auto;
+  padding: $spacing10 $spacing4;
+  gap: $spacing12;
 
   @media screen and (min-width: $desktop) {
     margin-top: 25vh;
+    grid-template-columns: 1fr auto;
     padding: 0 $spacing13;
     align-items: start;
     min-height: calc(var(--app-height) - 25vh - 60px);
+  }
 
-    @media screen and (min-width: $desktop-huge) {
-      min-height: initial;
-      margin-bottom: 25vh;
-    }
+  @media screen and (min-width: $desktop-huge) {
+    min-height: initial;
+    margin-bottom: 25vh;
   }
 
   .left {
@@ -45,9 +47,25 @@
   .image-wrapper {
     display: grid;
     position: relative;
+    margin-right: $spacing6;
+    max-width: 360px;
+    justify-self: center;
+
+    @media screen and (min-width: $tablet) {
+      justify-self: end;
+    }
+
+    @media screen and (min-width: $desktop) {
+      justify-self: initial;
+      margin-right: initial;
+    }
 
     @media screen and (min-width: $desktop-large) {
       margin-right: $spacing14;
+    }
+
+    @media screen and (min-width: $desktop-huge) {
+      max-width: 400px;
     }
 
     .image {

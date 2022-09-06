@@ -6,11 +6,11 @@ import MobileNav from './MobileNav/MobileNav';
 
 function Component({ children }: { children: JSX.Element }) {
   return (
-    <div className={styles.wrapper}>
+    <>
       <DesktopNav />
       <MobileNav />
       <div className={styles.app}>{children}</div>
-    </div>
+    </>
   );
 }
 

@@ -57,8 +57,6 @@ export default function Hero() {
         <motion.div variants={imageVariants} className={styles.image}>
           <Image
             src={heroImage}
-            width={360}
-            height={360}
             placeholder="blur"
             alt="Roland Branten"
             quality={100}
