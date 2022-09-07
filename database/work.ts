@@ -5,6 +5,7 @@ export type ProjectType = {
   startYear: number;
   endYear?: number;
   client: string;
+  clientLink?: string;
   color: string;
   github?: string;
   url: string;
@@ -21,9 +22,10 @@ export const projects: ProjectType[] = [
       nl: '',
     },
     startYear: 2020,
-    endYear: 2022,
     client: 'Studio Tast',
+    clientLink: 'https://www.studiotast.nl/',
     color: '#0827E9',
+    github: 'https://github.com/r-oland/persistful',
     url: 'https://learntogroow.com',
     logo: '/projects/groow/logo.svg',
     images: [
@@ -33,7 +35,7 @@ export const projects: ProjectType[] = [
     ],
   },
   {
-    name: 'Groow',
+    name: 'Persistful',
     functionality: { en: 'Frontend lead', nl: '' },
     description: {
       en: 'An open-source tool that brings attention and understanding to how color contrast can affect different people with visual impairments.',
@@ -41,8 +43,8 @@ export const projects: ProjectType[] = [
     },
     startYear: 2020,
     endYear: 2022,
-    client: 'Studio Tast',
-    color: '#0827E9',
+    client: 'Passion project',
+    color: '#3F6C5B',
     url: 'https://learntogroow.com',
     logo: '/projects/groow/logo.svg',
     images: [

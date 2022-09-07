@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import styles from './Button.module.scss';
 // =========================
 
-type Color = 'red' | 'green' | 'white';
+type Color = 'green' | 'white';
 
 export default function Button({
   children,

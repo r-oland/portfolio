@@ -9,7 +9,9 @@ function Component({ children }: { children: JSX.Element }) {
     <>
       <DesktopNav />
       <MobileNav />
-      <div className={styles.app}>{children}</div>
+      <div className={styles.app} id="app">
+        {children}
+      </div>
     </>
   );
 }

@@ -1,6 +1,7 @@
 // Components==============
 import Hero from 'components/Hero/Hero';
 import styles from 'components/Home.module.scss';
+import Work from 'components/Work/Work';
 import Head from 'next/head';
 import { createContext, useMemo } from 'react';
 // =========================
@@ -21,6 +22,7 @@ export default function Home() {
       </Head>
       <div className={styles.wrapper}>
         <Hero />
+        <Work />
       </div>
     </HomeContext.Provider>
   );

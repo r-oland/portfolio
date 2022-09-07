@@ -1,0 +1,12 @@
+@import "styles/Variables";
+
+.container {
+  width: 100%;
+  max-width: 920px;
+  padding: 0 $spacing3;
+  margin: 0 auto;
+
+  @media screen and (min-width: $desktop) {
+    padding: initial;
+  }
+}

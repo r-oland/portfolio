@@ -59,3 +59,30 @@ $border: 1px solid $off-white;
 
 // App height
 $app-height: var(--app-height);
+
+@mixin scrollBar {
+  /* Works on Firefox */
+  @supports (-moz-appearance: none) {
+    & {
+      scrollbar-width: thin;
+      scrollbar-color: hsl(210, 15%, 18%, 0.5) transparent;
+    }
+  }
+
+  /* Works on Chrome && Edge */
+  @media screen and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.001dpcm) {
+    &::-webkit-scrollbar {
+      width: 7px;
+      height: 7px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: hsl(210, 15%, 18%, 0.5);
+      border-radius: 8px;
+    }
+  }
+}

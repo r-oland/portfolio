@@ -12,13 +12,33 @@ export default function DesktopNav() {
   const { locale } = useLocale();
 
   const [pathname, setPathname] = useState('');
+  const [hasScrolled, setHasScrolled] = useState(false);
 
   useEffect(() => {
     setPathname(asPath);
   }, [asPath]);
 
+  useEffect(() => {
+    const handleAppScroll = (e: Event) => {
+      const target = e.target as HTMLElement;
+
+      if (target.scrollTop > 0 && hasScrolled) return;
+      if (target.scrollTop === 0 && hasScrolled) return setHasScrolled(false);
+      if (target.scrollTop > 0 && !hasScrolled) return setHasScrolled(true);
+    };
+
+    const app = document.getElementById('app');
+
+    app?.addEventListener('scroll', handleAppScroll);
+    return () => app?.removeEventListener('scroll', handleAppScroll);
+  }, [hasScrolled]);
+
   return (
-    <div className={styles.wrapper}>
+    <div
+      className={`${styles.wrapper} ${
+        hasScrolled ? styles['has-scrolled'] : ''
+      }`}
+    >
       <div onClick={() => push('/#introduction')} className={styles.logo}>
         <h3>RO.</h3>
       </div>

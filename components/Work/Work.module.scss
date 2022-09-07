@@ -1,0 +1,26 @@
+@import "styles/Variables";
+
+.wrapper {
+  display: grid;
+  gap: $spacing8;
+  width: 100%;
+  margin-bottom: $spacing15;
+
+  @media screen and (min-width: $tablet) {
+    gap: $spacing10;
+  }
+
+  .button {
+    width: max-content;
+    margin: 0 auto;
+  }
+
+  .projects {
+    display: grid;
+    gap: $spacing10;
+
+    @media screen and (min-width: $tablet) {
+      gap: $spacing12;
+    }
+  }
+}

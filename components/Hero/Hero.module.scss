@@ -7,13 +7,15 @@
   margin: 0 auto;
   padding: $spacing3 $spacing4;
   gap: $spacing12;
+  margin-bottom: $spacing14;
 
   @media screen and (min-width: $desktop) {
     margin-top: 25vh;
+    margin-bottom: 0;
     grid-template-columns: 1fr auto;
     padding: 0 $spacing13;
     align-items: start;
-    min-height: calc(var(--app-height) - 25vh - 60px);
+    min-height: calc(var(--app-height) - 25vh);
   }
 
   @media screen and (min-width: $desktop-huge) {

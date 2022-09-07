@@ -1,0 +1,87 @@
+@import "styles/Variables";
+
+.wrapper {
+  display: grid;
+  gap: $spacing8;
+  padding: $spacing8;
+  align-items: center;
+  background-color: $off-white;
+  border-radius: $border-radius;
+
+  @media screen and (min-width: $desktop) {
+    grid-template-columns: 1fr 1fr;
+
+    &.reverse {
+      text-align: end;
+
+      .description {
+        margin-left: auto;
+      }
+
+      .labels {
+        .label {
+          grid-template-columns: 1fr 18px;
+
+          svg {
+            grid-column: 2;
+            grid-row: 1;
+          }
+        }
+      }
+
+      .image {
+        grid-column: 1;
+        grid-row: 1;
+      }
+    }
+  }
+
+  h1 {
+    margin-bottom: $spacing6;
+  }
+
+  .functionality {
+    color: $grey;
+    font-weight: $weight-semi-bold;
+    font-size: $font-small;
+    text-transform: uppercase;
+    margin-bottom: $spacing3;
+  }
+
+  .description {
+    max-width: 370px;
+    margin-bottom: $spacing4;
+  }
+
+  .labels {
+    display: grid;
+    gap: $spacing2;
+    margin-bottom: $spacing8;
+
+    .label {
+      display: grid;
+      grid-template-columns: 18px 1fr;
+      align-items: center;
+      gap: $spacing2;
+
+      svg {
+        width: 16px;
+      }
+
+      p,
+      a {
+        font-size: $font-small;
+      }
+
+      a {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .link {
+    display: block;
+    font-weight: $weight-bold;
+    font-size: $font-large;
+  }
+}

@@ -2,12 +2,8 @@
 
 .app {
   width: 100%;
-  height: calc($app-height - 0px);
+  height: $app-height;
   overflow: auto;
-}
 
-@media screen and (min-width: $desktop) {
-  .app {
-    height: calc($app-height - 60px);
-  }
+  @include scrollBar;
 }

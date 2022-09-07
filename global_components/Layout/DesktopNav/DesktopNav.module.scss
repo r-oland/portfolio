@@ -1,6 +1,8 @@
 @import "styles/Variables";
 
 .wrapper {
+  position: fixed;
+  z-index: 100;
   align-items: center;
   grid-template-columns: 1fr auto;
   padding: 0 $spacing13;
@@ -8,6 +10,12 @@
   height: 60px;
   background-color: transparent;
   display: none;
+  transition: 0.2s;
+
+  &.has-scrolled {
+    background-color: $background;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.03);
+  }
 
   @media screen and (min-width: $desktop) {
     display: grid;
