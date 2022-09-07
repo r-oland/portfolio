@@ -5,7 +5,7 @@
   width: 100%;
   max-width: 1750px;
   margin: 0 auto;
-  padding: $spacing10 $spacing4;
+  padding: $spacing3 $spacing4;
   gap: $spacing12;
 
   @media screen and (min-width: $desktop) {
@@ -24,6 +24,15 @@
   .left {
     display: grid;
     max-width: 510px;
+
+    .logo {
+      font-size: $font-h3;
+      margin-bottom: $spacing10;
+
+      @media screen and (min-width: $desktop) {
+        display: none;
+      }
+    }
 
     h1 {
       margin-bottom: $spacing4;

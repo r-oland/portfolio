@@ -2,8 +2,8 @@
 
 .wrapper {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: $spacing3;
+  right: $spacing5;
 
   @media screen and (min-width: $desktop) {
     display: none;

@@ -27,6 +27,7 @@ export default function Hero() {
   return (
     <div className={styles.wrapper}>
       <div className={styles.left}>
+        <h3 className={styles.logo}>RO.</h3>
         <ChapterTitle id={0} color="grey" marginBottom="1.25rem" />
         <h1>{t('I am', 'Ik ben')}</h1>
         <h3>
