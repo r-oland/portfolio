@@ -1,5 +1,5 @@
 // Components==============
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import ChapterTitle from 'global_components/ChapterTitle/ChapterTitle';
 import { useLocale } from 'hooks/useLocale';
 import Image from 'next/image';
@@ -41,7 +41,7 @@ export default function Hero() {
         <h1 className={styles.name}>Roland Branten</h1>
         <Curl />
       </div>
-      <motion.div
+      <m.div
         className={styles['image-wrapper']}
         initial="initial"
         animate="animate"
@@ -55,20 +55,20 @@ export default function Hero() {
           },
         }}
       >
-        <motion.div variants={imageVariants} className={styles.image}>
+        <m.div variants={imageVariants} className={styles.image}>
           <Image
             src={heroImage}
             placeholder="blur"
             alt="Roland Branten"
             quality={100}
           />
-        </motion.div>
-        <motion.div
+        </m.div>
+        <m.div
           className={styles.square}
           transition={{ type: 'spring', stiffness: 220, damping: 14 }}
           variants={squareVariants}
         />
-      </motion.div>
+      </m.div>
     </div>
   );
 }

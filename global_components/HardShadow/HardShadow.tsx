@@ -1,5 +1,5 @@
 // Components==============
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import styles from './HardShadow.module.scss';
 // =========================
 
@@ -30,7 +30,7 @@ export default function HardShadow({
   animations?: boolean;
 }) {
   return (
-    <motion.div
+    <m.div
       className={styles.wrapper}
       whileHover={animations ? 'hover' : undefined}
       initial="initial"
@@ -41,10 +41,10 @@ export default function HardShadow({
         cursor: animations ? 'pointer' : 'initial',
       }}
     >
-      <motion.div variants={child} className={styles.content}>
+      <m.div variants={child} className={styles.content}>
         {children}
-      </motion.div>
+      </m.div>
       <div className={styles.shadow} />
-    </motion.div>
+    </m.div>
   );
 }

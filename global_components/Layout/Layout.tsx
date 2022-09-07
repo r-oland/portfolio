@@ -1,4 +1,5 @@
 // Components==============
+import { domAnimation, LazyMotion } from 'framer-motion';
 import DesktopNav from './DesktopNav/DesktopNav';
 import styles from './Layout.module.scss';
 import MobileNav from './MobileNav/MobileNav';
@@ -25,5 +26,9 @@ export default function Layout({
 }) {
   if (noLayout) return children;
 
-  return <Component>{children}</Component>;
+  return (
+    <LazyMotion features={domAnimation} strict>
+      <Component>{children}</Component>
+    </LazyMotion>
+  );
 }

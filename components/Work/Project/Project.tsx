@@ -4,7 +4,7 @@ import { faCalendar, faStore } from '@fortawesome/pro-regular-svg-icons';
 import { faArrowRight } from '@fortawesome/pro-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ProjectType } from 'database/work';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { useLocale } from 'hooks/useLocale';
 import Image from 'next/image';
 import styles from './Project.module.scss';
@@ -22,7 +22,13 @@ export default function Project({
   const color = { style: { color: project.color } };
 
   return (
-    <div className={`${styles.wrapper} ${!left ? styles.reverse : ''}`}>
+    <m.div
+      className={`${styles.wrapper} ${!left ? styles.reverse : ''}`}
+      initial={{ x: left ? -100 : 100, opacity: 0 }}
+      whileInView={{ x: 0, opacity: 1 }}
+      transition={{ type: 'spring', stiffness: 120, damping: 14 }}
+      viewport={{ once: true, amount: 0.4 }}
+    >
       <div>
         <h1 {...color}>{project.name}</h1>
         <p className={styles.functionality}>{project.functionality[locale]}</p>
@@ -63,7 +69,7 @@ export default function Project({
             </div>
           )}
         </div>
-        <motion.a
+        <m.a
           className={styles.link}
           href={project.url}
           target="_blank"
@@ -73,11 +79,11 @@ export default function Project({
           whileTap={{ x: 0 }}
         >
           Visit site <FontAwesomeIcon icon={faArrowRight} />
-        </motion.a>
+        </m.a>
       </div>
       <div className={styles.image}>
         <Image src={project.images[0]} width={1500} height={840} />
       </div>
-    </div>
+    </m.div>
   );
 }
