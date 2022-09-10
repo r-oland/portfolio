@@ -22,18 +22,29 @@
     .ranks {
       .rank {
         border-bottom: 1px solid $off-white;
-        padding: $spacing6 $spacing3 $spacing6 0;
         display: grid;
-        grid-template-columns: 220px 1fr;
+        grid-template-columns: 140px 1fr;
         align-items: center;
 
+        @media screen and (min-width: $tablet) {
+          grid-template-columns: 220px 1fr;
+        }
+
         .description {
-          font-size: $font-large;
-          width: 177px;
+          width: 120px;
+          font-size: $font-small;
 
           strong {
-            font-size: $font-large;
             font-weight: $weight-bold;
+          }
+
+          @media screen and (min-width: $tablet) {
+            width: 177px;
+            font-size: $font-large;
+
+            strong {
+              font-size: $font-large;
+            }
           }
         }
 
@@ -43,6 +54,11 @@
           gap: $spacing2;
           justify-content: start;
           align-items: center;
+          overflow-x: auto;
+          overflow-y: hidden;
+          padding: $spacing6 0 $spacing6 $spacing1;
+
+          @include scrollBar;
 
           .item {
             position: relative;

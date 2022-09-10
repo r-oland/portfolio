@@ -4,7 +4,6 @@ import ChapterTitle from 'global_components/ChapterTitle/ChapterTitle';
 import Container from 'global_components/Container/Container';
 import { useLocale } from 'hooks/useLocale';
 import Image from 'next/image';
-import React from 'react';
 import styles from './Tech.module.scss';
 // =========================
 
