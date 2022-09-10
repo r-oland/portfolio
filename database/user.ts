@@ -1,7 +1,15 @@
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/pro-solid-svg-icons';
+import polite from 'public/images/polite.jpg';
+import enthusiastic from 'public/images/enthusiastic.jpg';
+import huge from 'public/images/huge.jpg';
 
 export const user = {
+  aboutTitles: [
+    { en: 'really short', nl: '' },
+    { en: 'short', nl: '' },
+    { en: 'long', nl: '' },
+  ],
   about: [
     // really short
     [{ en: '', nl: '' }],
@@ -23,6 +31,12 @@ export const user = {
     // long
     [{ en: '', nl: '' }],
   ],
+  imageTitles: [
+    { en: 'a polite smile', nl: 'een beleefde lach' },
+    { en: 'an enthusiastic face', nl: 'een enthousiast gezicht' },
+    { en: 'a huge fake laugh', nl: 'een enorme nep lach' },
+  ],
+  images: [polite, enthusiastic, huge],
   contact: [
     {
       icon: faEnvelope,

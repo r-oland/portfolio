@@ -1,0 +1,36 @@
+@import "styles/Variables";
+
+.wrapper {
+  display: grid;
+  gap: $spacing12;
+  margin-bottom: $spacing14;
+  align-items: center;
+
+  @media screen and (min-width: $tablet) {
+    grid-template-columns: 1fr auto;
+  }
+
+  h2 {
+    margin-bottom: $spacing5;
+
+    span {
+      cursor: pointer;
+      color: $green;
+    }
+  }
+
+  .text {
+    display: grid;
+    gap: $spacing4;
+  }
+
+  .image {
+    width: 100%;
+    margin-bottom: $spacing4;
+
+    @media screen and (min-width: $tablet) {
+      max-width: 365px;
+      margin-bottom: 0;
+    }
+  }
+}
