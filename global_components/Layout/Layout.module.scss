@@ -3,7 +3,8 @@
 .app {
   width: 100%;
   height: $app-height;
-  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
 
   @include scrollBar;
 }

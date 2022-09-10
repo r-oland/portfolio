@@ -1,6 +1,7 @@
 // Components==============
 import Hero from 'components/Hero/Hero';
 import styles from 'components/Home.module.scss';
+import Tech from 'components/Tech/Tech';
 import Work from 'components/Work/Work';
 import Head from 'next/head';
 import { createContext, useMemo } from 'react';
@@ -23,6 +24,7 @@ export default function Home() {
       <div className={styles.wrapper}>
         <Hero />
         <Work />
+        <Tech />
       </div>
     </HomeContext.Provider>
   );
