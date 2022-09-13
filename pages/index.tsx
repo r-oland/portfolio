@@ -1,5 +1,6 @@
 // Components==============
 import About from 'components/About/About';
+import Contact from 'components/Contact/Contact';
 import Hero from 'components/Hero/Hero';
 import styles from 'components/Home.module.scss';
 import Tech from 'components/Tech/Tech';
@@ -27,6 +28,7 @@ export default function Home() {
         <Work />
         <Tech />
         <About />
+        <Contact />
       </div>
     </HomeContext.Provider>
   );

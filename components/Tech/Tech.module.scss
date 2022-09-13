@@ -5,7 +5,11 @@
   background-color: $green;
   color: $white;
   padding: $spacing10 0 $spacing13;
-  margin-bottom: $spacing14;
+  margin-bottom: $spacing13;
+
+  @media screen and (min-width: $tablet) {
+    margin-bottom: $spacing14;
+  }
 
   .content {
     display: grid;

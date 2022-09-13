@@ -3,10 +3,11 @@
 .wrapper {
   display: grid;
   gap: $spacing12;
-  margin-bottom: $spacing14;
+  margin-bottom: $spacing13;
   align-items: center;
 
   @media screen and (min-width: $tablet) {
+    margin-bottom: $spacing15;
     grid-template-columns: 1fr auto;
   }
 
