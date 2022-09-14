@@ -23,5 +23,10 @@ export default function Anker({
     if (inView) setAnker(id);
   }, [inView]);
 
-  return <div id={id} className={styles.wrapper} />;
+  return (
+    <div
+      id={id}
+      className={`${styles.wrapper} ${lessMargin ? styles['more-to-top'] : ''}`}
+    />
+  );
 }

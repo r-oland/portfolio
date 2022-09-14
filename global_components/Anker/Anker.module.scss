@@ -7,5 +7,9 @@
 
   @media screen and (min-width: $desktop) {
     top: -80px;
+
+    &.more-to-top {
+      top: -120px;
+    }
   }
 }
