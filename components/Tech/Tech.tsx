@@ -8,7 +8,7 @@ import styles from './Tech.module.scss';
 // =========================
 
 export default function Tech() {
-  const { locale } = useLocale();
+  const { locale, t } = useLocale();
 
   return (
     <div className={styles.wrapper}>
@@ -16,8 +16,17 @@ export default function Tech() {
         <div className={styles.content}>
           <ChapterTitle id={2} color="white" marginBottom="4rem" />
           <h2>
-            <span>Following internet tradition, I present to you:</span>a tier
-            list of my tech stack.
+            <span>
+              {t(
+                'Following internet tradition, I present to you',
+                'Internet traditie volgend, stel ik je voor aan'
+              )}
+              :
+            </span>
+            {t(
+              'a tier list of my tech stack.',
+              'een ranglijst van mijn tech stack.'
+            )}
           </h2>
           <div className={styles.ranks}>
             {ranks.map((rank) => {
