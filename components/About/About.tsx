@@ -39,7 +39,11 @@ export default function About() {
           </h2>
           {!query && (
             <div className={styles.image}>
-              <Image src={user.images[selectedImage]} alt="Roland Branten" />
+              <Image
+                src={user.images[selectedImage]}
+                placeholder="blur"
+                alt="Roland Branten"
+              />
             </div>
           )}
           <div className={styles.text}>
@@ -50,7 +54,11 @@ export default function About() {
         </div>
         {query && (
           <div className={styles.image}>
-            <Image src={user.images[selectedImage]} alt="Roland Branten" />
+            <Image
+              src={user.images[selectedImage]}
+              placeholder="blur"
+              alt="Roland Branten"
+            />
           </div>
         )}
       </div>

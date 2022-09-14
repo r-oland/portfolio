@@ -1,3 +1,10 @@
+import { StaticImageData } from 'next/image';
+// Groow
+import Groow1 from 'public/projects/groow/groow-1.png';
+import Groow2 from 'public/projects/groow/groow-2.png';
+import Groow3 from 'public/projects/groow/groow-3.png';
+// Persistful
+
 export type ProjectType = {
   name: string;
   functionality: { en: string; nl: string };
@@ -10,7 +17,7 @@ export type ProjectType = {
   github?: string;
   url: string;
   logo: string;
-  images: string[];
+  images: StaticImageData[];
 };
 
 export const projects: ProjectType[] = [
@@ -28,11 +35,7 @@ export const projects: ProjectType[] = [
     github: 'https://github.com/r-oland/persistful',
     url: 'https://learntogroow.com',
     logo: '/projects/groow/logo.svg',
-    images: [
-      '/projects/groow/groow-1.png',
-      '/projects/groow/groow-2.png',
-      '/projects/groow/groow-3.png',
-    ],
+    images: [Groow1, Groow2, Groow3],
   },
   {
     name: 'Persistful',
@@ -47,10 +50,6 @@ export const projects: ProjectType[] = [
     color: '#3F6C5B',
     url: 'https://learntogroow.com',
     logo: '/projects/groow/logo.svg',
-    images: [
-      '/projects/groow/groow-1.png',
-      '/projects/groow/groow-2.png',
-      '/projects/groow/groow-3.png',
-    ],
+    images: [Groow1, Groow2, Groow3],
   },
 ];

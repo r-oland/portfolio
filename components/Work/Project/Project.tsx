@@ -82,7 +82,7 @@ export default function Project({
         </m.a>
       </div>
       <div className={styles.image}>
-        <Image src={project.images[0]} width={1500} height={840} />
+        <Image src={project.images[0]} placeholder="blur" />
       </div>
     </m.div>
   );
