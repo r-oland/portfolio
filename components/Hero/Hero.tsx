@@ -1,10 +1,11 @@
 // Components==============
 import { m } from 'framer-motion';
+import Anker from 'global_components/Anker/Anker';
 import ChapterTitle from 'global_components/ChapterTitle/ChapterTitle';
 import { useLocale } from 'hooks/useLocale';
 import Image from 'next/image';
 import heroImage from 'public/images/hero.jpg';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import Curl from './Curl/Curl';
 import styles from './Hero.module.scss';
 // =========================
@@ -23,52 +24,56 @@ const squareVariants = {
 export default function Hero() {
   const { t } = useLocale();
   const [mounted, setMounted] = useState(false);
+  const ref = useRef(null);
 
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.left}>
-        <h3 className={styles.logo}>RO.</h3>
-        <ChapterTitle id={0} color="grey" marginBottom="1.25rem" />
-        <h1>{t('I am', 'Ik ben')}</h1>
-        <h3>
-          {t('a', 'een')} <span>front-end</span>{' '}
-          {t(
-            'developer who enjoys building unique experiences for creatives with taste',
-            'developer die graag unieke ervaringen bouwt voor creatives met smaak'
-          )}
-          .
-        </h3>
-        <h1 className={styles.name}>Roland Branten</h1>
-        <Curl />
-      </div>
-      <m.div
-        className={styles['image-wrapper']}
-        initial="initial"
-        animate="animate"
-        onHoverStart={() => setMounted(true)}
-        whileHover="hover"
-        variants={{
-          animate: {
-            transition: {
-              staggerChildren: mounted ? 0 : 0.3,
+    <>
+      <Anker id="introduction" reference={ref} />
+      <div className={styles.wrapper} ref={ref}>
+        <div className={styles.left}>
+          <h3 className={styles.logo}>RO.</h3>
+          <ChapterTitle id={0} color="grey" marginBottom="1.25rem" />
+          <h1>{t('I am', 'Ik ben')}</h1>
+          <h3>
+            {t('a', 'een')} <span>front-end</span>{' '}
+            {t(
+              'developer who enjoys building unique experiences for creatives with taste',
+              'developer die graag unieke ervaringen bouwt voor creatives met smaak'
+            )}
+            .
+          </h3>
+          <h1 className={styles.name}>Roland Branten</h1>
+          <Curl />
+        </div>
+        <m.div
+          className={styles['image-wrapper']}
+          initial="initial"
+          animate="animate"
+          onHoverStart={() => setMounted(true)}
+          whileHover="hover"
+          variants={{
+            animate: {
+              transition: {
+                staggerChildren: mounted ? 0 : 0.3,
+              },
             },
-          },
-        }}
-      >
-        <m.div variants={imageVariants} className={styles.image}>
-          <Image
-            src={heroImage}
-            placeholder="blur"
-            alt="Roland Branten"
-            quality={100}
+          }}
+        >
+          <m.div variants={imageVariants} className={styles.image}>
+            <Image
+              src={heroImage}
+              placeholder="blur"
+              alt="Roland Branten"
+              quality={100}
+            />
+          </m.div>
+          <m.div
+            className={styles.square}
+            transition={{ type: 'spring', stiffness: 220, damping: 14 }}
+            variants={squareVariants}
           />
         </m.div>
-        <m.div
-          className={styles.square}
-          transition={{ type: 'spring', stiffness: 220, damping: 14 }}
-          variants={squareVariants}
-        />
-      </m.div>
-    </div>
+      </div>
+    </>
   );
 }

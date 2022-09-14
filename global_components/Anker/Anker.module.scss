@@ -1,0 +1,11 @@
+@import "styles/Variables";
+
+.wrapper {
+  position: relative;
+  top: -60px;
+  pointer-events: none;
+
+  @media screen and (min-width: $desktop) {
+    top: -80px;
+  }
+}

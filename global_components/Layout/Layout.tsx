@@ -17,15 +17,7 @@ function Component({ children }: { children: JSX.Element }) {
   );
 }
 
-export default function Layout({
-  children,
-  noLayout,
-}: {
-  children: JSX.Element;
-  noLayout?: boolean;
-}) {
-  if (noLayout) return children;
-
+export default function Layout({ children }: { children: JSX.Element }) {
   return (
     <LazyMotion features={domAnimation} strict>
       <Component>{children}</Component>

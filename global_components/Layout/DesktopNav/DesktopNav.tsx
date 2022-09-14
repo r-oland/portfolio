@@ -2,32 +2,29 @@
 import { navItems } from 'database/navItems';
 import LocaleSwitcher from 'global_components/LocaleSwitcher/LocaleSwitcher';
 import { useLocale } from 'hooks/useLocale';
-import { useRouter } from 'next/router';
+import { useStore } from 'hooks/useStore';
 import { useEffect, useState } from 'react';
+import { handleScrollTo } from 'utils/handleScrollTo';
 import styles from './DesktopNav.module.scss';
 // =========================
 
 export default function DesktopNav() {
-  const { asPath, push } = useRouter();
   const { locale } = useLocale();
 
-  const [pathname, setPathname] = useState('');
+  const anker = useStore((state) => state.anker);
   const [hasScrolled, setHasScrolled] = useState(false);
 
   useEffect(() => {
-    setPathname(asPath);
-  }, [asPath]);
+    const app = document.getElementById('app');
 
-  useEffect(() => {
-    const handleAppScroll = (e: Event) => {
-      const target = e.target as HTMLElement;
-
-      if (target.scrollTop > 0 && hasScrolled) return;
-      if (target.scrollTop === 0 && hasScrolled) return setHasScrolled(false);
-      if (target.scrollTop > 0 && !hasScrolled) return setHasScrolled(true);
+    const handleAppScroll = () => {
+      if (!app) return;
+      if (app.scrollTop > 0 && hasScrolled) return;
+      if (app.scrollTop === 0 && hasScrolled) return setHasScrolled(false);
+      if (app.scrollTop > 0 && !hasScrolled) return setHasScrolled(true);
     };
 
-    const app = document.getElementById('app');
+    handleAppScroll();
 
     app?.addEventListener('scroll', handleAppScroll);
     return () => app?.removeEventListener('scroll', handleAppScroll);
@@ -39,18 +36,19 @@ export default function DesktopNav() {
         hasScrolled ? styles['has-scrolled'] : ''
       }`}
     >
-      <div onClick={() => push('/#introduction')} className={styles.logo}>
+      <div
+        onClick={() => handleScrollTo('introduction')}
+        className={styles.logo}
+      >
         <h3>RO.</h3>
       </div>
       <div className={styles.right}>
         <div className={styles.items}>
           {navItems.map((item) => (
             <div
-              onClick={() => push(item.link)}
-              key={item.link}
-              className={
-                pathname.includes(item.link) ? styles.active : undefined
-              }
+              onClick={() => handleScrollTo(item.id)}
+              key={item.id}
+              className={item.id === anker ? styles.active : undefined}
             >
               <p>{item.name[locale]}</p>
             </div>
