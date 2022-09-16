@@ -26,12 +26,25 @@
   }
 
   .image {
-    width: 100%;
-    margin-bottom: $spacing4;
+    width: calc(100% - $spacing4);
+    margin-bottom: $spacing8;
+    position: relative;
+    display: grid;
 
     @media screen and (min-width: $tablet) {
+      width: 100%;
       max-width: 365px;
       margin-bottom: 0;
+    }
+
+    .square {
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: $green-light;
     }
   }
 }
