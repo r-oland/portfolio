@@ -5,20 +5,18 @@ import Button from 'global_components/Button/Button';
 import ChapterTitle from 'global_components/ChapterTitle/ChapterTitle';
 import Container from 'global_components/Container/Container';
 import { useLocale } from 'hooks/useLocale';
-import React, { useRef } from 'react';
 import Project from './Project/Project';
 import styles from './Work.module.scss';
 // =========================
 
 export default function Work() {
   const { t } = useLocale();
-  const ref = useRef(null);
 
   return (
     <>
-      <Anker id="work" reference={ref} />
+      <Anker id="work" />
       <Container>
-        <div className={styles.wrapper} ref={ref}>
+        <div className={styles.wrapper}>
           <ChapterTitle color="grey" id={1} marginBottom="1rem" />
           <div className={styles.projects}>
             {projects.map((p, i) => {

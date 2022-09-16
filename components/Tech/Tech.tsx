@@ -5,18 +5,16 @@ import ChapterTitle from 'global_components/ChapterTitle/ChapterTitle';
 import Container from 'global_components/Container/Container';
 import { useLocale } from 'hooks/useLocale';
 import Image from 'next/image';
-import { useRef } from 'react';
 import styles from './Tech.module.scss';
 // =========================
 
 export default function Tech() {
   const { locale, t } = useLocale();
-  const ref = useRef(null);
 
   return (
     <>
-      <Anker id="tech" reference={ref} />
-      <div className={styles.wrapper} ref={ref}>
+      <Anker id="tech" />
+      <div className={styles.wrapper}>
         <Container>
           <div className={styles.content}>
             <ChapterTitle id={2} color="white" marginBottom="4rem" />

@@ -7,7 +7,7 @@ import Container from 'global_components/Container/Container';
 import { useLocale } from 'hooks/useLocale';
 import { useMediaQ } from 'hooks/useMediaQ';
 import Image from 'next/image';
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import styles from './About.module.scss';
 // =========================
 
@@ -45,16 +45,15 @@ export default function About() {
   const [selectedImage, setSelectedImage] = useState(0);
 
   const query = useMediaQ('min', 768);
-  const ref = useRef<HTMLDivElement>(null);
 
   const { locale, t } = useLocale();
 
   return (
     <>
-      <Anker id="about" reference={ref} lessMargin />
+      <Anker id="about" lessMargin />
       <Container>
         <ChapterTitle id={3} marginBottom="4rem" color="grey" />
-        <div className={styles.wrapper} ref={ref}>
+        <div className={styles.wrapper}>
           <div>
             <h2>
               {t('Time for a', 'Tijd voor een')}{' '}

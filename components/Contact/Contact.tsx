@@ -6,7 +6,7 @@ import Anker from 'global_components/Anker/Anker';
 import ChapterTitle from 'global_components/ChapterTitle/ChapterTitle';
 import Container from 'global_components/Container/Container';
 import { useLocale } from 'hooks/useLocale';
-import React, { useRef, useState } from 'react';
+import { useState } from 'react';
 import styles from './Contact.module.scss';
 // =========================
 
@@ -14,13 +14,12 @@ export default function Contact() {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
-  const ref = useRef(null);
   const { t } = useLocale();
 
   return (
     <>
-      <Anker id="contact" reference={ref} />
-      <div className={styles.wrapper} ref={ref}>
+      <Anker id="contact" />
+      <div className={styles.wrapper}>
         <Container>
           <ChapterTitle id={4} color="white" marginBottom="4rem" />
           <div className={styles.content}>

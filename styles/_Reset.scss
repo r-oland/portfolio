@@ -5,7 +5,15 @@
 }
 
 :root {
-  height: 100%;
+  height: $app-height;
+}
+
+html {
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  @include scrollBar;
 }
 
 body {
@@ -14,7 +22,6 @@ body {
   background-size: 21px;
   background-position-x: 11px;
   background-position-y: 11px;
-  overflow: hidden;
 }
 
 svg {

@@ -1,7 +1,6 @@
 // Components==============
 import { domAnimation, LazyMotion } from 'framer-motion';
 import DesktopNav from './DesktopNav/DesktopNav';
-import styles from './Layout.module.scss';
 import MobileNav from './MobileNav/MobileNav';
 // =========================
 
@@ -10,9 +9,7 @@ function Component({ children }: { children: JSX.Element }) {
     <>
       <DesktopNav />
       <MobileNav />
-      <div className={styles.app} id="app">
-        {children}
-      </div>
+      {children}
     </>
   );
 }

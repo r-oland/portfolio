@@ -4,19 +4,17 @@ import ChapterTitle from 'global_components/ChapterTitle/ChapterTitle';
 import { useLocale } from 'hooks/useLocale';
 import Image from 'next/image';
 import heroImage from 'public/images/hero.png';
-import { useRef } from 'react';
 import Curl from './Curl/Curl';
 import styles from './Hero.module.scss';
 // =========================
 
 export default function Hero() {
   const { t } = useLocale();
-  const ref = useRef(null);
 
   return (
     <>
-      <Anker id="introduction" reference={ref} />
-      <div className={styles.wrapper} ref={ref}>
+      <Anker id="introduction" />
+      <div className={styles.wrapper}>
         <div className={styles.left}>
           <h3 className={styles.logo}>RO.</h3>
           <ChapterTitle id={0} color="grey" marginBottom="1.25rem" />
