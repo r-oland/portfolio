@@ -32,6 +32,7 @@ module.exports = {
     'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': 'error',
     'react/no-unescaped-entities': 0,
+    'react/no-unknown-property': 0,
     'consistent-return': 0,
     'import/extensions': 0,
     'import/no-mutable-exports': 0,
