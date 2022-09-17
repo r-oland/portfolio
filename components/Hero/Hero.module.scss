@@ -7,7 +7,7 @@
   gap: $spacing10;
   margin-bottom: $spacing10;
 
-  @media screen and (min-width: 1300px) {
+  @media screen and (min-width: $desktop-large) {
     margin-bottom: $spacing14;
     gap: 0;
     grid-template-columns: auto 1fr;
@@ -24,7 +24,7 @@
       padding: $spacing12 $spacing10 $spacing10 $spacing13;
     }
 
-    @media screen and (min-width: 1300px) {
+    @media screen and (min-width: $desktop-large) {
       width: 540px;
       padding: 0 $spacing10 0 $spacing13;
     }
@@ -35,7 +35,7 @@
     }
 
     @media screen and (min-width: $desktop-huge) {
-      width: 50vw;
+      width: 1000px;
     }
 
     .content {
@@ -80,6 +80,10 @@
 
     @media screen and (min-width: $desktop) {
       height: 600px;
+    }
+
+    @media screen and (min-width: $desktop-huge) {
+      height: 750px;
     }
   }
 }
