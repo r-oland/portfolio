@@ -20,19 +20,21 @@ export default function Hero() {
       <Anker id="introduction" />
       <div className={styles.wrapper}>
         <div className={styles.left}>
-          <h3 className={styles.logo}>RO.</h3>
-          <ChapterTitle id={0} color="grey" marginBottom="1.25rem" />
-          <h1>{t('I am', 'Ik ben')}</h1>
-          <h3>
-            {t('a', 'een')} <span>front-end</span>{' '}
-            {t(
-              'developer who enjoys building unique experiences for creatives with taste',
-              'developer die graag unieke ervaringen bouwt voor creatives met smaak'
-            )}
-            .
-          </h3>
-          <h1 className={styles.name}>Roland Branten</h1>
-          <Curl />
+          <div className={styles.content}>
+            <h3 className={styles.logo}>RO.</h3>
+            <ChapterTitle id={0} color="white" marginBottom="1.25rem" />
+            <h1>{t('I am', 'Ik ben')}</h1>
+            <h3>
+              {t('a', 'een')} <span>front-end</span>{' '}
+              {t(
+                'developer who enjoys building unique experiences for creatives with taste',
+                'developer die graag unieke ervaringen bouwt voor creatives met smaak'
+              )}
+              .
+            </h3>
+            <h1 className={styles.name}>Roland Branten</h1>
+            <Curl />
+          </div>
         </div>
         <div className={styles.render}>
           <Suspense>
