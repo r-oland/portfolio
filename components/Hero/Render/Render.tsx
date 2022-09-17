@@ -9,7 +9,7 @@ import Pyramid from './components/Pyramid';
 
 export default function App() {
   return (
-    <Canvas flat dpr={[1, 2]} camera={{ fov: 25, position: [0, 0, 7] }}>
+    <Canvas flat camera={{ fov: 25, position: [0, 0, 7.5] }}>
       <ambientLight />
       <PresentationControls
         global
