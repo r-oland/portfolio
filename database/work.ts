@@ -30,7 +30,7 @@ export const projects: ProjectType[] = [
     },
     startYear: 2020,
     client: 'Studio Tast',
-    clientLink: 'https://www.studiotast.nl/',
+    clientLink: 'https://www.tast.studio/',
     color: '#0827E9',
     github: 'https://github.com/r-oland/persistful',
     url: 'https://learntogroow.com',

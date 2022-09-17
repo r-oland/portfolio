@@ -73,22 +73,9 @@
       }
 
       button {
-        background-color: $green-light;
-        color: $black;
-        border: none;
-        border-radius: $border-radius;
-        padding: $spacing2 $spacing4;
-        font-weight: $weight-bold;
-        cursor: pointer;
-        transition: 0.2s;
-
         @media screen and (min-width: $phone) {
-          width: 130px;
+          width: 110px;
           margin-left: auto;
-        }
-
-        &:hover {
-          background-color: $white;
         }
       }
     }

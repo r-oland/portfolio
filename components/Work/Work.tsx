@@ -1,4 +1,6 @@
 // Components==============
+import { faArrowDown } from '@fortawesome/pro-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { projects } from 'database/work';
 import Anker from 'global_components/Anker/Anker';
 import Button from 'global_components/Button/Button';
@@ -25,7 +27,10 @@ export default function Work() {
             })}
           </div>
           <div className={styles.button}>
-            <Button>{t('Show more', 'Toon meer')}</Button>
+            <Button variant="border-black">
+              {t('Show more', 'Toon meer')}
+              <FontAwesomeIcon icon={faArrowDown} />
+            </Button>
           </div>
         </div>
       </Container>

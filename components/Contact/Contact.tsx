@@ -3,6 +3,7 @@ import { faCopyright } from '@fortawesome/pro-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { user } from 'database/user';
 import Anker from 'global_components/Anker/Anker';
+import Button from 'global_components/Button/Button';
 import ChapterTitle from 'global_components/ChapterTitle/ChapterTitle';
 import Container from 'global_components/Container/Container';
 import { useLocale } from 'hooks/useLocale';
@@ -73,7 +74,9 @@ export default function Contact() {
                   placeholder="Write your message..."
                   required
                 />
-                <button type="submit">Send</button>
+                <Button submit variant="green-light">
+                  Send
+                </Button>
               </form>
             </div>
           </div>
