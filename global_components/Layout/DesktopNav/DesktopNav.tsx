@@ -54,10 +54,6 @@ export default function DesktopNav() {
     return () => unsubscribe();
   }, [query]);
 
-  useEffect(() => {
-    document.addEventListener('click', (e) => console.log(e));
-  }, []);
-
   return (
     <div
       className={`${styles.wrapper} ${
