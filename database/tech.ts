@@ -7,16 +7,16 @@ export const ranks = [
   },
   {
     key: 'A' as RankKeyType,
-    description: { en: 'Could not live without it', nl: '' },
+    description: { en: 'Could not live without them', nl: '' },
   },
   {
     key: 'B' as RankKeyType,
-    description: { en: 'I mean, it’s a standard for a reason', nl: '' },
+    description: { en: 'I mean, they are standards for a reason', nl: '' },
   },
-  { key: 'C' as RankKeyType, description: { en: 'I like all dit', nl: '' } },
+  { key: 'C' as RankKeyType, description: { en: 'Wonderful stuff', nl: '' } },
   {
     key: 'D' as RankKeyType,
-    description: { en: 'It was nice, but I found something better', nl: '' },
+    description: { en: 'It was nice, but I found something else', nl: '' },
   },
   {
     key: 'E' as RankKeyType,
