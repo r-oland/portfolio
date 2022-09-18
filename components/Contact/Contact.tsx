@@ -1,5 +1,6 @@
 // Components==============
 import { faCopyright } from '@fortawesome/pro-regular-svg-icons';
+import { faCheck, faSpinnerThird } from '@fortawesome/pro-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { user } from 'database/user';
 import Anker from 'global_components/Anker/Anker';
@@ -11,7 +12,10 @@ import { useState } from 'react';
 import styles from './Contact.module.scss';
 // =========================
 
+type StatusType = 'initial' | 'sending' | 'send' | 'error';
+
 export default function Contact() {
+  const [status, setStatus] = useState<StatusType>('initial');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
@@ -57,25 +61,63 @@ export default function Contact() {
               <form
                 onSubmit={(e) => {
                   e.preventDefault();
+                  setStatus('sending');
+                  fetch('/api/contact', {
+                    method: 'POST',
+                    body: JSON.stringify({ email, message }),
+                  })
+                    .then(() => {
+                      setStatus('send');
+                      setEmail('');
+                      setMessage('');
 
-                  console.log(email, message);
+                      setTimeout(() => {
+                        setStatus('initial');
+                      }, 2000);
+                    })
+                    .catch(() => setStatus('error'));
                 }}
               >
                 <input
                   type="email"
                   value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={(e) => {
+                    if (status === 'error') setStatus('initial');
+                    setEmail(e.target.value);
+                  }}
                   placeholder="jondoe@mail.com"
                   required
                 />
                 <textarea
                   value={message}
-                  onChange={(e) => setMessage(e.target.value)}
+                  onChange={(e) => {
+                    if (status === 'error') setStatus('initial');
+                    setMessage(e.target.value);
+                  }}
                   placeholder="Write your message..."
                   required
                 />
-                <Button submit variant="green-light">
-                  Send
+                {status === 'error' && (
+                  <p className={styles.error}>
+                    {t(
+                      'Something went wrong... You can also directly send an email to info@rolandbranten.nl',
+                      'Er is iets mis gegaan... Je kunt ook direct een mail sturen naar info@rolandbranten.nl'
+                    )}
+                  </p>
+                )}
+                <Button
+                  submit
+                  variant="green-light"
+                  inactive={status === 'sending'}
+                >
+                  {status === 'sending' ? 'Sending...' : 'Send'}
+                  {status === 'sending' ? (
+                    <FontAwesomeIcon icon={faSpinnerThird} spin />
+                  ) : status === 'send' ? (
+                    <FontAwesomeIcon icon={faCheck} />
+                  ) : (
+                    <></>
+                  )}
                 </Button>
               </form>
             </div>

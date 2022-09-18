@@ -53,6 +53,11 @@
       display: grid;
       gap: $spacing3;
 
+      .error {
+        font-size: $font-small;
+        color: $green-light;
+      }
+
       input,
       textarea {
         border: 1px solid $green-light;
