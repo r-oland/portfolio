@@ -66,7 +66,9 @@ export default function Contact() {
                     method: 'POST',
                     body: JSON.stringify({ email, message }),
                   })
-                    .then(() => {
+                    .then((res) => {
+                      if (!res.ok) return setStatus('error');
+
                       setStatus('send');
                       setEmail('');
                       setMessage('');

@@ -37,7 +37,7 @@ export default async function handler(
       });
 
       const mailData = {
-        from: email,
+        from: 'contact@rolandbranten.nl',
         to: 'info@rolandbranten.nl',
         subject: `Contact request: ${email}`,
         text: text({ email, message }),
