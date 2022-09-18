@@ -1,11 +1,5 @@
 // Email HTML body
 export function html({ email, message }: { email: string; message: string }) {
-  // Insert invisible space into domains and email address to prevent both the
-  // email address and the domain from being turned into a hyperlink by email
-  // clients like Outlook and Apple mail, as this is confusing because it seems
-  // like they are supposed to click on their email address to sign in.
-
-  // Some simple styling options
   const backgroundColor = '#f9f9f9';
   const textColor = '#282f36';
   const mainBackgroundColor = '#ffffff';
@@ -19,7 +13,7 @@ export function html({ email, message }: { email: string; message: string }) {
       </td>
     </tr>
     <tr>
-      <td style="font-family: Helvetica, Arial, sans-serif; color: ${textColor}; font-size: 16px; white-space: pre-line;">
+      <td style="font-family: Helvetica, Arial, sans-serif; color: ${textColor}; font-size: 16px;">
         ${message}
       </td>
     </tr>

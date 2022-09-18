@@ -8,10 +8,13 @@ export default async function handler(
 ) {
   try {
     if (req.method === 'POST') {
-      const { message, email } = JSON.parse(req.body) as {
+      const data = JSON.parse(req.body) as {
         email: string;
         message: string;
       };
+
+      const { email } = data;
+      const message = data.message.replace(/\n/g, '<br />');
 
       const transporter = nodemailer.createTransport({
         port: parseFloat(process.env.EMAIL_SERVER_PORT || '0'),
