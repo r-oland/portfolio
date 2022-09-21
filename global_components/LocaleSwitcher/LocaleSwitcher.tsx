@@ -17,6 +17,7 @@ export default function LocaleSwitcher() {
 
         push(asPath, asPath, {
           locale: loc,
+          scroll: false,
         });
       }}
       className={styles.wrapper}

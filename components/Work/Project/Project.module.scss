@@ -20,6 +20,7 @@
       }
 
       .labels {
+        justify-content: end;
         .label {
           grid-template-columns: 1fr 18px;
 
@@ -58,6 +59,7 @@
     display: grid;
     gap: $spacing2;
     margin-bottom: $spacing8;
+    justify-content: start;
 
     .label {
       display: grid;
@@ -81,7 +83,7 @@
   }
 
   .link {
-    display: block;
+    display: inline-block;
     font-weight: $weight-bold;
     font-size: $font-large;
   }

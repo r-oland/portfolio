@@ -1,6 +1,10 @@
 // Components==============
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
-import { faCalendar, faStore } from '@fortawesome/pro-regular-svg-icons';
+import {
+  faCalendar,
+  faInfoCircle,
+  faStore,
+} from '@fortawesome/pro-regular-svg-icons';
 import { faArrowRight } from '@fortawesome/pro-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ProjectType } from 'database/work';
@@ -21,24 +25,28 @@ export default function Project({
 
   const color = { style: { color: project.color } };
 
+  const year = project.endYear
+    ? project.endYear === project.startYear
+      ? project.startYear
+      : `${project.startYear} - ${project.endYear}`
+    : `${project.startYear} - ${t('Now', 'Heden')}`;
+
   return (
     <m.div
       className={`${styles.wrapper} ${!left ? styles.reverse : ''}`}
       initial={{ x: left ? -100 : 100, opacity: 0 }}
       whileInView={{ x: 0, opacity: 1 }}
       transition={{ type: 'spring', stiffness: 120, damping: 14 }}
-      viewport={{ once: true, amount: 0.4 }}
+      viewport={{ amount: 0.4 }}
     >
       <div>
         <h1 {...color}>{project.name}</h1>
-        <p className={styles.functionality}>{project.functionality[locale]}</p>
+        <p className={styles.functionality}>{project.functionality}</p>
         <p className={styles.description}>{project.description[locale]}</p>
         <div className={styles.labels}>
           <div className={styles.label}>
             <FontAwesomeIcon icon={faCalendar} color={project.color} />
-            <p {...color}>
-              {project.startYear} - {project.endYear || t('Now', 'Heden')}
-            </p>
+            <p {...color}>{year}</p>
           </div>
           <div className={styles.label}>
             <FontAwesomeIcon icon={faStore} color={project.color} />
@@ -65,6 +73,19 @@ export default function Project({
                 rel="noreferrer"
               >
                 Github
+              </a>
+            </div>
+          )}
+          {!!project.marketingUrl && (
+            <div className={styles.label}>
+              <FontAwesomeIcon icon={faInfoCircle} color={project.color} />
+              <a
+                {...color}
+                href={project.marketingUrl}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {t('More about', 'Meer over')} {project.name}
               </a>
             </div>
           )}
