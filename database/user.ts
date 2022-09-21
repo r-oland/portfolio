@@ -6,13 +6,13 @@ import huge from 'public/images/huge.jpg';
 
 export const user = {
   aboutTitles: [
-    { en: 'really short', nl: '' },
-    { en: 'short', nl: '' },
-    { en: 'long', nl: '' },
+    { en: 'really short', nl: 'zeer korte' },
+    { en: 'short', nl: 'korte' },
+    { en: 'long', nl: 'lange' },
   ],
   about: [
     // really short
-    [{ en: '', nl: '' }],
+    [{ en: 'Is trying his very best', nl: 'Is zijn best aan het doen' }],
     // short
     [
       {

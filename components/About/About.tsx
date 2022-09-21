@@ -58,14 +58,22 @@ export default function About() {
             <h2>
               {t('Time for a', 'Tijd voor een')}{' '}
               <span
-                onClick={() => setSelectedText((prev) => (prev === 0 ? 1 : 0))}
+                onClick={() =>
+                  setSelectedText((prev) =>
+                    prev === 0 ? 1 : prev === 1 ? 2 : 0
+                  )
+                }
               >
                 {user.aboutTitles[selectedText][locale]}
               </span>{' '}
               {t('introduction', 'introductie')} <br />
               {t('with', 'met')}{' '}
               <span
-                onClick={() => setSelectedImage((prev) => (prev === 0 ? 1 : 0))}
+                onClick={() =>
+                  setSelectedImage((prev) =>
+                    prev === 0 ? 1 : prev === 1 ? 2 : 0
+                  )
+                }
               >
                 {user.imageTitles[selectedImage][locale]}
               </span>
