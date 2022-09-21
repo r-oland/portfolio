@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 // Components==============
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import {
@@ -10,7 +11,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ProjectType } from 'database/work';
 import { m } from 'framer-motion';
 import { useLocale } from 'hooks/useLocale';
-import Image from 'next/image';
+import { useState } from 'react';
 import styles from './Project.module.scss';
 // =========================
 
@@ -21,6 +22,7 @@ export default function Project({
   project: ProjectType;
   left: boolean;
 }) {
+  const [image, setImage] = useState(0);
   const { locale, t } = useLocale();
 
   const color = { style: { color: project.color } };
@@ -102,8 +104,18 @@ export default function Project({
           Visit site <FontAwesomeIcon icon={faArrowRight} />
         </m.a>
       </div>
-      <div className={styles.image}>
-        <Image src={project.images[0]} placeholder="blur" />
+      <div
+        className={styles.image}
+        onClick={() =>
+          setImage((prev) =>
+            prev === project.amountOfImages - 1 ? 0 : prev + 1
+          )
+        }
+      >
+        <img
+          src={`/projects/${project.id}/image ${image + 1}.jpg`}
+          alt={project.name}
+        />
       </div>
     </m.div>
   );

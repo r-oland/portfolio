@@ -1,23 +1,5 @@
-import { StaticImageData } from 'next/image';
-// Klik
-import KlikLogo from 'public/projects/klik/logo.svg';
-// Spiek
-import SpiekLogo from 'public/projects/spiek/logo.svg';
-// Persistful
-import PersistfulLogo from 'public/projects/persistful/logo.svg';
-// Groow
-import Groow1 from 'public/projects/groow/groow-1.png';
-import Groow2 from 'public/projects/groow/groow-2.png';
-import Groow3 from 'public/projects/groow/groow-3.png';
-import GroowLogo from 'public/projects/groow/logo.svg';
-// Dust Media
-import DustMediaLogo from 'public/projects/dust-media/logo.svg';
-// Qblox
-import QbloxLogo from 'public/projects/qblox/logo.svg';
-// Portfolio
-import PortfolioLogo from 'public/projects/portfolio/logo.svg';
-
 export type ProjectType = {
+  id: string;
   name: string;
   functionality: string;
   description: { en: string; nl: string };
@@ -29,13 +11,13 @@ export type ProjectType = {
   github?: string;
   url: string;
   marketingUrl?: string;
-  logo: StaticImageData;
-  images: StaticImageData[];
+  amountOfImages: number;
 };
 
 export const projects: ProjectType[] = [
   // Klik
   {
+    id: 'klik',
     name: 'Klik',
     functionality: 'Frontend lead',
     description: {
@@ -48,11 +30,11 @@ export const projects: ProjectType[] = [
     color: '#030626',
     url: 'https://klik.tast.cloud/',
     marketingUrl: 'https://klik.tast.tools',
-    logo: KlikLogo,
-    images: [Groow1, Groow2, Groow3],
+    amountOfImages: 4,
   },
   // Spiek
   {
+    id: 'spiek',
     name: 'Spiek',
     functionality: 'Frontend lead',
     description: {
@@ -60,32 +42,32 @@ export const projects: ProjectType[] = [
       nl: 'Een web app waarin kinderen (met dyslexie) door middel van levendige en interactieve instructies en oefeningen beter leren lezen en spellen. Mijn rol was om de frontend vanuit niets op te bouwen en te onderhouden.',
     },
     startYear: 2020,
-    client: 'Studio Tast',
-    clientLink: 'https://www.tast.studio/',
+    client: 'Opdidakt',
+    clientLink: 'https://opdidakt.nl/',
     color: '#1368e5',
     url: 'https://spiekdigitaal.nl/inloggen',
     marketingUrl: 'https://opdidakt.nl/spiek-digitaal/',
-    logo: SpiekLogo,
-    images: [Groow1, Groow2, Groow3],
+    amountOfImages: 8,
   },
   // Persistful
   {
+    id: 'persistful',
     name: 'Persistful',
     functionality: 'Frontend - Backend - Design',
     description: {
-      en: 'A reward based habit tracking app that guides you in being more conscious and consistent in the way you spend your free time fruitfully. I did everything from thinking out the concept to deploying the application.',
-      nl: 'Een habit tracking app die je helpt om meer bewust en consistent te zijn in het nuttig besteden van je vrije tijd. Ik heb alles gedaan van het bedenken van het concept tot het deployen van de applicatie.',
+      en: 'A reward based habit tracking app (PWA) that guides you in being more conscious and consistent in the way you spend your free time fruitfully. I did everything from thinking out the concept to deploying the application.',
+      nl: 'Een habit tracking app (PWA) die je helpt om bewuster en consistenter te zijn in het nuttige besteden van je vrije tijd. Ik heb alles gedaan van het bedenken van het concept tot het deployen van de applicatie.',
     },
     startYear: 2022,
     client: 'Passion project',
     color: '#18e597',
     url: 'https://persistful.com/',
     github: 'https://github.com/r-oland/persistful',
-    logo: PersistfulLogo,
-    images: [Groow1, Groow2, Groow3],
+    amountOfImages: 4,
   },
   // Groow
   {
+    id: 'groow',
     name: 'Groow',
     functionality: 'Frontend lead',
     description: {
@@ -98,11 +80,11 @@ export const projects: ProjectType[] = [
     color: '#0827E9',
     marketingUrl: 'https://groow.tast.tools',
     url: 'https://learntogroow.com',
-    logo: GroowLogo,
-    images: [Groow1, Groow2, Groow3],
+    amountOfImages: 3,
   },
   // Dust Media
   {
+    id: 'dust-media',
     name: 'Dust Media',
     functionality: 'Frontend - CMS - Design',
     description: {
@@ -115,11 +97,11 @@ export const projects: ProjectType[] = [
     color: '#e1c598',
     github: 'https://github.com/DustMedia?tab=repositories',
     url: 'https://dustmedia.nl/',
-    logo: DustMediaLogo,
-    images: [Groow1, Groow2, Groow3],
+    amountOfImages: 3,
   },
   // Qblox
   {
+    id: 'qblox',
     name: 'Qblox',
     functionality: 'Frontend - CMS',
     description: {
@@ -131,11 +113,11 @@ export const projects: ProjectType[] = [
     color: '#00819d',
     github: 'https://github.com/QbloxWebsiteAccount/Website',
     url: 'https://qblox.com/',
-    logo: QbloxLogo,
-    images: [Groow1, Groow2, Groow3],
+    amountOfImages: 3,
   },
   // Portfolio
   {
+    id: 'portfolio',
     name: 'Portfolio',
     functionality: 'Frontend - Backend - Design',
     description: {
@@ -147,7 +129,6 @@ export const projects: ProjectType[] = [
     color: '#3f6c5b',
     github: 'https://github.com/r-oland/portfolio',
     url: 'https://rolandbranten.com/',
-    logo: PortfolioLogo,
-    images: [Groow1, Groow2, Groow3],
+    amountOfImages: 3,
   },
 ];
