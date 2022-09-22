@@ -44,10 +44,27 @@ export const projects: ProjectType[] = [
     startYear: 2020,
     client: 'Opdidakt',
     clientLink: 'https://opdidakt.nl/',
-    color: '#1368e5',
+    color: '#3edc89',
     url: 'https://spiekdigitaal.nl/inloggen',
     marketingUrl: 'https://opdidakt.nl/spiek-digitaal/',
     amountOfImages: 8,
+  },
+  // Groow
+  {
+    id: 'groow',
+    name: 'Groow',
+    functionality: 'Frontend lead',
+    description: {
+      en: 'A web app that serves as a digital extension of a physical toolkit. The purpose of Groow is to offer a method to guide you in solving complex problems. My role was to lead a complete refactor of the frontend.',
+      nl: 'Een app die dient als een digitale uitbreiding van een fysieke kit. Groow biedt een methode aan die je helpt bij het oplossen van complexe problemen. Mijn rol was om een complete refactor van de frontend te leiden.',
+    },
+    startYear: 2020,
+    client: 'Studio Tast',
+    clientLink: 'https://www.tast.studio/',
+    color: '#0827E9',
+    marketingUrl: 'https://groow.tast.tools',
+    url: 'https://learntogroow.com',
+    amountOfImages: 9,
   },
   // Persistful
   {
@@ -65,23 +82,6 @@ export const projects: ProjectType[] = [
     github: 'https://github.com/r-oland/persistful',
     amountOfImages: 4,
   },
-  // Groow
-  {
-    id: 'groow',
-    name: 'Groow',
-    functionality: 'Frontend lead',
-    description: {
-      en: 'A web app that serves as a digital extension of a physical toolkit. The purpose of Groow is to offer a method to guide you in solving complex problems. My role was to lead a complete refactor of the frontend.',
-      nl: 'Een app die dient als een digitale uitbreiding van een fysieke kit. Groow biedt een methode aan die je helpt bij het oplossen van complexe problemen. Mijn rol was om een complete refactor van de frontend te leiden.',
-    },
-    startYear: 2020,
-    client: 'Studio Tast',
-    clientLink: 'https://www.tast.studio/',
-    color: '#0827E9',
-    marketingUrl: 'https://groow.tast.tools',
-    url: 'https://learntogroow.com',
-    amountOfImages: 3,
-  },
   // Dust Media
   {
     id: 'dust-media',
@@ -97,7 +97,7 @@ export const projects: ProjectType[] = [
     color: '#e1c598',
     github: 'https://github.com/DustMedia?tab=repositories',
     url: 'https://dustmedia.nl/',
-    amountOfImages: 3,
+    amountOfImages: 4,
   },
   // Qblox
   {
@@ -109,11 +109,12 @@ export const projects: ProjectType[] = [
       nl: "Een marketing site voor Qblox Quantum. Het doel was om een flexibele frontend te maken waarbij pagina's en content toegevoegd en bewerkt kunnen worden. Mijn rol was om de frontend en het CMS te bouwen.",
     },
     startYear: 2020,
+    endYear: 2020,
     client: 'Qblox Quantum Computing',
     color: '#00819d',
     github: 'https://github.com/QbloxWebsiteAccount/Website',
     url: 'https://qblox.com/',
-    amountOfImages: 3,
+    amountOfImages: 7,
   },
   // Portfolio
   {
@@ -129,6 +130,6 @@ export const projects: ProjectType[] = [
     color: '#3f6c5b',
     github: 'https://github.com/r-oland/portfolio',
     url: 'https://rolandbranten.com/',
-    amountOfImages: 3,
+    amountOfImages: 1,
   },
 ];

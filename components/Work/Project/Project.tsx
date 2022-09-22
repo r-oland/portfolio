@@ -27,10 +27,16 @@ export default function Project({
 
   const color = { style: { color: project.color } };
 
+  const currentYear = new Date().getFullYear();
+
   const year = project.endYear
-    ? project.endYear === project.startYear
+    ? // has end year
+      project.endYear === project.startYear
       ? project.startYear
       : `${project.startYear} - ${project.endYear}`
+    : // only has start year
+    project.startYear === currentYear
+    ? project.startYear
     : `${project.startYear} - ${t('Now', 'Heden')}`;
 
   return (
