@@ -7,9 +7,13 @@ import Cactus from './components/Cactus';
 import Icon from './components/Icon';
 import Pyramid from './components/Pyramid';
 
-export default function App() {
+export default function App({ inView }: { inView: boolean }) {
   return (
-    <Canvas flat camera={{ fov: 25, position: [0, 0, 7.5] }}>
+    <Canvas
+      flat
+      camera={{ fov: 25, position: [0, 0, 7.5] }}
+      frameloop={inView ? 'always' : 'never'}
+    >
       <ambientLight />
       <PresentationControls
         global

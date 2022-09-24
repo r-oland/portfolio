@@ -13,14 +13,16 @@ const DynamicRender = dynamic(() => import('./Render'), {
 export default function ImageRender({
   project,
   left,
+  inView,
 }: {
   project: ProjectType;
   left?: boolean;
+  inView: boolean;
 }) {
   return (
     <div className={`${styles.wrapper} ${!left ? styles.reverse : ''}`}>
       <Suspense>
-        <DynamicRender project={project} />
+        <DynamicRender project={project} inView={inView} />
       </Suspense>
     </div>
   );

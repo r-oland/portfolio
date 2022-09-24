@@ -8,8 +8,9 @@ import {
 import { faArrowRight } from '@fortawesome/pro-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ProjectType } from 'database/work';
-import { m } from 'framer-motion';
+import { m, useInView } from 'framer-motion';
 import { useLocale } from 'hooks/useLocale';
+import { useRef } from 'react';
 import ImageRender from './ImageRender/ImageRender';
 import styles from './Project.module.scss';
 // =========================
@@ -21,9 +22,17 @@ export default function Project({
   project: ProjectType;
   left: boolean;
 }) {
+  const ref = useRef(null);
   const { locale, t } = useLocale();
 
   const color = { style: { color: project.color } };
+
+  const inView = useInView(ref, { amount: 0.4 });
+
+  const variants = {
+    initial: { x: left ? -100 : 100, opacity: 0 },
+    animate: { x: 0, opacity: 1 },
+  };
 
   const currentYear = new Date().getFullYear();
 
@@ -40,10 +49,11 @@ export default function Project({
   return (
     <m.div
       className={`${styles.wrapper} ${!left ? styles.reverse : ''}`}
-      initial={{ x: left ? -100 : 100, opacity: 0 }}
-      whileInView={{ x: 0, opacity: 1 }}
+      initial="initial"
+      animate={inView ? 'animate' : 'initial'}
+      variants={variants}
       transition={{ type: 'spring', stiffness: 120, damping: 14 }}
-      viewport={{ amount: 0.4 }}
+      ref={ref}
     >
       <div className={styles.content}>
         <h1 {...color}>{project.name}</h1>
@@ -108,7 +118,7 @@ export default function Project({
           Visit site <FontAwesomeIcon icon={faArrowRight} />
         </m.a>
       </div>
-      <ImageRender project={project} left={left} />
+      <ImageRender project={project} left={left} inView={inView} />
     </m.div>
   );
 }

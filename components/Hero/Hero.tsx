@@ -1,9 +1,10 @@
 // Components==============
+import { useInView } from 'framer-motion';
 import Anker from 'global_components/Anker/Anker';
 import ChapterTitle from 'global_components/ChapterTitle/ChapterTitle';
 import { useLocale } from 'hooks/useLocale';
 import dynamic from 'next/dynamic';
-import { Suspense } from 'react';
+import { Suspense, useRef } from 'react';
 import Curl from './Curl/Curl';
 import styles from './Hero.module.scss';
 // =========================
@@ -14,6 +15,9 @@ const DynamicRender = dynamic(() => import('./Render/Render'), {
 
 export default function Hero() {
   const { t } = useLocale();
+  const renderRef = useRef<HTMLDivElement>(null);
+
+  const inView = useInView(renderRef);
 
   return (
     <>
@@ -36,9 +40,9 @@ export default function Hero() {
             <Curl />
           </div>
         </div>
-        <div className={styles.render}>
+        <div className={styles.render} ref={renderRef}>
           <Suspense>
-            <DynamicRender />
+            <DynamicRender inView={inView} />
           </Suspense>
         </div>
       </div>

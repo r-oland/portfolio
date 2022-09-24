@@ -1,6 +1,5 @@
 // Components==============
-import { OrbitControls } from '@react-three/drei';
-import { Canvas, useFrame, useLoader } from '@react-three/fiber';
+import { Canvas, useLoader } from '@react-three/fiber';
 import { ProjectType } from 'database/work';
 import { useLayoutEffect, useRef, useState } from 'react';
 import { Group, NearestFilter, TextureLoader } from 'three';
@@ -13,12 +12,12 @@ function Meshes({ project }: { project: ProjectType }) {
 
   const url = `/projects/${project.id}/image ${image + 1}.jpg`;
 
-  useFrame(({ clock }) => {
-    if (!ref.current) return;
-    const time = clock.getElapsedTime();
+  // useFrame(({ clock }) => {
+  //   if (!ref.current) return;
+  //   const time = clock.getElapsedTime();
 
-    ref.current.rotation.y = Math.sin(time * 0.5) / 2;
-  });
+  //   ref.current.rotation.y = Math.sin(time * 0.5) / 2;
+  // });
 
   const texture = useLoader(TextureLoader, url);
 
@@ -54,7 +53,13 @@ function Meshes({ project }: { project: ProjectType }) {
   );
 }
 
-export default function Render({ project }: { project: ProjectType }) {
+export default function Render({
+  project,
+  inView,
+}: {
+  project: ProjectType;
+  inView: boolean;
+}) {
   return (
     <Canvas
       flat
@@ -64,10 +69,11 @@ export default function Render({ project }: { project: ProjectType }) {
           ? Math.min(window.devicePixelRatio, 2)
           : undefined
       }
+      frameloop={inView ? 'always' : 'never'}
     >
       <ambientLight intensity={0.9} />
       <Meshes project={project} />
-      <OrbitControls />
+      {/* <OrbitControls /> */}
     </Canvas>
   );
 }
