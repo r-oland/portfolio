@@ -2,90 +2,96 @@
 
 .wrapper {
   display: grid;
-  gap: $spacing8;
-  padding: $spacing8;
   align-items: center;
   background-color: $off-white;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.01);
   border-radius: $border-radius;
+  position: relative;
 
   @media screen and (min-width: $desktop) {
-    grid-template-columns: 1fr 1fr;
+    padding: $spacing8;
+    gap: $spacing8;
 
     &.reverse {
       text-align: end;
 
-      .description {
-        margin-left: auto;
-      }
+      .content {
+        justify-self: end;
+        .description {
+          margin-left: auto;
+        }
 
-      .labels {
-        justify-content: end;
-        .label {
-          grid-template-columns: 1fr 18px;
+        .labels {
+          justify-content: end;
+          .label {
+            grid-template-columns: 1fr 18px;
 
-          svg {
-            grid-column: 2;
-            grid-row: 1;
+            svg {
+              grid-column: 2;
+              grid-row: 1;
+            }
           }
         }
       }
-
-      .image {
-        grid-column: 1;
-        grid-row: 1;
-      }
     }
   }
 
-  h1 {
-    margin-bottom: $spacing6;
-  }
-
-  .functionality {
-    color: $grey;
-    font-weight: $weight-semi-bold;
-    font-size: $font-small;
-    text-transform: uppercase;
-    margin-bottom: $spacing3;
-  }
-
-  .description {
+  .content {
+    padding: $spacing8;
     max-width: 370px;
-    margin-bottom: $spacing4;
-  }
 
-  .labels {
-    display: grid;
-    gap: $spacing2;
-    margin-bottom: $spacing8;
-    justify-content: start;
+    @media screen and (min-width: $desktop) {
+      padding: 0;
+    }
 
-    .label {
+    h1 {
+      margin-bottom: $spacing6;
+    }
+
+    .functionality {
+      color: $grey;
+      font-weight: $weight-semi-bold;
+      font-size: $font-small;
+      text-transform: uppercase;
+      margin-bottom: $spacing3;
+    }
+
+    .description {
+      margin-bottom: $spacing4;
+    }
+
+    .labels {
       display: grid;
-      grid-template-columns: 18px 1fr;
-      align-items: center;
       gap: $spacing2;
+      margin-bottom: $spacing8;
+      justify-content: start;
 
-      svg {
-        width: 16px;
-      }
+      .label {
+        display: grid;
+        grid-template-columns: 18px 1fr;
+        align-items: center;
+        gap: $spacing2;
 
-      p,
-      a {
-        font-size: $font-small;
-        margin: 0;
-      }
+        svg {
+          width: 16px;
+        }
 
-      a {
-        text-decoration: underline;
+        p,
+        a {
+          font-size: $font-small;
+          margin: 0;
+        }
+
+        a {
+          text-decoration: underline;
+        }
       }
     }
-  }
 
-  .link {
-    display: inline-block;
-    font-weight: $weight-bold;
-    font-size: $font-large;
+    .link {
+      display: inline-block;
+      font-weight: $weight-bold;
+      font-size: $font-large;
+    }
   }
 }

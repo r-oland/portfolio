@@ -1,0 +1,18 @@
+@import "styles/Variables";
+
+.wrapper {
+  height: 60vw;
+  width: calc(100vw - 1.5rem);
+
+  @media screen and (min-width: $desktop) {
+    position: absolute;
+    height: calc(497px / 1.36);
+    width: calc(864px / 1.36);
+    right: -10rem;
+    transition: 0.2s;
+
+    &.reverse {
+      left: -10rem;
+    }
+  }
+}

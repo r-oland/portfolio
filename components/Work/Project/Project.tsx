@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 // Components==============
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import {
@@ -11,7 +10,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ProjectType } from 'database/work';
 import { m } from 'framer-motion';
 import { useLocale } from 'hooks/useLocale';
-import { useState } from 'react';
+import ImageRender from './ImageRender/ImageRender';
 import styles from './Project.module.scss';
 // =========================
 
@@ -22,7 +21,6 @@ export default function Project({
   project: ProjectType;
   left: boolean;
 }) {
-  const [image, setImage] = useState(0);
   const { locale, t } = useLocale();
 
   const color = { style: { color: project.color } };
@@ -47,7 +45,7 @@ export default function Project({
       transition={{ type: 'spring', stiffness: 120, damping: 14 }}
       viewport={{ amount: 0.4 }}
     >
-      <div>
+      <div className={styles.content}>
         <h1 {...color}>{project.name}</h1>
         <p className={styles.functionality}>{project.functionality}</p>
         <p className={styles.description}>{project.description[locale]}</p>
@@ -110,19 +108,7 @@ export default function Project({
           Visit site <FontAwesomeIcon icon={faArrowRight} />
         </m.a>
       </div>
-      <div
-        className={styles.image}
-        onClick={() =>
-          setImage((prev) =>
-            prev === project.amountOfImages - 1 ? 0 : prev + 1
-          )
-        }
-      >
-        <img
-          src={`/projects/${project.id}/image ${image + 1}.jpg`}
-          alt={project.name}
-        />
-      </div>
+      <ImageRender project={project} left={left} />
     </m.div>
   );
 }
