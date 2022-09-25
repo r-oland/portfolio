@@ -25,7 +25,7 @@ export const ranks = [
   {
     key: 'C' as RankKeyType,
     description: {
-      en: 'quality of life improvements',
+      en: 'Quality of life improvements',
       nl: 'Kwaliteit van leven verbeteringen',
     },
   },
@@ -54,6 +54,7 @@ export const techItems = [
   },
   { icon: '/tech/threejs.svg', rank: ranks[0].key, name: 'Three.js' },
   { icon: '/tech/d3.svg', rank: ranks[0].key, name: 'D3' },
+  { icon: '/tech/react-spring.svg', rank: ranks[0].key, name: 'React spring' },
   // 1
   { icon: '/tech/typescript.svg', rank: ranks[1].key, name: 'Typescript' },
   { icon: '/tech/react.svg', rank: ranks[1].key, name: 'React' },
