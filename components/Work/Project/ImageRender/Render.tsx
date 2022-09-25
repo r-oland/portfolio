@@ -37,7 +37,7 @@ function Meshes({ project, left }: { project: ProjectType; left: boolean }) {
   const width = 864 / dividedBy;
   const height = 497 / dividedBy;
   const depth = 0.1;
-  const offset = 0.55;
+  const offset = 0.58;
 
   return (
     <group position={[left ? -offset : offset, 0, 0]} ref={ref}>
@@ -81,7 +81,7 @@ export default function Render({
       }
       frameloop={inView ? 'always' : 'never'}
     >
-      <ambientLight intensity={0.9} />
+      <ambientLight intensity={0.5} />
       <Meshes project={project} left={left} />
     </Canvas>
   );

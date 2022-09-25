@@ -65,6 +65,7 @@
       gap: $spacing2;
       margin-bottom: $spacing8;
       justify-content: start;
+      filter: contrast(80%);
 
       .label {
         display: grid;
