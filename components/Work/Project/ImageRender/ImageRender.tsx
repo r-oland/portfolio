@@ -16,13 +16,13 @@ export default function ImageRender({
   inView,
 }: {
   project: ProjectType;
-  left?: boolean;
+  left: boolean;
   inView: boolean;
 }) {
   return (
     <div className={`${styles.wrapper} ${!left ? styles.reverse : ''}`}>
       <Suspense>
-        <DynamicRender project={project} inView={inView} />
+        <DynamicRender project={project} inView={inView} left={left} />
       </Suspense>
     </div>
   );
