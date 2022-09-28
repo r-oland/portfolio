@@ -93,6 +93,10 @@
       display: inline-block;
       font-weight: $weight-bold;
       font-size: $font-large;
+
+      p {
+        font-size: $font-extra-small;
+      }
     }
   }
 }

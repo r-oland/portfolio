@@ -114,8 +114,17 @@ export default function Project({
           initial={{ x: 0 }}
           whileHover={{ x: 5 }}
           whileTap={{ x: 0 }}
+          style={{ opacity: project.behindPaywall ? 0.4 : 1 }}
         >
           Visit site <FontAwesomeIcon icon={faArrowRight} />
+          {project.behindPaywall && (
+            <p>
+              {t(
+                '*requires a paid subscription',
+                '*vereist een betaald abonnement'
+              )}
+            </p>
+          )}
         </m.a>
       </div>
       <ImageRender project={project} left={left} inView={inView} />
