@@ -12,6 +12,7 @@ export type ProjectType = {
   url: string;
   marketingUrl?: string;
   amountOfImages: number;
+  behindPaywall?: boolean;
 };
 
 export const projects: ProjectType[] = [
@@ -31,6 +32,7 @@ export const projects: ProjectType[] = [
     url: 'https://klik.tast.cloud/',
     marketingUrl: 'https://klik.tast.tools',
     amountOfImages: 4,
+    behindPaywall: true,
   },
   // Spiek
   {
@@ -48,6 +50,7 @@ export const projects: ProjectType[] = [
     url: 'https://spiekdigitaal.nl/inloggen',
     marketingUrl: 'https://opdidakt.nl/spiek-digitaal/',
     amountOfImages: 8,
+    behindPaywall: true,
   },
   // Groow
   {

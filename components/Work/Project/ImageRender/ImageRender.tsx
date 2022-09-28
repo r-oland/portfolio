@@ -1,11 +1,21 @@
 /* eslint-disable @next/next/no-img-element */
 // Components==============
 import { ProjectType } from 'database/work';
-import { useState } from 'react';
 import { m } from 'framer-motion';
 import { useMediaQ } from 'hooks/useMediaQ';
+import { useState } from 'react';
 import styles from './ImageRender.module.scss';
 // =========================
+
+// order of transform output
+const transformTemplate = ({
+  transformPerspective,
+  rotateY,
+  rotateX,
+  scale,
+  x,
+}: any) =>
+  `perspective(${transformPerspective}) rotateY(${rotateY}) rotateX(${rotateX}) scale(${scale}) translateX(${x}) translateZ(0)`;
 
 export default function ImageRender({
   project,
@@ -42,7 +52,9 @@ export default function ImageRender({
       rotateX: 45,
       scale: 0.8,
       x: left ? -60 : 60,
-      transition: { delay: 0.2 },
+      transition: {
+        delay: 0.2,
+      },
     },
   };
 
@@ -52,23 +64,22 @@ export default function ImageRender({
       onClick={() =>
         setImage((prev) => (prev === project.amountOfImages - 1 ? 0 : prev + 1))
       }
-      // order of transform output
-      transformTemplate={({
-        transformPerspective,
-        rotateY,
-        rotateX,
-        scale,
-        x,
-      }) =>
-        `perspective(${transformPerspective}) rotateY(${rotateY}) rotateX(${rotateX}) scale(${scale}) translateX(${x}) translateZ(0)`
-      }
+      transformTemplate={transformTemplate}
       animate={!query ? 'hovering' : inView ? 'mounted' : 'initial'}
       whileHover="hovering"
       initial={!query ? 'hovering' : 'initial'}
       transition={{ type: 'spring', stiffness: 120, damping: 18 }}
       variants={variants}
     >
-      <img src={url} alt={project.name} />
+      <m.img
+        src={url}
+        alt={project.name}
+        variants={{
+          hovering: { scaleY: 0.92, scaleX: 0.95, transition: { delay: 0.3 } },
+          initial: { scaleY: 1, scaleX: 1 },
+          mounted: { scaleY: 1, scaleX: 1 },
+        }}
+      />
       {query && (
         <>
           <div
