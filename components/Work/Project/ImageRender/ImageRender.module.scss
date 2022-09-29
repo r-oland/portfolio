@@ -2,6 +2,7 @@
 
 .wrapper {
   background-color: $white;
+  cursor: none;
 
   @media screen and (min-width: $desktop) {
     display: grid;
@@ -13,7 +14,6 @@
     backface-visibility: hidden;
     height: calc(497px / 1.36);
     width: calc(864px / 1.36);
-    cursor: none;
 
     img {
       position: absolute;
