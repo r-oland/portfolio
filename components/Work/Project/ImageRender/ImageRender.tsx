@@ -61,15 +61,51 @@ export default function ImageRender({
   return (
     <m.div
       className={`${styles.wrapper} ${!left ? styles.reverse : ''}`}
-      onClick={() =>
-        setImage((prev) => (prev === project.amountOfImages - 1 ? 0 : prev + 1))
-      }
+      onClick={() => {
+        const toRight = (
+          document.getElementById('cursor')?.childNodes[0] as HTMLImageElement
+        )?.src.includes('right');
+
+        setImage((prev) => {
+          if (toRight) {
+            if (prev === project.amountOfImages - 1) return 0;
+            return prev + 1;
+          }
+          if (prev === 0) return project.amountOfImages - 1;
+          return prev - 1;
+        });
+      }}
       transformTemplate={transformTemplate}
       animate={!query ? 'hovering' : inView ? 'mounted' : 'initial'}
       whileHover="hovering"
       initial={!query ? 'hovering' : 'initial'}
       transition={{ type: 'spring', stiffness: 120, damping: 18 }}
       variants={variants}
+      onMouseMove={(e) => {
+        const mouseY = e.pageY;
+        const mouseX = e.pageX;
+        const cursor = document.getElementById('cursor');
+        const cursorImage = cursor?.childNodes[0] as HTMLImageElement;
+        const target = e.target as Element;
+
+        const isRightImage = cursorImage.src.includes('right');
+
+        if (target?.classList[0]?.includes('left') && isRightImage)
+          cursorImage.src = '/images/chevron-left-white.svg';
+        if (target?.classList[0]?.includes('right') && !isRightImage)
+          cursorImage.src = '/images/chevron-right-white.svg';
+
+        if (cursor) {
+          cursor.style.transform = `translate(${mouseX - 17}px, ${
+            mouseY - 17
+          }px)`;
+          cursor.style.opacity = '1';
+        }
+      }}
+      onMouseLeave={() => {
+        const cursor = document.getElementById('cursor');
+        if (cursor) cursor.style.opacity = '0';
+      }}
     >
       <m.img
         src={url}
@@ -80,6 +116,8 @@ export default function ImageRender({
           mounted: { scaleY: 1, scaleX: 1 },
         }}
       />
+      <div className={styles.left} />
+      <div className={styles.right} />
       {query && (
         <>
           <div

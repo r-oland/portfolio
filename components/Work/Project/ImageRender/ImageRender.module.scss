@@ -1,9 +1,11 @@
 @import "styles/Variables";
 
 .wrapper {
-  width: calc(100vw - 1.5rem);
+  background-color: $white;
 
   @media screen and (min-width: $desktop) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     position: absolute;
     right: -10rem;
     transform-style: preserve-3d;
@@ -11,7 +13,11 @@
     backface-visibility: hidden;
     height: calc(497px / 1.36);
     width: calc(864px / 1.36);
-    background-color: $white;
+    cursor: none;
+
+    img {
+      position: absolute;
+    }
 
     &:hover {
       img {
@@ -19,13 +25,11 @@
       }
     }
 
-    .background {
-      position: absolute;
-      background-color: $white;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
+    .left {
+      position: relative;
+    }
+    .right {
+      position: relative;
     }
 
     .bottom,

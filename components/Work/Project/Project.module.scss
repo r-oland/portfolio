@@ -33,6 +33,12 @@
           }
         }
       }
+
+      .link {
+        p {
+          right: 0;
+        }
+      }
     }
   }
 
@@ -90,12 +96,25 @@
     }
 
     .link {
+      position: relative;
       display: inline-block;
       font-weight: $weight-bold;
       font-size: $font-large;
 
+      &:hover {
+        p {
+          opacity: 1;
+        }
+      }
+
       p {
+        width: 160px;
+        pointer-events: none;
+        position: absolute;
         font-size: $font-extra-small;
+        bottom: -$spacing4;
+        opacity: 0;
+        transition: 0.2s;
       }
     }
   }
