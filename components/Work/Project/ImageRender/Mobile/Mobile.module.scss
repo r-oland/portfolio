@@ -1,0 +1,35 @@
+@import "styles/Variables";
+
+.wrapper {
+  position: relative;
+  height: calc(56.5vw + 20px);
+  overflow: hidden;
+
+  img {
+    position: absolute;
+    border: 1px solid $off-white;
+  }
+
+  .dots {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: center;
+    gap: $spacing3;
+    position: absolute;
+    bottom: $spacing2;
+    left: 50%;
+    transform: translateX(-50%);
+
+    .dot {
+      opacity: 0.25;
+      width: 12px;
+      height: 12px;
+      border-radius: 100%;
+      cursor: pointer;
+
+      &.active {
+        opacity: 1;
+      }
+    }
+  }
+}

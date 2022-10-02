@@ -3,6 +3,9 @@
 .wrapper {
   background-color: $white;
   cursor: none;
+  img {
+    border: 1px solid $off-white;
+  }
 
   @media screen and (min-width: $desktop) {
     display: grid;
@@ -12,11 +15,12 @@
     transform-style: preserve-3d;
     image-rendering: optimizeQuality;
     backface-visibility: hidden;
-    height: calc(497px / 1.36);
-    width: calc(864px / 1.36);
+    height: 365px;
+    width: 635px;
 
     img {
       position: absolute;
+      border: none;
     }
 
     &:hover {
@@ -25,9 +29,7 @@
       }
     }
 
-    .left {
-      position: relative;
-    }
+    .left,
     .right {
       position: relative;
     }

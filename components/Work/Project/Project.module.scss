@@ -116,6 +116,12 @@
         opacity: 0;
         transition: 0.2s;
       }
+
+      @media screen and (max-width: $desktop) {
+        p {
+          opacity: 1;
+        }
+      }
     }
   }
 }
