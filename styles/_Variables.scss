@@ -57,9 +57,6 @@ $spacing19: 48rem;
 $border-radius: 1px;
 $border: 1px solid $off-white;
 
-// App height
-$app-height: var(--app-height);
-
 @mixin scrollBar {
   /* Works on Firefox */
   @supports (-moz-appearance: none) {

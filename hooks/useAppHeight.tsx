@@ -2,7 +2,7 @@
 import { useEffect } from 'react';
 // =========================
 
-export const setAppHeight = () => {
+const setAppHeight = () => {
   if (typeof document === 'undefined') return;
 
   const doc = document.documentElement;
