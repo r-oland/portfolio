@@ -25,7 +25,7 @@
     gap: $spacing4;
   }
 
-  .image {
+  .image-wrapper {
     width: calc(100% - $spacing4);
     margin-bottom: $spacing8;
     position: relative;
@@ -35,6 +35,10 @@
       width: 100%;
       max-width: 365px;
       margin-bottom: 0;
+    }
+
+    .image {
+      display: grid;
     }
 
     .square {

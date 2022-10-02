@@ -20,17 +20,29 @@ const squareVariants = {
 function Images({ selectedImage }: { selectedImage: number }) {
   return (
     <m.div
-      className={styles.image}
+      className={styles['image-wrapper']}
       initial="initial"
       whileInView="animate"
       whileHover="hover"
       viewport={{ amount: 1, once: true }}
     >
-      <Image
-        src={user.images[selectedImage]}
-        placeholder="blur"
-        alt="Roland Branten"
-      />
+      {/* Load all images at once to prevent flicker from happening between switching images */}
+      {user.images.map((image, i) => (
+        <div
+          key={i}
+          className={styles.image}
+          style={{
+            position: i !== selectedImage ? 'absolute' : 'relative',
+            zIndex: i === selectedImage ? 1 : 0,
+          }}
+        >
+          <Image
+            src={image}
+            placeholder="blur"
+            alt={`Roland Branten - ${user.imageTitles[i]}`}
+          />
+        </div>
+      ))}
       <m.div
         className={styles.square}
         transition={{ type: 'spring', stiffness: 220, damping: 14 }}
