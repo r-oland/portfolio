@@ -106,7 +106,7 @@ export default function Desktop({
           cursor.style.transform = `translate(${mouseX - 17}px, ${
             mouseY - 17
           }px)`;
-          cursor.style.opacity = '0.9';
+          cursor.style.opacity = '1';
         }
       }}
       onMouseLeave={() => {

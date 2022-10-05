@@ -1,0 +1,90 @@
+@import "styles/Variables";
+
+.wrapper {
+  position: relative;
+  display: inline-block;
+  color: $green;
+  cursor: default;
+
+  span {
+    display: inline-block;
+  }
+
+  .tooltip {
+    position: absolute;
+    bottom: calc(100% + 15px);
+    z-index: 1;
+    background-color: $white;
+    width: 205px;
+    height: 35px;
+    border-radius: 100px;
+    font-size: 16px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: $spacing3;
+    align-items: center;
+    padding: 0 $spacing3;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.01);
+
+    &:before {
+      content: " ";
+      position: absolute;
+      z-index: 1;
+      width: 100%;
+      height: 20px;
+      bottom: -18px;
+    }
+
+    &:after {
+      content: " ";
+      position: absolute;
+      top: 100%; /* At the bottom of the tooltip */
+      left: 50%;
+      margin-left: -7px;
+      border-width: 7px;
+      border-style: solid;
+      border-color: white transparent transparent transparent;
+    }
+
+    .slider {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 2px;
+      border-radius: $border-radius;
+      background: $green-light;
+      outline: none;
+      opacity: 1;
+      transition: opacity 0.2s;
+      margin: 0;
+      cursor: pointer;
+
+      &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 8px;
+        height: 15px;
+        border-radius: $border-radius;
+        background: $black;
+        border: none;
+        cursor: pointer;
+        position: relative;
+        z-index: 5;
+        transition: 0.2s;
+      }
+      &::-moz-range-thumb {
+        width: 8px;
+        height: 15px;
+        border-radius: $border-radius;
+        background: $black;
+        border: none;
+        cursor: pointer;
+        position: relative;
+        z-index: 5;
+        transition: 0.2s;
+      }
+    }
+    svg {
+      cursor: pointer;
+    }
+  }
+}

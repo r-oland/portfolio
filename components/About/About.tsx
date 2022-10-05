@@ -6,9 +6,11 @@ import ChapterTitle from 'global_components/ChapterTitle/ChapterTitle';
 import Container from 'global_components/Container/Container';
 import { useLocale } from 'hooks/useLocale';
 import { useMediaQ } from 'hooks/useMediaQ';
+import { useStorage } from 'hooks/useStorage';
 import Image from 'next/image';
 import { useState } from 'react';
 import styles from './About.module.scss';
+import Tooltip from './Tooltip/Tooltip';
 // =========================
 
 const squareVariants = {
@@ -28,20 +30,22 @@ function Images({ selectedImage }: { selectedImage: number }) {
     >
       {/* Load all images at once to prevent flicker from happening between switching images */}
       {user.images.map((image, i) => (
-        <div
+        <m.div
           key={i}
           className={styles.image}
           style={{
             position: i !== selectedImage ? 'absolute' : 'relative',
             zIndex: i === selectedImage ? 1 : 0,
           }}
+          animate={{ opacity: i === selectedImage ? 1 : 0 }}
+          initial={{ opacity: 1 }}
         >
           <Image
             src={image}
             placeholder="blur"
             alt={`Roland Branten - ${user.imageTitles[i]}`}
           />
-        </div>
+        </m.div>
       ))}
       <m.div
         className={styles.square}
@@ -55,6 +59,10 @@ function Images({ selectedImage }: { selectedImage: number }) {
 export default function About() {
   const [selectedText, setSelectedText] = useState(1);
   const [selectedImage, setSelectedImage] = useState(0);
+  const [hasOpenedTooltip, setHasOpenedTooltip] = useStorage(
+    'has-opened-tooltip',
+    false
+  );
 
   const query = useMediaQ('min', 768);
 
@@ -69,26 +77,21 @@ export default function About() {
           <div>
             <h2>
               {t('Time for a', 'Tijd voor een')}{' '}
-              <span
-                onClick={() =>
-                  setSelectedText((prev) =>
-                    prev === 0 ? 1 : prev === 1 ? 2 : 0
-                  )
-                }
-              >
-                {user.aboutTitles[selectedText][locale]}
-              </span>{' '}
+              <Tooltip
+                selected={selectedText}
+                setSelected={setSelectedText}
+                hasOpenedTooltip={hasOpenedTooltip}
+                setHasOpenedTooltip={setHasOpenedTooltip}
+                type="text"
+              />{' '}
               {t('introduction', 'introductie')} <br />
               {t('with', 'met')}{' '}
-              <span
-                onClick={() =>
-                  setSelectedImage((prev) =>
-                    prev === 0 ? 1 : prev === 1 ? 2 : 0
-                  )
-                }
-              >
-                {user.imageTitles[selectedImage][locale]}
-              </span>
+              <Tooltip
+                selected={selectedImage}
+                setSelected={setSelectedImage}
+                setHasOpenedTooltip={setHasOpenedTooltip}
+                type="image"
+              />
             </h2>
             {!query && <Images selectedImage={selectedImage} />}
             <div className={styles.text}>

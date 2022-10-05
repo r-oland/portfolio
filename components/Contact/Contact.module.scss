@@ -37,6 +37,11 @@
         gap: $spacing1;
         align-items: center;
         color: $off-white;
+        transition: 0.2s;
+
+        &:hover {
+          color: $green-light;
+        }
       }
     }
 

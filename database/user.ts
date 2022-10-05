@@ -8,28 +8,61 @@ export const user = {
   aboutTitles: [
     { en: 'really short', nl: 'zeer korte' },
     { en: 'short', nl: 'korte' },
+    { en: 'extensive', nl: 'uitgebreide' },
     { en: 'long', nl: 'lange' },
   ],
   about: [
     // really short
-    [{ en: 'Is trying his very best', nl: 'Is zijn best aan het doen' }],
+    [
+      {
+        en: "My name is Roland and I'm trying my very best.",
+        nl: 'Ik ben mijn best aan het doen.',
+      },
+    ],
     // short
     [
       {
-        en: "An Eindhoven based human specimen who loves to create cool projects on the web. Next to that, I'm pretty passionate about music 🎵 and I like to stay fit in my kayak 🚣. But, you probably care most about the web part, so let's just continue with that!",
+        en: "My name is Roland. What I love doing is making ideas come to life and solving problems. The front-end is where I'm most comfortable and where I have the most fun but that doesn't mean I shy away from back-end development or designing.",
         nl: '',
       },
       {
-        en: "I'm a design-oriented front-end developer. I strive to build immersive and beautiful web applications through carefully crafted code and user-centric design. I'm also not afraid to write some server-side code from time to time.",
-        nl: '',
-      },
-      {
-        en: 'Rethinking the way I write my code and learning new technologies are probably my two favorite activities within programming.',
+        en: "I can currently be found in Eindhoven, The Netherlands and I'm available for (remote) freelance work. Please don't hesitate to reach out if you have any questions or if you want to check for availability.",
         nl: '',
       },
     ],
     // long
-    [{ en: '', nl: '' }],
+    [
+      {
+        en: "My name is Roland. What I love doing is making ideas come to life and solving problems. The front-end is where I'm most comfortable and where I have the most fun but that doesn't mean I shy away from back-end development or designing.",
+        nl: '',
+      },
+      {
+        en: 'A concept I have always been interested in is bridging the gap between functionality and creativity. This could come in the form of interesting animations, clever design choices or whatever else you can imagine. The possibilities are endless, which is something that excites me!',
+        nl: '',
+      },
+      {
+        en: "I can currently be found in Eindhoven, The Netherlands and I'm available for (remote) freelance work. Please don't hesitate to reach out if you have any questions or if you want to check for availability.",
+        nl: '',
+      },
+    ],
+    [
+      {
+        en: "My name is Roland. What I love doing is making ideas come to life and solving problems. The front-end is where I'm most comfortable and where I have the most fun but that doesn't mean I shy away from back-end development or designing.",
+        nl: '',
+      },
+      {
+        en: 'My story started back in 2017 when I was introduced to the world of programming during a web development class. I immediately stuck to it and became fairly proficient in a short time. This let me to having time to do other things like, you know, (allegedly) letting half of my class pay me to do the same for them. Suffice it to say, I was hooked!',
+        nl: '',
+      },
+      {
+        en: 'A concept I have always been interested in is bridging the gap between functionality and creativity. This could come in the form of interesting animations, clever design choices or whatever else you can imagine. The possibilities are endless, which is something that excites me!',
+        nl: '',
+      },
+      {
+        en: "I can currently be found in Eindhoven, The Netherlands and I'm available for (remote) freelance work. Please don't hesitate to reach out if you have any questions or if you want to check for availability.",
+        nl: '',
+      },
+    ],
   ],
   imageTitles: [
     { en: 'a polite smile', nl: 'een beleefde lach' },

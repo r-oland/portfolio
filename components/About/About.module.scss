@@ -4,7 +4,7 @@
   display: grid;
   gap: $spacing12;
   margin-bottom: $spacing13;
-  align-items: center;
+  align-items: start;
 
   @media screen and (min-width: $tablet) {
     margin-bottom: $spacing15;
@@ -13,16 +13,15 @@
 
   h2 {
     margin-bottom: $spacing5;
-
-    span {
-      cursor: pointer;
-      color: $green;
-    }
   }
 
   .text {
     display: grid;
     gap: $spacing4;
+
+    strong {
+      font-weight: $weight-bold;
+    }
   }
 
   .image-wrapper {
@@ -30,6 +29,7 @@
     margin-bottom: $spacing8;
     position: relative;
     display: grid;
+    align-self: center;
 
     @media screen and (min-width: $tablet) {
       width: 100%;
