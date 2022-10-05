@@ -35,11 +35,17 @@ export default function Tooltip({
 
   const { locale } = useLocale();
 
-  const total = type === 'image' ? user.images.length : user.about.length;
   const content =
     type === 'image'
       ? user.imageTitles[selected][locale]
       : user.aboutTitles[selected][locale];
+
+  const total = type === 'image' ? user.images.length : user.about.length;
+  const barWidth = 125;
+  const sliderWidth = 8;
+  const x =
+    (barWidth / (total - 1)) * selected -
+    (sliderWidth / (total - 1)) * selected;
 
   return (
     <div
@@ -64,7 +70,9 @@ export default function Tooltip({
       <AnimatePresence>
         {isOpen && (
           <m.div
-            className={styles.tooltip}
+            className={`${styles.tooltip} ${
+              type === 'image' ? styles.image : ''
+            }`}
             initial={{ opacity: 0, y: 0 }}
             animate={{ opacity: 1, y: 10 }}
             exit={{ opacity: 0, y: 0, pointerEvents: 'none' }}
@@ -79,8 +87,14 @@ export default function Tooltip({
               min="0"
               max={total - 1}
               value={selected}
-              className={styles.slider}
               onChange={handleChange}
+            />
+            <div className={styles.bar} />
+            <m.div
+              className={styles.slider}
+              initial={{ x }}
+              animate={{ x }}
+              transition={{ type: 'spring', stiffness: 200, damping: 22 }}
             />
             <FontAwesomeIcon
               icon={type === 'image' ? faLaughSquint : faPlusCircle}
