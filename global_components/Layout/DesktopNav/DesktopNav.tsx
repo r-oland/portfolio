@@ -64,7 +64,7 @@ export default function DesktopNav() {
         onClick={() => handleScrollTo('introduction')}
         className={styles.logo}
       >
-        <h3>RO.</h3>
+        <h3>ROLAND BRANTEN</h3>
       </div>
       <div className={styles.right}>
         <div className={styles.items}>
