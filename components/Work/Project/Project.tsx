@@ -44,7 +44,7 @@ export default function Project({
     : // only has start year
     project.startYear === currentYear
     ? project.startYear
-    : `${project.startYear} - ${t('Now', 'Heden')}`;
+    : `${project.startYear} - ${currentYear}`;
 
   return (
     <m.div
