@@ -19,11 +19,13 @@
 
     h1 {
       margin-bottom: $spacing1;
+      font-family: $zen;
     }
 
     h2 {
       color: $green-light;
       margin-bottom: $spacing6;
+      font-weight: $weight-normal;
     }
 
     .labels {
@@ -46,7 +48,6 @@
     }
 
     .contact-text {
-      font-weight: $weight-semi-bold;
       margin-bottom: $spacing4;
 
       @media screen and (min-width: $desktop) {

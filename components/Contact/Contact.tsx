@@ -87,7 +87,7 @@ export default function Contact() {
                     if (status === 'error') setStatus('initial');
                     setEmail(e.target.value);
                   }}
-                  placeholder="jondoe@mail.com"
+                  placeholder="johndoesitgood@mail.com"
                   required
                 />
                 <textarea

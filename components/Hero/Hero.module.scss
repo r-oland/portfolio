@@ -56,11 +56,13 @@
       h1 {
         color: $white;
         margin-bottom: $spacing4;
+        font-family: $zen;
       }
 
       h3 {
         font-size: 22px;
         margin-bottom: $spacing3;
+        font-weight: $weight-normal;
 
         span {
           color: $green-light;
