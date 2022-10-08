@@ -3,10 +3,10 @@ import { navItems } from 'database/navItems';
 import { useScroll } from 'framer-motion';
 import { AnkerType } from 'global_components/Anker/Anker';
 import LocaleSwitcher from 'global_components/LocaleSwitcher/LocaleSwitcher';
+import useHandleScrollTo from 'hooks/useHandleScrollTo';
 import { useLocale } from 'hooks/useLocale';
 import { useMediaQ } from 'hooks/useMediaQ';
 import { useEffect, useState } from 'react';
-import { handleScrollTo } from 'utils/handleScrollTo';
 import styles from './DesktopNav.module.scss';
 // =========================
 
@@ -18,6 +18,7 @@ export default function DesktopNav() {
 
   const query = useMediaQ('min', 1024);
   const { scrollY } = useScroll();
+  const handleScrollTo = useHandleScrollTo();
 
   useEffect(() => {
     if (!query) return;

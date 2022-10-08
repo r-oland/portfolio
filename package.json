@@ -16,6 +16,7 @@
     "@react-spring/three": "^9.5.4",
     "@react-three/drei": "^9.31.1",
     "@react-three/fiber": "^8.7.4",
+    "@studio-freight/lenis": "^0.2.9",
     "framer-motion": "^7.2.1",
     "next": "12.2.5",
     "nodemailer": "^6.7.8",
