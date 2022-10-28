@@ -45,6 +45,13 @@ export const ranks = [
   },
 ];
 
+/* 
+  TO ADD
+  Blender
+  React query 
+  React native
+*/
+
 export const techItems = [
   // 0
   {
@@ -89,6 +96,7 @@ export const techItems = [
   { icon: '/tech/graphql.svg', rank: ranks[3].key, name: 'GraphQl' },
   { icon: '/tech/laravel.svg', rank: ranks[3].key, name: 'Laravel' },
   // 4
+  { icon: '/tech/redux.svg', rank: ranks[4].key, name: 'Redux' },
   { icon: '/tech/gatsby.svg', rank: ranks[4].key, name: 'Gatsby' },
   {
     icon: '/tech/styled-components.svg',
