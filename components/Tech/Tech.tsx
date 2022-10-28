@@ -47,11 +47,7 @@ export default function Tech() {
                     <div className={styles.items}>
                       {items.map((item) => (
                         <div key={item.name} className={styles.item}>
-                          <Image
-                            src={item.icon}
-                            alt={item.name}
-                            layout="fill"
-                          />
+                          <Image src={item.icon} alt={item.name} fill />
                           <p>{item.name}</p>
                         </div>
                       ))}
