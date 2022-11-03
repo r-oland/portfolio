@@ -6,6 +6,9 @@
   margin: 0 auto;
   gap: $spacing10;
   margin-bottom: $spacing10;
+  @media screen and (min-width: $desktop-large) {
+    background-color: #1e86623d;
+  }
 
   @media screen and (min-width: $desktop-large) {
     margin-bottom: $spacing14;
@@ -88,7 +91,6 @@
 
     @media screen and (min-width: $desktop-large) {
       width: calc(100vw - 540px);
-      padding: 100px;
       max-height: 1200px;
     }
 

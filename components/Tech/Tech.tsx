@@ -21,13 +21,13 @@ export default function Tech() {
             <h2>
               <span>
                 {t(
-                  'Following internet tradition, I present to you',
-                  'Internet traditie volgend, stel ik je voor aan'
+                  "In case you were wondering what I'm working with",
+                  'In het geval dat je je afvroeg waar ik mee werk'
                 )}
                 :
               </span>
               {t(
-                'a tier list of my tech stack.',
+                "a tier list of the tech that I'm currently into",
                 'een ranglijst van mijn tech stack.'
               )}
             </h2>

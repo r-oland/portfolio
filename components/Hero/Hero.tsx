@@ -9,7 +9,7 @@ import Curl from './Curl/Curl';
 import styles from './Hero.module.scss';
 // =========================
 
-const DynamicRender = dynamic(() => import('./Render/Render'), {
+const DynamicPortal = dynamic(() => import('./Portal/Canvas'), {
   suspense: true,
 });
 
@@ -41,7 +41,7 @@ export default function Hero() {
         </div>
         <div className={styles.render} ref={renderRef}>
           <Suspense>
-            <DynamicRender inView={inView} />
+            <DynamicPortal inView={inView} />
           </Suspense>
         </div>
       </div>
