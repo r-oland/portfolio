@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 // Components==============
 import { ProjectType } from 'database/work';
-import { m } from 'framer-motion';
+import { AnimatePresence, m } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import styles from './Desktop.module.scss';
 // =========================
@@ -124,27 +124,37 @@ export default function Desktop({
         if (cursor) cursor.style.opacity = '0';
       }}
     >
-      <m.img
-        src={url}
-        alt={project.name}
-        variants={{
-          hovering: {
-            scaleY: 0.92,
-            scaleX: 0.95,
-            translateZ: 0,
-            transition: { delay: 0.3 },
-          },
-          initial: { scaleY: 1, scaleX: 1 },
-          mounted: { scaleY: 1, scaleX: 1 },
-        }}
-        // Safari bug where images doesn't change when clicked if it has a positive translateZ value and flashes white with a 0 value.
-        // Solution = disable translateZ on image
-        transformTemplate={({ scaleY, scaleX }) =>
-          `scaleY(${scaleY}) scaleX(${scaleX})`
-        }
-      />
-      <div className={styles.left} />
-      <div className={styles.right} />
+      <AnimatePresence>
+        <m.div
+          key={image}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className={styles['image-wrapper']}
+        >
+          <m.img
+            src={url}
+            alt={project.name}
+            variants={{
+              hovering: {
+                scaleY: 0.92,
+                scaleX: 0.95,
+                translateZ: 0,
+                transition: { delay: 0.3 },
+              },
+              initial: { scaleY: 1, scaleX: 1 },
+              mounted: { scaleY: 1, scaleX: 1 },
+            }}
+            // Safari bug where images doesn't change when clicked if it has a positive translateZ value and flashes white with a 0 value.
+            // Solution = disable translateZ on image
+            transformTemplate={({ scaleY, scaleX }) =>
+              `scaleY(${scaleY}) scaleX(${scaleX})`
+            }
+          />
+          <div className={styles.left} />
+          <div className={styles.right} />
+        </m.div>
+      </AnimatePresence>
       <div className={styles.bottom} />
       <div className={styles.side} />
       {inView && hovering && (

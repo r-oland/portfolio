@@ -8,8 +8,6 @@
   }
 
   @media screen and (min-width: $desktop) {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
     position: absolute;
     right: -10rem;
     transform-style: preserve-3d;
@@ -18,8 +16,16 @@
     height: 365px;
     width: 635px;
 
+    .image-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      width: inherit;
+      height: inherit;
+    }
+
     img {
       position: absolute;
+      top: 0;
       border: none;
     }
 
