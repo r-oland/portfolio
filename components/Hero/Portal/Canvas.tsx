@@ -2,6 +2,7 @@
 import { OrbitControls } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 import dynamic from 'next/dynamic';
+import Fireflies from './Fireflies';
 import Portal from './Portal';
 // =========================
 
@@ -24,6 +25,7 @@ export default function PortalCanvas({ inView }: { inView: boolean }) {
     >
       <OrbitControls makeDefault enableZoom={false} />
       {perfVisible && <ConditionalPerf position="top-left" deepAnalyze />}
+      <Fireflies />
       <Portal />
     </Canvas>
   );
