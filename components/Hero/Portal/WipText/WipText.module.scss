@@ -4,7 +4,22 @@
   display: grid;
   position: absolute;
   width: 350px;
-  top: 125px;
-  left: 100px;
   z-index: 1;
+  top: 0;
+  left: $spacing4;
+
+  @media screen and (min-width: $tablet) {
+    top: $spacing4;
+    left: 50px;
+  }
+
+  @media screen and (min-width: $tablet) {
+    top: 50px;
+    left: 50px;
+  }
+
+  @media screen and (min-width: $desktop-large) {
+    top: 125px;
+    left: 100px;
+  }
 }
