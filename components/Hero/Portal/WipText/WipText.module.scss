@@ -1,0 +1,10 @@
+@import "styles/Variables";
+
+.wrapper {
+  display: grid;
+  position: absolute;
+  width: 350px;
+  top: 125px;
+  left: 100px;
+  z-index: 1;
+}

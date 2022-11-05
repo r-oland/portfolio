@@ -1,15 +1,11 @@
 // Components==============
 import { Sparkles } from '@react-three/drei';
-import { useMemo } from 'react';
+import { memo } from 'react';
 // =========================
 
-export default function Fireflies() {
-  const scale = useMemo(
-    () =>
-      new Float32Array(
-        Array.from({ length: 40 }, () => 0.5 + Math.random() * 7)
-      ),
-    []
+function NoMemoFireflies() {
+  const scale = new Float32Array(
+    Array.from({ length: 40 }, () => 0.5 + Math.random() * 7)
   );
 
   return (
@@ -23,3 +19,5 @@ export default function Fireflies() {
     />
   );
 }
+
+export default memo(NoMemoFireflies);

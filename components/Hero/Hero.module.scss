@@ -6,9 +6,6 @@
   margin: 0 auto;
   gap: $spacing10;
   margin-bottom: $spacing10;
-  @media screen and (min-width: $desktop-large) {
-    background-color: #1e86623d;
-  }
 
   @media screen and (min-width: $desktop-large) {
     margin-bottom: $spacing14;
@@ -82,6 +79,7 @@
   .render {
     width: 100vw;
     height: 100%;
+    position: relative;
     min-height: 400px;
     align-self: center;
 

@@ -25,8 +25,6 @@ export default function Project({
   const ref = useRef(null);
   const { locale, t } = useLocale();
 
-  const color = { style: { color: project.color } };
-
   const inView = useInView(ref, { amount: 0.4 });
 
   const variants = {
@@ -56,51 +54,36 @@ export default function Project({
       ref={ref}
     >
       <div className={styles.content}>
-        <h1 {...color}>{project.name}</h1>
+        <h1>{project.name}</h1>
         <p className={styles.functionality}>{project.functionality}</p>
         <p className={styles.description}>{project.description[locale]}</p>
         <div className={styles.labels}>
           <div className={styles.label}>
-            <FontAwesomeIcon icon={faCalendar} color={project.color} />
-            <p {...color}>{year}</p>
+            <FontAwesomeIcon icon={faCalendar} />
+            <p>{year}</p>
           </div>
           <div className={styles.label}>
-            <FontAwesomeIcon icon={faStore} color={project.color} />
+            <FontAwesomeIcon icon={faStore} />
             {project.clientLink ? (
-              <a
-                {...color}
-                href={project.clientLink}
-                target="_blank"
-                rel="noreferrer"
-              >
+              <a href={project.clientLink} target="_blank" rel="noreferrer">
                 {project.client}
               </a>
             ) : (
-              <p {...color}>{project.client}</p>
+              <p>{project.client}</p>
             )}
           </div>
           {!!project.github && (
             <div className={styles.label}>
-              <FontAwesomeIcon icon={faGithub} color={project.color} />
-              <a
-                {...color}
-                href={project.github}
-                target="_blank"
-                rel="noreferrer"
-              >
+              <FontAwesomeIcon icon={faGithub} />
+              <a href={project.github} target="_blank" rel="noreferrer">
                 Github
               </a>
             </div>
           )}
           {!!project.marketingUrl && (
             <div className={styles.label}>
-              <FontAwesomeIcon icon={faInfoCircle} color={project.color} />
-              <a
-                {...color}
-                href={project.marketingUrl}
-                target="_blank"
-                rel="noreferrer"
-              >
+              <FontAwesomeIcon icon={faInfoCircle} />
+              <a href={project.marketingUrl} target="_blank" rel="noreferrer">
                 {t('More about', 'Meer over')} {project.name}
               </a>
             </div>

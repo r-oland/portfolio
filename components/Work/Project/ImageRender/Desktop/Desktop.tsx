@@ -2,7 +2,7 @@
 // Components==============
 import { ProjectType } from 'database/work';
 import { m } from 'framer-motion';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './Desktop.module.scss';
 // =========================
 
@@ -28,13 +28,23 @@ export default function Desktop({
   const [image, setImage] = useState(0);
   const [hovering, setHovering] = useState(false);
 
-  const url = `/projects/${project.id}/image ${image + 1}.jpg`;
+  const url = `/projects/${project.id}/image ${image}.jpg`;
   const prevUrl = `/projects/${project.id}/image ${
-    image + 1 === 1 ? project.amountOfImages : image
+    image === 0 ? project.amountOfImages - 1 : image - 1
   }.jpg`;
   const nextUrl = `/projects/${project.id}/image ${
-    image + 1 >= project.amountOfImages ? 1 : image + 2
+    image >= project.amountOfImages - 1 ? 0 : image + 1
   }.jpg`;
+
+  useEffect(() => {
+    if (!hovering && image !== 0) {
+      const timeout = setTimeout(() => {
+        setImage(0);
+      }, 500);
+
+      return () => clearTimeout(timeout);
+    }
+  }, [hovering]);
 
   const variants = {
     initial: {
@@ -135,8 +145,8 @@ export default function Desktop({
       />
       <div className={styles.left} />
       <div className={styles.right} />
-      <div className={styles.bottom} style={{ background: project.color }} />
-      <div className={styles.side} style={{ background: project.color }} />
+      <div className={styles.bottom} />
+      <div className={styles.side} />
       {inView && hovering && (
         <>
           <link rel="preload" as="image" href={prevUrl} />

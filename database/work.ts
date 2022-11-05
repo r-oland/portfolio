@@ -32,7 +32,7 @@ export const projects: ProjectType[] = [
     color: '#030626',
     url: 'https://klik.tast.cloud/',
     marketingUrl: 'https://klik.tast.tools',
-    amountOfImages: 4,
+    amountOfImages: 5,
     behindPaywall: true,
   },
   // Spiek
@@ -51,7 +51,7 @@ export const projects: ProjectType[] = [
     color: '#3edc89',
     url: 'https://spiekdigitaal.nl/inloggen',
     marketingUrl: 'https://opdidakt.nl/spiek-digitaal/',
-    amountOfImages: 8,
+    amountOfImages: 9,
     behindPaywall: true,
   },
   // Groow
@@ -70,7 +70,7 @@ export const projects: ProjectType[] = [
     color: '#0827E9',
     marketingUrl: 'https://groow.tast.tools',
     url: 'https://learntogroow.com',
-    amountOfImages: 9,
+    amountOfImages: 10,
   },
   // Persistful
   {
@@ -86,7 +86,7 @@ export const projects: ProjectType[] = [
     color: '#18e597',
     url: 'https://persistful.com/',
     github: 'https://github.com/r-oland/persistful',
-    amountOfImages: 4,
+    amountOfImages: 5,
   },
   // Dust Media
   {
@@ -103,7 +103,7 @@ export const projects: ProjectType[] = [
     color: '#e1c598',
     github: 'https://github.com/DustMedia?tab=repositories',
     url: 'https://dustmedia.nl/',
-    amountOfImages: 4,
+    amountOfImages: 5,
   },
   // Qblox
   {
@@ -120,7 +120,7 @@ export const projects: ProjectType[] = [
     color: '#00819d',
     github: 'https://github.com/QbloxWebsiteAccount/Website',
     url: 'https://qblox.com/',
-    amountOfImages: 7,
+    amountOfImages: 8,
   },
   // Portfolio
   {
@@ -136,6 +136,6 @@ export const projects: ProjectType[] = [
     color: '#3f6c5b',
     github: 'https://github.com/r-oland/portfolio',
     url: 'https://rolandbranten.com/',
-    amountOfImages: 1,
+    amountOfImages: 2,
   },
 ];

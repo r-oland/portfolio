@@ -49,12 +49,12 @@ export default function Mobile({
     setPage([page + newDirection, newDirection]);
   };
 
-  const url = `/projects/${project.id}/image ${imageIndex + 1}.jpg`;
+  const url = `/projects/${project.id}/image ${imageIndex}.jpg`;
   const prevUrl = `/projects/${project.id}/image ${
-    imageIndex + 1 === 1 ? project.amountOfImages : imageIndex
+    imageIndex === 0 ? project.amountOfImages - 1 : imageIndex - 1
   }.jpg`;
   const nextUrl = `/projects/${project.id}/image ${
-    imageIndex + 1 >= project.amountOfImages ? 1 : imageIndex + 2
+    imageIndex >= project.amountOfImages - 1 ? 0 : imageIndex + 1
   }.jpg`;
 
   const dots = Array.from(Array(project.amountOfImages).keys());
@@ -101,7 +101,6 @@ export default function Mobile({
             key={i}
             className={`${styles.dot} ${i === imageIndex ? styles.active : ''}`}
             onClick={() => setPage([i, 0])}
-            style={{ backgroundColor: project.color }}
           />
         ))}
       </div>
