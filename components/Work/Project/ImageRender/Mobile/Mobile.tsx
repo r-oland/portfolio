@@ -95,15 +95,19 @@ export default function Mobile({
           <link rel="preload" as="image" href={nextUrl} />
         </>
       )}
-      <div className={styles.dots}>
-        {dots.map((dot, i) => (
-          <div
-            key={i}
-            className={`${styles.dot} ${i === imageIndex ? styles.active : ''}`}
-            onClick={() => setPage([i, 0])}
-          />
-        ))}
-      </div>
+      {project.amountOfImages > 1 && (
+        <div className={styles.dots}>
+          {dots.map((dot, i) => (
+            <div
+              key={i}
+              className={`${styles.dot} ${
+                i === imageIndex ? styles.active : ''
+              }`}
+              onClick={() => setPage([i, 0])}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 }

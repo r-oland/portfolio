@@ -90,15 +90,18 @@ export default function Desktop({
           return prev - 1;
         });
       }}
+      style={{
+        cursor: project.amountOfImages === 1 ? 'default' : 'none',
+      }}
       transformTemplate={transformTemplate}
-      animate={inView ? 'mounted' : 'initial'}
-      whileHover="hovering"
-      initial="initial"
+      animate={hovering ? 'hovering' : inView ? 'mounted' : 'initial'}
+      initial={hovering ? 'hovering' : 'initial'}
       transition={{ type: 'spring', stiffness: 120, damping: 18 }}
       variants={variants}
       onHoverStart={() => setHovering(true)}
       onHoverEnd={() => setHovering(false)}
       onMouseMove={(e) => {
+        if (project.amountOfImages === 1) return;
         const mouseY = e.pageY;
         const mouseX = e.pageX;
         const cursor = document.getElementById('cursor');

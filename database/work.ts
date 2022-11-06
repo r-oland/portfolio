@@ -136,6 +136,6 @@ export const projects: ProjectType[] = [
     color: '#3f6c5b',
     github: 'https://github.com/r-oland/portfolio',
     url: 'https://rolandbranten.com/',
-    amountOfImages: 2,
+    amountOfImages: 1,
   },
 ];
