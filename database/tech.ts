@@ -45,13 +45,6 @@ export const ranks = [
   },
 ];
 
-/* 
-  TO ADD
-  Blender
-  React query 
-  React native
-*/
-
 export const techItems = [
   // 0
   {
@@ -62,11 +55,13 @@ export const techItems = [
   { icon: '/tech/threejs.svg', rank: ranks[0].key, name: 'Three.js' },
   { icon: '/tech/d3.svg', rank: ranks[0].key, name: 'D3' },
   { icon: '/tech/react-spring.svg', rank: ranks[0].key, name: 'React spring' },
+  { icon: '/tech/blender.svg', rank: ranks[0].key, name: 'Blender' },
   // 1
   { icon: '/tech/typescript.svg', rank: ranks[1].key, name: 'Typescript' },
-  { icon: '/tech/react.svg', rank: ranks[1].key, name: 'React' },
+  { icon: '/tech/react.svg', rank: ranks[1].key, name: 'React (Native)' },
   { icon: '/tech/nextjs.svg', rank: ranks[1].key, name: 'Next.js' },
   { icon: '/tech/nodejs.svg', rank: ranks[1].key, name: 'Node.js' },
+  { icon: '/tech/react-query.svg', rank: ranks[1].key, name: 'React query' },
   {
     icon: '/tech/visual-studio-code.svg',
     rank: ranks[1].key,
