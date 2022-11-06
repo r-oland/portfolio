@@ -5,7 +5,7 @@
   position: absolute;
   width: 350px;
   z-index: 1;
-  top: 0;
+  top: $spacing4;
   left: $spacing4;
 
   @media screen and (min-width: $tablet) {

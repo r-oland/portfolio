@@ -26,10 +26,21 @@ export default function PortalCanvas({ inView }: { inView: boolean }) {
         camera={{ fov: 25, position: [5, 4, 9] }}
         frameloop={inView ? 'always' : 'never'}
       >
-        <OrbitControls makeDefault enableZoom={false} />
         {perfVisible && <ConditionalPerf position="top-left" deepAnalyze />}
-        <Fireflies />
         <Portal />
+        <Fireflies />
+        <OrbitControls
+          makeDefault
+          enableZoom={false}
+          enablePan={false}
+          rotateSpeed={0.25}
+          // vertical
+          maxPolarAngle={Math.PI / 2.2}
+          minPolarAngle={Math.PI / 4}
+          // Horizontal
+          minAzimuthAngle={Math.PI / 20}
+          maxAzimuthAngle={Math.PI / 3}
+        />
       </Canvas>
     </>
   );
