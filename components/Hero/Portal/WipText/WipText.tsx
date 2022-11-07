@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 // Components==============
 import { m } from 'framer-motion';
 import { useLocale } from 'hooks/useLocale';

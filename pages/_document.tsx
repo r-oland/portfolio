@@ -3,7 +3,10 @@ import Document, { Head, Html, Main, NextScript } from 'next/document';
 // =========================
 
 const title = 'Roland Branten';
-const description = 'Eindhoven based Frontend Developer';
+export const description =
+  'Creative developer based in Eindhoven, The Netherlands. Currently working as a freelancer who is enthusiastic about creating engaging and delightful digital experiences.';
+export const descriptionDutch =
+  'Creative developer uit Eindhoven. Momenteel aan de slag als freelancer die enthousiast is over het maken van unieke digitale ervaringen.';
 const color = '#3F6C5B';
 const colorLight = '#bdd3cc';
 const domain = 'https://rolandbranten.nl';
@@ -25,7 +28,6 @@ class MyDocument extends Document {
             content="default"
           />
           <meta name="apple-mobile-web-app-title" content={title} />
-          <meta name="description" content={description} />
           <meta name="format-detection" content="telephone=no" />
           <meta name="mobile-web-app-capable" content="yes" />
           <meta name="msapplication-config" content="/logo/browserconfig.xml" />

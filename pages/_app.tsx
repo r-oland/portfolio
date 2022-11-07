@@ -1,5 +1,4 @@
 // Components==============
-import Layout from 'global_components/Layout/Layout';
 import SmoothScroll from 'global_components/SmoothScroll';
 import { useAppHeight } from 'hooks/useAppHeight';
 import type { AppProps } from 'next/app';
@@ -20,9 +19,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         />
       </Head>
       <SmoothScroll>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+        <Component {...pageProps} />
       </SmoothScroll>
     </>
   );

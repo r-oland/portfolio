@@ -6,12 +6,14 @@ import useHandleScrollTo from 'hooks/useHandleScrollTo';
 import { useLocale } from 'hooks/useLocale';
 import { useMediaQ } from 'hooks/useMediaQ';
 import useNavItems from 'hooks/useNavItems';
+import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import styles from './DesktopNav.module.scss';
 // =========================
 
 export default function DesktopNav() {
   const { locale } = useLocale();
+  const { asPath } = useRouter();
 
   const [anker, setAnker] = useState<AnkerType>('introduction');
   const [hasScrolled, setHasScrolled] = useState(false);
@@ -23,6 +25,8 @@ export default function DesktopNav() {
 
   useEffect(() => {
     if (!query) return;
+    if (asPath !== '/') return setHasScrolled(true);
+
     const handleScroll = (latest: number) => {
       // get height of window and divide by 2. WHen subtracting the half height form the section start,
       // the anker will change when the element is in the middle of the screen
@@ -54,7 +58,7 @@ export default function DesktopNav() {
     const unsubscribe = scrollY.onChange(handleScroll);
 
     return () => unsubscribe();
-  }, [query]);
+  }, [query, asPath]);
 
   return (
     <div
