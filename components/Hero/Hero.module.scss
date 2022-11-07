@@ -83,6 +83,15 @@
     align-self: center;
     padding-top: $spacing8;
 
+    .loader {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 50px;
+      color: $green;
+    }
+
     @media screen and (min-width: $tablet) {
       padding-top: 0;
       min-height: 600px;

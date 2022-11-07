@@ -1,7 +1,6 @@
 // Components==============
-import { navItems } from 'database/navItems';
 import { useLocale } from 'hooks/useLocale';
-import React from 'react';
+import useNavItems from 'hooks/useNavItems';
 import styles from './ChapterTitle.module.scss';
 // =========================
 
@@ -15,6 +14,7 @@ export default function ChapterTitle({
   marginBottom: string;
 }) {
   const { locale } = useLocale();
+  const navItems = useNavItems();
 
   return (
     <div

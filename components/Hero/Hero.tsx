@@ -1,4 +1,6 @@
 // Components==============
+import { faSpinnerThird } from '@fortawesome/pro-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useInView } from 'framer-motion';
 import Anker from 'global_components/Anker/Anker';
 import ChapterTitle from 'global_components/ChapterTitle/ChapterTitle';
@@ -40,7 +42,15 @@ export default function Hero() {
           </div>
         </div>
         <div className={styles.render} ref={renderRef}>
-          <Suspense>
+          <Suspense
+            fallback={
+              <FontAwesomeIcon
+                icon={faSpinnerThird}
+                spin
+                className={styles.loader}
+              />
+            }
+          >
             <DynamicPortal inView={inView} />
           </Suspense>
         </div>

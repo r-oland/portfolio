@@ -33,13 +33,16 @@ export default function PortalCanvas({ inView }: { inView: boolean }) {
           makeDefault
           enableZoom={false}
           enablePan={false}
-          rotateSpeed={0.25}
+          minDistance={7}
+          maxDistance={14}
+          zoomSpeed={0.25}
           // vertical
           maxPolarAngle={Math.PI / 2.2}
           minPolarAngle={Math.PI / 4}
           // Horizontal
           minAzimuthAngle={Math.PI / 20}
           maxAzimuthAngle={Math.PI / 3}
+          rotateSpeed={0.25}
         />
       </Canvas>
     </>
