@@ -32,7 +32,7 @@ export const projects: ProjectType[] = [
     color: '#030626',
     url: 'https://klik.tast.cloud/',
     marketingUrl: 'https://klik.tast.tools',
-    amountOfImages: 5,
+    amountOfImages: 8,
     behindPaywall: true,
   },
   // Spiek
