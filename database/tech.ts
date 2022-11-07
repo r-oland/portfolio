@@ -25,8 +25,8 @@ export const ranks = [
   {
     key: 'C' as RankKeyType,
     description: {
-      en: 'Quality of life improvements',
-      nl: 'Kwaliteit van leven verbeteringen',
+      en: 'Good to have when you need it',
+      nl: 'Goed om te hebben zodra je het nodig hebt',
     },
   },
   {
@@ -80,7 +80,6 @@ export const techItems = [
   { icon: '/tech/git.svg', rank: ranks[2].key, name: 'Git' },
   { icon: '/tech/npm.svg', rank: ranks[2].key, name: 'NPM' },
   { icon: '/tech/illustrator.svg', rank: ranks[2].key, name: 'Illustrator' },
-  { icon: '/tech/photoshop.svg', rank: ranks[2].key, name: 'Photoshop' },
   // 3
   { icon: '/tech/firebase.svg', rank: ranks[3].key, name: 'Firebase' },
   { icon: '/tech/digitalocean.svg', rank: ranks[3].key, name: 'Digital Ocean' },

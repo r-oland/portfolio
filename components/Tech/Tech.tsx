@@ -21,14 +21,13 @@ export default function Tech() {
             <h2>
               <span>
                 {t(
-                  "In case you were wondering what I'm working with",
-                  'In het geval dat je je afvroeg waar ik mee werk'
+                  'I love exploring new technologies',
+                  'Ik ben altijd nieuwe technologieën aan het verkennen'
                 )}
-                :
               </span>
               {t(
-                "a tier list of the tech that I'm currently into",
-                'een ranglijst van mijn tech stack.'
+                "This is what I'm currently into",
+                'Dit is waar ik momenteel mee werk'
               )}
             </h2>
             <div className={styles.ranks}>
