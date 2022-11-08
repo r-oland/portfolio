@@ -51,12 +51,12 @@ export const projects: ProjectType[] = [
     functionality: 'Frontend lead',
     description: {
       Project: {
-        en: 'A web app where children (with dyslexia) can learn to read and spell by offering fun and interactive instructions and exercises.',
-        nl: 'Een web app waarin kinderen (met dyslexie) door middel van levendige en interactieve instructies en oefeningen beter leren lezen en spellen.',
+        en: 'A web app that helps children with dyslexia by improving their reading and spelling skills trough a large collection of exercises and instructions.',
+        nl: 'Een web app die kinderen met dyslexie helpt door hun lees- en spellingvaardigheden te verbeteren door middel van een grote collectie oefeningen en instructies.',
       },
       Role: {
-        en: 'My role was to build the frontend from the ground up and to maintain it.',
-        nl: 'Mijn rol was om de frontend vanuit niets op te bouwen en te onderhouden.',
+        en: 'I wrote the frontend from scratch and maintained it in a sprint structure. keeping the app scalable was important due to a large amount of variation in exercises.',
+        nl: 'Ik heb de frontend opgebouwd en onderhouden in een sprintstructuur. Belangrijk was om de app schaalbaar te houden vanwege een grote variatie in oefeningen.',
       },
     },
     startYear: 2020,
@@ -76,12 +76,12 @@ export const projects: ProjectType[] = [
     functionality: 'Frontend lead',
     description: {
       Project: {
-        en: 'A web app that serves as a digital extension of a physical toolkit. The purpose of Groow is to offer a method to guide you in solving complex problems.',
-        nl: 'Een app die dient als een digitale uitbreiding van een fysieke kit. Groow biedt een methode aan die je helpt bij het oplossen van complexe problemen.',
+        en: 'A web app that serves as a digital extension of a physical toolkit. The purpose of Groow is to offer a method that guides you in solving complex problems.',
+        nl: 'Een app die dient als een digitale uitbreiding van een fysieke toolkit. Groow biedt een methodiek aan die je helpt bij het oplossen van complexe problemen.',
       },
       Role: {
-        en: 'My role was to lead a complete refactor of the frontend.',
-        nl: 'Mijn rol was om een complete refactor van de frontend te leiden.',
+        en: 'I did an entire refactor of the frontend and added new features in a sprint structure. The main purpose of the refactor was to make the app type-safe and scalable.',
+        nl: 'Ik heb de frontend opnieuw opgebouwd en verder ontwikkeld in een sprintstructuur. Het doel van de refactor was om de app type-safe en schaalbaar te maken.',
       },
     },
     startYear: 2020,
@@ -100,12 +100,12 @@ export const projects: ProjectType[] = [
     functionality: 'Frontend - Backend - Design',
     description: {
       Project: {
-        en: 'A reward based habit tracking app (PWA) that guides you in being more conscious and consistent in the way you spend your free time fruitfully.',
-        nl: 'Een habit tracking app (PWA) die je helpt om bewuster en consistenter te zijn in het nuttige besteden van je vrije tijd.',
+        en: 'A reward based habit tracking app (Progressive Web App) that provides structure and consistency while trying to build, get rid of or maintain habits.',
+        nl: 'Een habit tracking app (Progressive Web App) die structuur en consistentie biedt tijdens het proberen op te bouwen, af te leren of te behouden van gewoontes.',
       },
       Role: {
-        en: 'I did everything from thinking out the concept to deploying the application.',
-        nl: 'Ik heb alles gedaan van het bedenken van het concept tot het deployen van de applicatie.',
+        en: 'I came up with the idea, designed the app and built it from scratch. I also wrote the backend, using the Next.js framework, in Node.js and MongoDB.',
+        nl: 'Ik heb het idee bedacht, de app ontworpen en opgebouwd. Ook heb ik binnen Next.js de backend geschreven in Node.js en MongoDB.',
       },
     },
     startYear: 2022,
@@ -122,12 +122,12 @@ export const projects: ProjectType[] = [
     functionality: 'Frontend - CMS - Design',
     description: {
       Project: {
-        en: 'A portfolio for the videographer Colin Dust. The goal was to create a minimal portfolio that would put a heavy emphases on his work.',
-        nl: 'Een portfolio voor de videograaf Colin Dust. Het doel was om een minimalistische portfolio te maken met een grote nadruk op het werk.',
+        en: 'A portfolio for local videographer Colin Dust. The goal was to create a minimal portfolio that would put a heavy emphases on his work.',
+        nl: 'Een portfolio voor videograaf Colin Dust. Het doel was om een minimalistische portfolio te maken die een grote nadruk legt op zijn werk.',
       },
       Role: {
-        en: 'I designed and developed the site with a headless CMS for content editing.',
-        nl: 'Ik heb de site ontworpen en opgezet met een headless CMS voor content editing.',
+        en: 'Following the already existing branding, I created the design, built the frontend and made sure a headless CMS was set up for easy content editing.',
+        nl: 'Aan de hand van de al bestaande huisstijl heb ik het ontwerp gemaakt, de frontend opgebouwd en een headless CMS opgezet voor content editing.',
       },
     },
     startYear: 2020,
@@ -145,12 +145,12 @@ export const projects: ProjectType[] = [
     functionality: 'Frontend - CMS',
     description: {
       Project: {
-        en: 'A marketing site for the quantum computing company Qblox. The goal was to provide a flexibel frontend where the client can easily add and edit pages and content blocks.',
-        nl: "Een marketing site voor Qblox Quantum. Het doel was om een flexibele frontend te maken waarbij pagina's en content toegevoegd en bewerkt kunnen worden.",
+        en: 'A marketing site for a quantum computing company. The goal was to provide a modular frontend so that the client can easily add and edit pages and content blocks.',
+        nl: 'Een marketing site voor een quantum computing bedrijf. Het doel was om een modulaire frontend op te zetten zodat de klant zelf eenvoudig content kan bewerken.',
       },
       Role: {
-        en: 'My role was to build the frontend and the CMS.',
-        nl: 'Mijn rol was om de frontend en het CMS te bouwen.',
+        en: 'My role was to build a modular frontend that was able to recreate the design of the client. This was possible by creating a heavily customizable headless CMS.',
+        nl: 'Mijn rol was om een modulaire frontend op te zetten die in staat was om het ontwerp van de klant na te creëren. Dit is bereikt door een flexible headless CMS te maken.',
       },
     },
     startYear: 2020,
@@ -161,26 +161,28 @@ export const projects: ProjectType[] = [
     url: 'https://qblox.com/',
     amountOfImages: 8,
   },
-  // Portfolio
+  // Gilde sport app
   {
-    id: 'portfolio',
-    name: 'Portfolio',
-    functionality: 'Frontend - Backend - Design',
+    id: 'sport-app',
+    name: 'Sport app (WIP)',
+    functionality: 'App development',
     description: {
       Project: {
-        en: 'The site that your currently on. I built this site to showcase my work and to experiment with new Technologies. All 3D effects are handled by React Three Fiber. Curious how it build? Check out the source code.',
-        nl: 'Deze site is gebouwd om mijn werk te tonen en om te experimenteren met nieuwe technologieën. Alle 3D effecten worden afgehandeld door React Three Fiber. Benieuwd hoe het gebouwd is? Check de source code.',
+        en: 'An app where students can track their health and see information about upcoming sport clinics. This is a work in progress! ',
+        nl: 'Een app waar studenten hun gezondheid kunnen bijhouden en informatie kunnen vinden over opkomende sport clinics. Dit is een work in progress! ',
       },
       Role: {
-        en: '',
-        nl: '',
+        en: "I'm building the app from scratch using React Native. The app is currently in development and will be released in the near future.",
+        nl: 'Ik ben bezig met het opbouwen van de app in React Native. De app is momenteel in ontwikkeling en zal binnenkort worden uitgebracht.',
       },
     },
     startYear: 2022,
-    client: 'Passion project',
-    color: '#3f6c5b',
-    github: 'https://github.com/r-oland/portfolio',
-    url: 'https://rolandbranten.com/',
+    client: 'Gilde opleidingen',
+    clientLink: 'https://www.gildeopleidingen.nl/',
+    marketingUrl:
+      'https://www.gildeopleidingen.nl/studeren-bij-gilde/gilde-sportief/',
+    color: '#dd0069',
+    url: '',
     amountOfImages: 1,
   },
 ];

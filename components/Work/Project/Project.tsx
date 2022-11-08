@@ -33,7 +33,7 @@ export default function Project({
   const isTablet = useMediaQ('min', 768);
   const isDesktop = useMediaQ('min', 1024);
   const inView = useInView(ref, { amount: 0.4, once: !isTablet });
-  const isPortfolio = project.url === 'https://rolandbranten.com/';
+  const isWorkInProgress = project.url === '';
 
   const variants = {
     initial: { x: left ? -100 : 100, opacity: 0 },
@@ -126,7 +126,7 @@ export default function Project({
             </div>
           )}
         </div>
-        {isPortfolio && !isTablet ? (
+        {isWorkInProgress && !isTablet ? (
           <></>
         ) : (
           <m.a
@@ -138,8 +138,8 @@ export default function Project({
             whileHover={{ x: 5 }}
             whileTap={{ x: 0 }}
             style={{
-              opacity: isPortfolio ? 0 : project.behindPaywall ? 0.4 : 1,
-              pointerEvents: isPortfolio ? 'none' : 'initial',
+              opacity: isWorkInProgress ? 0 : project.behindPaywall ? 0.4 : 1,
+              pointerEvents: isWorkInProgress ? 'none' : 'initial',
             }}
           >
             {project.behindPaywall && (
