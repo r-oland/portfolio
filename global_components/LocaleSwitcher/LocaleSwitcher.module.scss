@@ -2,6 +2,14 @@
 
 .wrapper {
   cursor: pointer;
-  width: 20px;
+  font-size: $font-paragraph;
   color: $white;
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  gap: $spacing1;
+
+  @media screen and (min-width: $desktop-large) {
+    color: $black;
+  }
 }

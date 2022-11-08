@@ -1,0 +1,42 @@
+@import "styles/Variables";
+
+.wrapper {
+  position: relative;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: start;
+  gap: $spacing2;
+  border-radius: $border-radius;
+  cursor: pointer;
+  margin-bottom: $spacing2;
+  width: max-content;
+
+  .track {
+    position: absolute;
+    height: 2px;
+    width: 78px;
+    bottom: -$spacing1;
+    background-color: $green-light;
+  }
+
+  .toggle {
+    position: absolute;
+    width: 40px;
+    height: 2px;
+    bottom: -$spacing1;
+    background-color: $green;
+  }
+
+  p {
+    z-index: 1;
+    font-size: $font-extra-small;
+    transition: 0.2s;
+    user-select: none;
+    color: $grey;
+    padding: 0 $spacing1;
+
+    &.active {
+      color: $black;
+    }
+  }
+}

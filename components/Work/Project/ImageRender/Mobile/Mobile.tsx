@@ -61,7 +61,7 @@ export default function Mobile({
 
   return (
     <div className={styles.wrapper}>
-      <AnimatePresence>
+      <AnimatePresence initial={false} custom={direction}>
         <m.img
           key={page}
           src={url}
@@ -103,7 +103,7 @@ export default function Mobile({
               className={`${styles.dot} ${
                 i === imageIndex ? styles.active : ''
               }`}
-              onClick={() => setPage([i, 0])}
+              onClick={() => setPage([i, page > i ? -1 : 1])}
             />
           ))}
         </div>

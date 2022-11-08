@@ -57,7 +57,7 @@ function Images({ selectedImage }: { selectedImage: number }) {
 }
 
 export default function About() {
-  const [selectedText, setSelectedText] = useState(1);
+  const [selectedText, setSelectedText] = useState(2);
   const [selectedImage, setSelectedImage] = useState(0);
   const [hasOpenedTooltip, setHasOpenedTooltip] = useStorage(
     'has-opened-tooltip',

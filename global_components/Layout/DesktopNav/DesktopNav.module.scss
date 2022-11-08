@@ -24,14 +24,14 @@
     }
 
     .right {
-      svg {
-        color: $black;
-      }
-
       .items {
         p {
           color: $black;
         }
+      }
+
+      * {
+        color: $black;
       }
     }
   }
@@ -76,12 +76,6 @@
         p {
           font-weight: $weight-semi-bold;
         }
-      }
-    }
-
-    svg {
-      @media screen and (min-width: $desktop-large) {
-        color: $black;
       }
     }
   }

@@ -58,7 +58,7 @@ export default function Desktop({
       transformPerspective: 1200,
       rotateY: 0,
       rotateX: 0,
-      scale: 1,
+      scale: 1.02,
       x: 0,
     },
     mounted: {

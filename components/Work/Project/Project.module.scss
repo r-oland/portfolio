@@ -17,6 +17,11 @@
 
       .content {
         justify-self: end;
+        .toggle-wrapper {
+          width: max-content;
+          margin-left: auto;
+        }
+
         .description {
           margin-left: auto;
         }
@@ -44,9 +49,10 @@
 
   .content {
     padding: $spacing8;
-    max-width: 370px;
+    max-width: 500px;
 
     @media screen and (min-width: $desktop) {
+      max-width: 370px;
       padding: 0;
     }
 
@@ -61,6 +67,10 @@
       font-size: $font-small;
       text-transform: uppercase;
       margin-bottom: $spacing3;
+    }
+
+    .toggle-wrapper {
+      margin-bottom: $spacing1;
     }
 
     .description {

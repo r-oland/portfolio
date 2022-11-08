@@ -9,12 +9,15 @@ import { faArrowRight } from '@fortawesome/pro-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ProjectType } from 'database/work';
 import { m, useInView } from 'framer-motion';
+import Toggle from 'global_components/Toggle/Toggle';
 import { useLocale } from 'hooks/useLocale';
 import { useMediaQ } from 'hooks/useMediaQ';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import ImageRender from './ImageRender/ImageRender';
 import styles from './Project.module.scss';
 // =========================
+
+export type SelectedTextType = 'Project' | 'Role';
 
 export default function Project({
   project,
@@ -25,9 +28,11 @@ export default function Project({
 }) {
   const ref = useRef(null);
   const { locale, t } = useLocale();
+  const [selecteText, setSelecteText] = useState<SelectedTextType>('Project');
 
-  const isDesktop = useMediaQ('min', 768);
-  const inView = useInView(ref, { amount: 0.4, once: !isDesktop });
+  const isTablet = useMediaQ('min', 768);
+  const isDesktop = useMediaQ('min', 1024);
+  const inView = useInView(ref, { amount: 0.4, once: !isTablet });
   const isPortfolio = project.url === 'https://rolandbranten.com/';
 
   const variants = {
@@ -47,6 +52,8 @@ export default function Project({
     ? project.startYear
     : `${project.startYear} - ${currentYear}`;
 
+  const textOptions = Object.keys(project.description) as SelectedTextType[];
+
   return (
     <m.div
       className={`${styles.wrapper} ${!left ? styles.reverse : ''}`}
@@ -59,7 +66,34 @@ export default function Project({
       <div className={styles.content}>
         <h1>{project.name}</h1>
         <p className={styles.functionality}>{project.functionality}</p>
-        <p className={styles.description}>{project.description[locale]}</p>
+        {isDesktop ? (
+          <>
+            <div className={styles['toggle-wrapper']}>
+              <Toggle
+                options={textOptions}
+                selectedText={selecteText}
+                setSelectedText={setSelecteText}
+              />
+            </div>
+            <p className={styles.description}>
+              {project.description[selecteText][locale]}
+            </p>
+          </>
+        ) : (
+          <>
+            {textOptions.map((to, i) => (
+              <p
+                key={to}
+                className={styles.description}
+                style={{
+                  marginBottom: i !== textOptions.length - 1 ? '0.5rem' : '',
+                }}
+              >
+                {project.description[to][locale]}
+              </p>
+            ))}
+          </>
+        )}
         <div className={styles.labels}>
           <div className={styles.label}>
             <FontAwesomeIcon icon={faCalendar} />
@@ -92,7 +126,7 @@ export default function Project({
             </div>
           )}
         </div>
-        {isPortfolio && !isDesktop ? (
+        {isPortfolio && !isTablet ? (
           <></>
         ) : (
           <m.a
@@ -105,6 +139,7 @@ export default function Project({
             whileTap={{ x: 0 }}
             style={{
               opacity: isPortfolio ? 0 : project.behindPaywall ? 0.4 : 1,
+              pointerEvents: isPortfolio ? 'none' : 'initial',
             }}
           >
             {project.behindPaywall && (

@@ -22,12 +22,12 @@ export default function Tech() {
               <span>
                 {t(
                   'I love exploring new technologies',
-                  'Ik ben altijd nieuwe technologieën aan het verkennen'
+                  'Ik hou ervan om nieuwe technologieën te verkennen'
                 )}
               </span>
               {t(
                 "This is what I'm currently into",
-                'Dit is waar ik momenteel mee werk'
+                'Dit is wat ik momenteel tof vind'
               )}
             </h2>
             <div className={styles.ranks}>
