@@ -11,14 +11,26 @@ module.exports = {
       {
         domain: 'rolandbranten.com',
         defaultLocale: 'en',
-        http: true,
       },
       {
         domain: 'rolandbranten.nl',
         defaultLocale: 'nl',
-        http: true,
       },
     ],
+  },
+  async rewrites() {
+    return [
+      {
+        source: '/en/:path*/',
+        destination: 'https://rolandbranten.com/:path*/',
+        locale: false,
+      },
+      {
+        source: '/nl/:path*/',
+        destination: 'https://rolandbranten.nl/:path*/',
+        locale: false,
+      },
+    ];
   },
   async redirects() {
     return [
