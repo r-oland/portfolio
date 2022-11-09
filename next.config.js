@@ -5,14 +5,12 @@ module.exports = {
     defaultLocale: 'nl',
     domains: [
       {
-        domain: 'rolandbranten.com',
+        domain: 'www.rolandbranten.com',
         defaultLocale: 'en',
-        locales: ['en'],
       },
       {
-        domain: 'rolandbranten.nl',
+        domain: 'www.rolandbranten.nl',
         defaultLocale: 'nl',
-        locales: ['nl'],
       },
     ],
   },
