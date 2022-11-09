@@ -21,6 +21,12 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&family=Zen+Antique&display=swap"
             rel="stylesheet"
           />
+          <link
+            rel="alternate"
+            hrefLang="en"
+            href="https://rolandbranten.com"
+          />
+          <link rel="alternate" hrefLang="nl" href="https://rolandbranten.nl" />
           <meta name="application-name" content={title} />
           <meta name="apple-mobile-web-app-capable" content="yes" />
           <meta
