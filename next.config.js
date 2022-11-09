@@ -3,6 +3,7 @@ module.exports = {
   i18n: {
     locales: ['en', 'nl'],
     defaultLocale: 'nl',
+    localeDetection: false,
     domains: [
       {
         domain: 'www.rolandbranten.com',
