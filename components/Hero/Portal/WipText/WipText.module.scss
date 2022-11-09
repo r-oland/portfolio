@@ -7,6 +7,7 @@
   z-index: 1;
   top: $spacing4;
   left: $spacing4;
+  user-select: none;
 
   @media screen and (min-width: $tablet) {
     top: $spacing4;

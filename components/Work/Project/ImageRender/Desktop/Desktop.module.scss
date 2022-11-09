@@ -20,11 +20,13 @@
       grid-template-columns: 1fr 1fr;
       width: inherit;
       height: inherit;
+      position: absolute;
+      top: 0;
     }
 
     img {
+      user-select: none;
       position: absolute;
-      top: 0;
       border: none;
     }
 
