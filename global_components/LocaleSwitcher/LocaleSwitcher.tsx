@@ -12,7 +12,7 @@ export default function LocaleSwitcher() {
     <div
       onClick={() => {
         const loc = locale === 'en' ? 'nl' : 'en';
-        document.cookie = `NEXT_LOCALE=${loc}; max-age=31536000; path=/; SameSite=None; Secure`;
+        // document.cookie = `NEXT_LOCALE=${loc}; max-age=31536000; path=/; SameSite=None; Secure`;
 
         push(asPath, asPath, {
           locale: loc,
