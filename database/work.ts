@@ -136,7 +136,7 @@ export const projects: ProjectType[] = [
     color: '#e1c598',
     github: 'https://github.com/DustMedia?tab=repositories',
     url: 'https://dustmedia.nl/',
-    amountOfImages: 5,
+    amountOfImages: 6,
   },
   // Qblox
   {
