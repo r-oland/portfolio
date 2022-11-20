@@ -30,7 +30,7 @@ export default function Hero() {
             <ChapterTitle id={0} color="white" marginBottom="1.25rem" />
             <h1>{t('I am', 'Ik ben')}</h1>
             <h3>
-              {t('a', 'een')} <span>front-end</span>{' '}
+              {t('a', 'een')} <span>freelance</span>{' '}
               {t(
                 'developer who enjoys building unique experiences for creatives with taste',
                 'developer die graag unieke ervaringen bouwt voor creatives met smaak'
