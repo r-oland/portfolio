@@ -2,9 +2,7 @@
 import { OrbitControls } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 import dynamic from 'next/dynamic';
-import Fireflies from './Fireflies';
 import Portal from './Portal';
-import WipText from './WipText/WipText';
 // =========================
 
 const perfVisible = false;
@@ -20,7 +18,6 @@ const ConditionalPerf = dynamic(async () => {
 export default function PortalCanvas({ inView }: { inView: boolean }) {
   return (
     <>
-      <WipText />
       <Canvas
         flat
         camera={{ fov: 25, position: [5, 4, 9] }}
@@ -28,21 +25,22 @@ export default function PortalCanvas({ inView }: { inView: boolean }) {
       >
         {perfVisible && <ConditionalPerf position="top-left" deepAnalyze />}
         <Portal />
-        <Fireflies />
+        <ambientLight intensity={0.8} />
+        <directionalLight position={[-1, 2, 2]} intensity={0.75} />
         <OrbitControls
           makeDefault
           enableZoom={false}
-          enablePan={false}
-          minDistance={7}
-          maxDistance={14}
-          zoomSpeed={0.25}
+          // enablePan={false}
+          // minDistance={7}
+          // maxDistance={14}
+          // zoomSpeed={0.25}
           // vertical
-          maxPolarAngle={Math.PI / 2.2}
-          minPolarAngle={Math.PI / 4}
+          // maxPolarAngle={Math.PI / 2.2}
+          // minPolarAngle={Math.PI / 4}
           // Horizontal
-          minAzimuthAngle={Math.PI / 20}
-          maxAzimuthAngle={Math.PI / 3}
-          rotateSpeed={0.25}
+          // minAzimuthAngle={Math.PI / 20}
+          // maxAzimuthAngle={Math.PI / 3}
+          // rotateSpeed={0.25}
         />
       </Canvas>
     </>
