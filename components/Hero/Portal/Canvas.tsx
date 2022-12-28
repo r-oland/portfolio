@@ -2,7 +2,7 @@
 import { OrbitControls } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 import dynamic from 'next/dynamic';
-import Portal from './Portal';
+import Model from './World';
 // =========================
 
 const perfVisible = false;
@@ -24,7 +24,7 @@ export default function PortalCanvas({ inView }: { inView: boolean }) {
         frameloop={inView ? 'always' : 'never'}
       >
         {perfVisible && <ConditionalPerf position="top-left" deepAnalyze />}
-        <Portal />
+        <Model />
         <ambientLight intensity={0.8} />
         <directionalLight position={[-1, 2, 2]} intensity={0.75} />
         <OrbitControls
