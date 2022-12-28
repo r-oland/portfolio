@@ -6,7 +6,7 @@ import { Box3 } from 'three';
 import { GLTF } from 'three/examples/jsm/loaders/GLTFLoader';
 import { OBB } from 'three/examples/jsm/math/OBB';
 
-type ActionName = 'Spin' | 'Ride' | 'Jump';
+type ActionName = 'Ride' | 'Jump';
 
 interface GLTFAction extends THREE.AnimationClip {
   name: ActionName;
@@ -41,14 +41,8 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
   const group = useRef<THREE.Group>(null);
   const { nodes, materials, animations } = useGLTF('/world.glb') as GLTFResult;
   const { actions } = useAnimations(animations, group);
-  const [skateboardAnimation, setSkateboardAnimation] = useState<
-    'Ride' | 'Jump'
-  >('Ride');
-
-  useEffect(() => {
-    if (!actions.Spin) return;
-    actions.Spin.play();
-  }, []);
+  const [skateboardAnimation, setSkateboardAnimation] =
+    useState<ActionName>('Ride');
 
   useEffect(() => {
     const action = actions[skateboardAnimation];
@@ -63,11 +57,15 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
 
   const deck = useRef<THREE.Mesh>(null);
   const obstacle = useRef<THREE.Mesh>(null);
+  const planet = useRef<THREE.Group>(null);
   const wrapper = useRef<THREE.Group>(null);
 
   useEffect(() => {
     if (!deck.current?.geometry) return;
     if (!obstacle.current?.geometry) return;
+
+    // deck.current.geometry.computeBoundingBox();
+    // obstacle.current.geometry.computeBoundingBox();
 
     deck.current.geometry.userData.obb = new OBB().fromBox3(
       deck.current.geometry.boundingBox as Box3
@@ -81,6 +79,11 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
 
     obstacle.current.userData.obb = new OBB();
   }, []);
+
+  useFrame((state, delta) => {
+    if (!planet.current) return;
+    planet.current.rotation.y += 0.45 * delta;
+  });
 
   useFrame(() => {
     if (!deck.current?.geometry.userData.obb) return;
@@ -117,7 +120,7 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
       }}
     >
       <group name="scene" position={[0, 0, 0]} rotation={[1.05, 0.74, 0.99]}>
-        <group name="Planet">
+        <group name="Planet" ref={planet}>
           <group
             ref={wrapper}
             name="Obstacle"
