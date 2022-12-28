@@ -1,10 +1,10 @@
 import { useAnimations, useGLTF } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
-import { useObstacleRayCast } from 'components/Hero/Portal/useObstacleRayCaster';
 import { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
+import { Box3 } from 'three';
 import { GLTF } from 'three/examples/jsm/loaders/GLTFLoader';
-import Obstacle from './Obstacle';
+import { OBB } from 'three/examples/jsm/math/OBB';
 
 type ActionName = 'Spin' | 'Ride' | 'Jump';
 
@@ -14,6 +14,7 @@ interface GLTFAction extends THREE.AnimationClip {
 
 type GLTFResult = GLTF & {
   nodes: {
+    bar: THREE.Mesh;
     Icosphere012: THREE.Mesh;
     Icosphere012_1: THREE.Mesh;
     Icosphere007: THREE.Mesh;
@@ -60,13 +61,44 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
     };
   }, [skateboardAnimation]);
 
-  const skateboardRef = useRef(null);
-  const obstaclesRef = useRef(null);
-  const rayCast = useObstacleRayCast(skateboardRef, obstaclesRef);
+  const deck = useRef<THREE.Mesh>(null);
+  const obstacle = useRef<THREE.Mesh>(null);
+  const wrapper = useRef<THREE.Group>(null);
+
+  useEffect(() => {
+    if (!deck.current?.geometry) return;
+    if (!obstacle.current?.geometry) return;
+
+    deck.current.geometry.userData.obb = new OBB().fromBox3(
+      deck.current.geometry.boundingBox as Box3
+    );
+
+    deck.current.userData.obb = new OBB();
+
+    obstacle.current.geometry.userData.obb = new OBB().fromBox3(
+      obstacle.current.geometry.boundingBox as Box3
+    );
+
+    obstacle.current.userData.obb = new OBB();
+  }, []);
 
   useFrame(() => {
-    const intersection = rayCast();
-    if (intersection.length) console.log('Game over!');
+    if (!deck.current?.geometry.userData.obb) return;
+    if (!obstacle.current?.geometry.userData.obb) return;
+
+    deck.current.userData.obb.copy(deck.current.geometry.userData.obb);
+    obstacle.current.userData.obb.copy(obstacle.current.geometry.userData.obb);
+
+    deck.current.userData.obb.applyMatrix4(deck.current.matrixWorld);
+    obstacle.current.userData.obb.applyMatrix4(obstacle.current.matrixWorld);
+
+    if (
+      deck.current.userData.obb.intersectsOBB(obstacle.current.userData.obb)
+    ) {
+      obstacle.current.material = materials['Material.002'];
+    } else {
+      obstacle.current.material = materials['Material.004'];
+    }
   });
 
   return (
@@ -86,29 +118,33 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
     >
       <group name="scene" position={[0, 0, 0]} rotation={[1.05, 0.74, 0.99]}>
         <group name="Planet">
-          <group name="obstacles" ref={obstaclesRef}>
-            <Obstacle />
+          <group
+            ref={wrapper}
+            name="Obstacle"
+            position={[3.26, 0.05, 1.87]}
+            rotation={[1.6, 0.03, -1.07]}
+          >
+            <mesh
+              ref={obstacle}
+              name="bar"
+              geometry={nodes.bar.geometry}
+              material={materials['Material.003']}
+            />
           </group>
           <group name="Icosphere006" rotation={[-Math.PI, 0.23, -Math.PI]}>
             <mesh
               name="Icosphere012"
-              castShadow
-              receiveShadow
               geometry={nodes.Icosphere012.geometry}
               material={materials['Material.003']}
             />
             <mesh
               name="Icosphere012_1"
-              castShadow
-              receiveShadow
               geometry={nodes.Icosphere012_1.geometry}
               material={materials['Material.002']}
             />
           </group>
           <mesh
             name="Icosphere007"
-            castShadow
-            receiveShadow
             geometry={nodes.Icosphere007.geometry}
             material={materials['Material.004']}
             rotation={[-Math.PI, 0.23, -Math.PI]}
@@ -116,65 +152,45 @@ export default function Model(props: JSX.IntrinsicElements['group']) {
           <group name="Icosphere008" rotation={[-Math.PI, 0.23, -Math.PI]}>
             <mesh
               name="Icosphere014"
-              castShadow
-              receiveShadow
               geometry={nodes.Icosphere014.geometry}
               material={materials['Material.003']}
             />
             <mesh
               name="Icosphere014_1"
-              castShadow
-              receiveShadow
               geometry={nodes.Icosphere014_1.geometry}
               material={materials['Material.001']}
             />
             <mesh
               name="Icosphere014_2"
-              castShadow
-              receiveShadow
               geometry={nodes.Icosphere014_2.geometry}
               material={materials['Material.002']}
             />
           </group>
         </group>
-        <group
-          name="Skateboard"
-          position={[-0.04, -0.36, -4.05]}
-          rotation={[-1.63, 0.03, 0]}
-          ref={skateboardRef}
-        >
+        <group name="Skateboard">
           <mesh
             name="Cube"
-            castShadow
-            receiveShadow
             geometry={nodes.Cube.geometry}
             material={materials['Material.001']}
+            ref={deck}
           />
           <mesh
             name="Cylinder002"
-            castShadow
-            receiveShadow
             geometry={nodes.Cylinder002.geometry}
             material={materials.Material}
           />
           <mesh
             name="Cylinder003"
-            castShadow
-            receiveShadow
             geometry={nodes.Cylinder003.geometry}
             material={materials.Material}
           />
           <mesh
             name="Cylinder004"
-            castShadow
-            receiveShadow
             geometry={nodes.Cylinder004.geometry}
             material={materials.Material}
           />
           <mesh
             name="Cylinder005"
-            castShadow
-            receiveShadow
             geometry={nodes.Cylinder005.geometry}
             material={materials.Material}
           />
