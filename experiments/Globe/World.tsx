@@ -1,5 +1,9 @@
 import { useGLTF } from '@react-three/drei';
-import { CuboidCollider, RigidBody, RigidBodyApi } from '@react-three/rapier';
+import {
+  CuboidCollider,
+  RapierRigidBody,
+  RigidBody,
+} from '@react-three/rapier';
 import { useRef } from 'react';
 import * as THREE from 'three';
 import { GLTF } from 'three/examples/jsm/loaders/GLTFLoader';
@@ -31,10 +35,10 @@ type GLTFResult = GLTF & {
 export default function Model() {
   const { nodes, materials } = useGLTF('/world.glb') as GLTFResult;
 
-  const skateboard = useRef<RigidBodyApi>(null);
+  const skateboard = useRef<RapierRigidBody>(null);
 
   const handleJump = () => {
-    skateboard.current?.applyImpulse({ x: 0, y: 0.01, z: 0 });
+    skateboard.current?.applyImpulse({ x: 0, y: 0.01, z: 0 }, true);
   };
 
   return (
