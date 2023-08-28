@@ -1,5 +1,7 @@
+'use client';
+
 // Components==============
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 // =========================
 
 const setAppHeight = () => {
@@ -22,11 +24,17 @@ const setAppHeight = () => {
 
 setAppHeight();
 
-export function useAppHeight() {
+export default function CalculateAppHeight({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   useEffect(() => {
     const supportsDvh = CSS.supports('height', '100dvh');
     if (supportsDvh) return;
 
     window.addEventListener('resize', setAppHeight);
   }, []);
+
+  return children;
 }
