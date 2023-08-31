@@ -1,6 +1,6 @@
 // font
-$font: "Inter", sans-serif;
-$zen: "Zen Antique", serif;
+$font: var(--font-inter);
+$zen: var(--font-zen);
 
 // font-sizes
 $font-h1: 40px;

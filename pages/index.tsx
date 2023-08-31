@@ -11,12 +11,16 @@ import { useLocale } from 'hooks/useLocale';
 import { useMediaQ } from 'hooks/useMediaQ';
 import Head from 'next/head';
 import { createContext, useMemo } from 'react';
-import { description, descriptionDutch } from './_document';
 // =========================
 
 type HomeContextType = {
   isHome: boolean;
 };
+
+const description =
+  'Creative developer based in Eindhoven, The Netherlands. Currently working as a freelancer who is enthusiastic about creating engaging and delightful digital experiences.';
+const descriptionDutch =
+  'Creative developer uit Eindhoven. Momenteel aan de slag als freelancer die enthousiast is over het maken van unieke digitale ervaringen.';
 
 export const HomeContext = createContext({} as HomeContextType);
 
