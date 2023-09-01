@@ -8,10 +8,8 @@ export const metadata = {
 
 export default function Globe() {
   return (
-    <>
-      <div style={{ height: '100vh', display: 'grid' }}>
-        <Canvas />
-      </div>
-    </>
+    <div style={{ height: '100vh', display: 'grid' }}>
+      <Canvas />
+    </div>
   );
 }

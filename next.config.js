@@ -1,20 +1,5 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
-  i18n: {
-    locales: ['en', 'nl'],
-    defaultLocale: 'en',
-    localeDetection: false,
-    domains: [
-      {
-        domain: 'www.rolandbranten.com',
-        defaultLocale: 'en',
-      },
-      {
-        domain: 'www.rolandbranten.nl',
-        defaultLocale: 'nl',
-      },
-    ],
-  },
   async redirects() {
     return [
       {

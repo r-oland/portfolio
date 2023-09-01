@@ -1,28 +1,15 @@
 // Components==============
 import { faGlobe } from '@fortawesome/pro-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useRouter } from 'next/router';
+import SwitchLogic from './SwitchLogic';
 import styles from './LocaleSwitcher.module.scss';
 // =========================
 
-export default function LocaleSwitcher() {
-  const { asPath, locale, push } = useRouter();
-
+export default function LocaleSwitcher({ lang }: { lang: 'en' | 'nl' }) {
   return (
-    <div
-      onClick={() => {
-        const loc = locale === 'en' ? 'nl' : 'en';
-        // document.cookie = `NEXT_LOCALE=${loc}; max-age=31536000; path=/; SameSite=None; Secure`;
-
-        push(asPath, asPath, {
-          locale: loc,
-          scroll: false,
-        });
-      }}
-      className={styles.wrapper}
-    >
-      <FontAwesomeIcon icon={faGlobe} />
-      {locale === 'en' ? 'NL' : 'EN'}
-    </div>
+    <SwitchLogic className={styles.wrapper}>
+      <FontAwesomeIcon icon={faGlobe} height={14} width={14} />
+      {lang === 'en' ? 'NL' : 'EN'}
+    </SwitchLogic>
   );
 }
