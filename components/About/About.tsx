@@ -1,7 +1,7 @@
 // Components==============
 import { user } from 'database/user';
 import { m } from 'framer-motion';
-import Anker from 'components/Anker/Anker';
+import Anchor from 'components/Anchor/Anchor';
 import ChapterTitle from 'components/ChapterTitle/ChapterTitle';
 import Container from 'components/Container/Container';
 import { useLocale } from 'hooks/useLocale';
@@ -70,7 +70,7 @@ export default function About() {
 
   return (
     <>
-      <Anker id="about" lessMargin />
+      <Anchor id="about" lessMargin />
       <Container>
         <ChapterTitle id={3} marginBottom="4rem" color="grey" />
         <div className={styles.wrapper}>

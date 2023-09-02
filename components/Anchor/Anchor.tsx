@@ -1,14 +1,14 @@
 // Components==============
-import styles from './Anker.module.scss';
+import styles from './Anchor.module.scss';
 // =========================
 
-export type AnkerType = 'introduction' | 'work' | 'tech' | 'about' | 'contact';
+export type AnchorType = 'introduction' | 'work' | 'tech' | 'about' | 'contact';
 
-export default function Anker({
+export default function Anchor({
   id,
   lessMargin,
 }: {
-  id: AnkerType;
+  id: AnchorType;
   lessMargin?: boolean;
 }) {
   return (

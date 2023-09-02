@@ -2,7 +2,7 @@
 import { faArrowDown } from '@fortawesome/pro-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { projects } from 'database/work';
-import Anker from 'components/Anker/Anker';
+import Anchor from 'components/Anchor/Anchor';
 import Button from 'components/Button/Button';
 import ChapterTitle from 'components/ChapterTitle/ChapterTitle';
 import Container from 'components/Container/Container';
@@ -18,7 +18,7 @@ export default function Work() {
 
   return (
     <>
-      <Anker id="work" />
+      <Anchor id="work" />
       <Container>
         <div className={styles.wrapper}>
           <ChapterTitle color="grey" id={1} marginBottom="1rem" />

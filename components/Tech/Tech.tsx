@@ -1,6 +1,6 @@
 // Components==============
 import { ranks, techItems } from 'database/tech';
-import Anker from 'components/Anker/Anker';
+import Anchor from 'components/Anchor/Anchor';
 import ChapterTitle from 'components/ChapterTitle/ChapterTitle';
 import Container from 'components/Container/Container';
 import { useLocale } from 'hooks/useLocale';
@@ -13,7 +13,7 @@ export default function Tech() {
 
   return (
     <>
-      <Anker id="tech" />
+      <Anchor id="tech" />
       <div className={styles.wrapper}>
         <Container>
           <div className={styles.content}>

@@ -2,7 +2,7 @@
 
 // Components==============
 import { useScroll } from 'framer-motion';
-import { AnkerType } from 'components/Anker/Anker';
+import { AnchorType } from 'components/Anchor/Anchor';
 import LocaleSwitcher from 'components/LocaleSwitcher/LocaleSwitcher';
 import useHandleScrollTo from 'app/[lang]/home/Nav/DesktopNav/useHandleScrollTo';
 import { useMediaQ } from 'hooks/useMediaQ';
@@ -15,7 +15,7 @@ import styles from './DesktopNav.module.scss';
 export default function DesktopNav({ lang }: { lang: 'en' | 'nl' }) {
   const asPath = usePathname();
 
-  const [anker, setAnker] = useState<AnkerType>('introduction');
+  const [anchor, setAnchor] = useState<AnchorType>('introduction');
   const [hasScrolled, setHasScrolled] = useState(false);
 
   const query = useMediaQ('min', 1024);
@@ -29,7 +29,7 @@ export default function DesktopNav({ lang }: { lang: 'en' | 'nl' }) {
 
     const handleScroll = (latest: number) => {
       // get height of window and divide by 2. WHen subtracting the half height form the section start,
-      // the anker will change when the element is in the middle of the screen
+      // the anchor will change when the element is in the middle of the screen
       const halfHeight = window.innerHeight / 2;
 
       const heroStart = 0;
@@ -42,11 +42,11 @@ export default function DesktopNav({ lang }: { lang: 'en' | 'nl' }) {
       const contactStart =
         (document.getElementById('contact')?.offsetTop || 0) - halfHeight;
 
-      if (latest > heroStart && latest < workStart) setAnker('introduction');
-      if (latest > workStart && latest < techStart) setAnker('work');
-      if (latest > techStart && latest < aboutStart) setAnker('tech');
-      if (latest > aboutStart && latest < contactStart) setAnker('about');
-      if (latest > contactStart) setAnker('contact');
+      if (latest > heroStart && latest < workStart) setAnchor('introduction');
+      if (latest > workStart && latest < techStart) setAnchor('work');
+      if (latest > techStart && latest < aboutStart) setAnchor('tech');
+      if (latest > aboutStart && latest < contactStart) setAnchor('about');
+      if (latest > contactStart) setAnchor('contact');
 
       // Handle scrollbar background
       if (latest > 0 && hasScrolled) return;
@@ -78,7 +78,7 @@ export default function DesktopNav({ lang }: { lang: 'en' | 'nl' }) {
             <div
               onClick={() => handleScrollTo(item.id)}
               key={item.id}
-              className={item.id === anker ? styles.active : undefined}
+              className={item.id === anchor ? styles.active : undefined}
             >
               <p>{item.name}</p>
             </div>

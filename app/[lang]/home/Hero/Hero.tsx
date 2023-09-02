@@ -1,5 +1,5 @@
 // Components==============
-import Anker from 'components/Anker/Anker';
+import Anchor from 'components/Anchor/Anchor';
 import ChapterTitle from 'components/ChapterTitle/ChapterTitle';
 import { translate } from 'utils/translate';
 import Curl from './Curl/Curl';
@@ -12,7 +12,7 @@ export default function Hero({ lang }: { lang: 'en' | 'nl' }) {
 
   return (
     <>
-      <Anker id="introduction" />
+      <Anchor id="introduction" />
       <div className={styles.wrapper}>
         <div className={styles.left}>
           <div className={styles.content}>

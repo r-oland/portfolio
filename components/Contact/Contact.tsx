@@ -3,7 +3,7 @@ import { faCopyright } from '@fortawesome/pro-regular-svg-icons';
 import { faCheck, faSpinnerThird } from '@fortawesome/pro-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { user } from 'database/user';
-import Anker from 'components/Anker/Anker';
+import Anchor from 'components/Anchor/Anchor';
 import Button from 'components/Button/Button';
 import ChapterTitle from 'components/ChapterTitle/ChapterTitle';
 import Container from 'components/Container/Container';
@@ -23,7 +23,7 @@ export default function Contact() {
 
   return (
     <>
-      <Anker id="contact" />
+      <Anchor id="contact" />
       <div className={styles.wrapper}>
         <Container>
           <ChapterTitle id={4} color="white" marginBottom="4rem" />

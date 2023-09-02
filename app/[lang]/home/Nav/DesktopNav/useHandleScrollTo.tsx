@@ -1,5 +1,5 @@
 // Components==============
-import { AnkerType } from 'components/Anker/Anker';
+import { AnchorType } from 'components/Anchor/Anchor';
 import { SmoothScrollContext } from 'app/[lang]/layout/SmoothScroll';
 import { useRouter, usePathname } from 'next/navigation';
 import { useContext } from 'react';
@@ -10,10 +10,10 @@ export default function useHandleScrollTo() {
   const asPath = usePathname();
   const { push } = useRouter();
 
-  const handler = (id: AnkerType) => {
+  const handler = (id: AnchorType) => {
     if (asPath !== '/') return push('/');
-    const anker = document.getElementById(id);
-    if (anker) smoothScroll.scrollTo(anker.offsetTop);
+    const anchor = document.getElementById(id);
+    if (anchor) smoothScroll.scrollTo(anchor.offsetTop);
   };
 
   return handler;
