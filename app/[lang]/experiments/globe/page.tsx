@@ -1,5 +1,6 @@
 // Components==============
 import Canvas from 'app/[lang]/experiments/globe/Canvas';
+import styles from './Globe.module.scss';
 // =========================
 
 export const metadata = {
@@ -8,7 +9,7 @@ export const metadata = {
 
 export default function Globe() {
   return (
-    <div style={{ height: '100vh', display: 'grid' }}>
+    <div className={styles.wrapper}>
       <Canvas />
     </div>
   );
