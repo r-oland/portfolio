@@ -1,7 +1,7 @@
 import 'styles/App.scss';
 import { inter, zenAntique } from 'utils/font';
 import { getMetaDescription } from 'utils/getMetaDescription';
-import ClientWrapper from './layout/ClientWrapper';
+import ClientWrapper from './[lang]/layout/ClientWrapper';
 
 export async function generateMetadata({
   params: { lang },
@@ -64,7 +64,7 @@ export async function generateMetadata({
 
 export default function RootLayout({
   children,
-  params: { lang },
+  params: { lang = 'en' },
 }: {
   children: React.ReactNode;
   params: { lang: 'en' | 'nl' };

@@ -1,5 +1,7 @@
+'use client';
+
 // Components==============
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import styles from './Button.module.scss';
 // =========================
 
@@ -20,7 +22,7 @@ export default function Button({
   stretch?: boolean;
   submit?: boolean;
 }) {
-  const history = useRouter();
+  const { push } = useRouter();
 
   return (
     <button
@@ -28,7 +30,7 @@ export default function Button({
         to
           ? (e) => {
               e.stopPropagation();
-              history.push(to);
+              push(to);
             }
           : onClick
       }
