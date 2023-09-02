@@ -4,8 +4,8 @@ import React from 'react';
 import styles from 'components/404.module.scss';
 import Image from 'next/image';
 import John from 'public/images/what-huh.gif';
-import Container from 'global_components/Container/Container';
-import Button from 'global_components/Button/Button';
+import Container from 'components/Container/Container';
+import Button from 'components/Button/Button';
 import { useRouter } from 'next/router';
 import { useLocale } from 'hooks/useLocale';
 // =========================

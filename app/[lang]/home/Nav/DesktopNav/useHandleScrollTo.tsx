@@ -1,13 +1,14 @@
 // Components==============
-import { AnkerType } from 'global_components/Anker/Anker';
+import { AnkerType } from 'components/Anker/Anker';
 import { SmoothScrollContext } from 'app/[lang]/layout/SmoothScroll';
-import { useRouter } from 'next/router';
+import { useRouter, usePathname } from 'next/navigation';
 import { useContext } from 'react';
 // =========================
 
 export default function useHandleScrollTo() {
   const smoothScroll = useContext(SmoothScrollContext);
-  const { asPath, push } = useRouter();
+  const asPath = usePathname();
+  const { push } = useRouter();
 
   const handler = (id: AnkerType) => {
     if (asPath !== '/') return push('/');

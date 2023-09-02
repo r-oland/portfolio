@@ -1,5 +1,5 @@
 // Components==============
-import { AnkerType } from 'global_components/Anker/Anker';
+import { AnkerType } from 'components/Anker/Anker';
 // =========================
 
 export default function useNavItems(lang: 'en' | 'nl') {

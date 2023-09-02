@@ -9,7 +9,7 @@ import { faArrowRight } from '@fortawesome/pro-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ProjectType } from 'database/work';
 import { m, useInView } from 'framer-motion';
-import Toggle from 'global_components/Toggle/Toggle';
+import Toggle from 'components/Toggle/Toggle';
 import { useLocale } from 'hooks/useLocale';
 import { useMediaQ } from 'hooks/useMediaQ';
 import { useRef, useState } from 'react';

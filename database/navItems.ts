@@ -1,4 +1,4 @@
-import { AnkerType } from 'global_components/Anker/Anker';
+import { AnkerType } from 'components/Anker/Anker';
 
 export const navItems = [
   {

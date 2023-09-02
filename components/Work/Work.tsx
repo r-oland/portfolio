@@ -2,10 +2,10 @@
 import { faArrowDown } from '@fortawesome/pro-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { projects } from 'database/work';
-import Anker from 'global_components/Anker/Anker';
-import Button from 'global_components/Button/Button';
+import Anker from 'components/Anker/Anker';
+import Button from 'components/Button/Button';
 import ChapterTitle from 'components/ChapterTitle/ChapterTitle';
-import Container from 'global_components/Container/Container';
+import Container from 'components/Container/Container';
 import { useLocale } from 'hooks/useLocale';
 import { useState } from 'react';
 import Project from './Project/Project';

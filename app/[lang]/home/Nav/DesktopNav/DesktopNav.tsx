@@ -1,19 +1,19 @@
+'use client';
+
 // Components==============
 import { useScroll } from 'framer-motion';
-import { AnkerType } from 'global_components/Anker/Anker';
-import LocaleSwitcher from 'global_components/LocaleSwitcher/LocaleSwitcher';
-import useHandleScrollTo from 'hooks/useHandleScrollTo';
-import { useLocale } from 'hooks/useLocale';
+import { AnkerType } from 'components/Anker/Anker';
+import LocaleSwitcher from 'components/LocaleSwitcher/LocaleSwitcher';
+import useHandleScrollTo from 'app/[lang]/home/Nav/DesktopNav/useHandleScrollTo';
 import { useMediaQ } from 'hooks/useMediaQ';
 import useNavItems from 'hooks/useNavItems';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import styles from './DesktopNav.module.scss';
 // =========================
 
-export default function DesktopNav() {
-  const { locale } = useLocale();
-  const { asPath } = useRouter();
+export default function DesktopNav({ lang }: { lang: 'en' | 'nl' }) {
+  const asPath = usePathname();
 
   const [anker, setAnker] = useState<AnkerType>('introduction');
   const [hasScrolled, setHasScrolled] = useState(false);
@@ -21,7 +21,7 @@ export default function DesktopNav() {
   const query = useMediaQ('min', 1024);
   const { scrollY } = useScroll();
   const handleScrollTo = useHandleScrollTo();
-  const navItems = useNavItems();
+  const navItems = useNavItems(lang);
 
   useEffect(() => {
     if (!query) return;
@@ -80,11 +80,11 @@ export default function DesktopNav() {
               key={item.id}
               className={item.id === anker ? styles.active : undefined}
             >
-              <p>{item.name[locale]}</p>
+              <p>{item.name}</p>
             </div>
           ))}
         </div>
-        <LocaleSwitcher />
+        <LocaleSwitcher lang={lang} />
       </div>
     </div>
   );

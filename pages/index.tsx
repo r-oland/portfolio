@@ -3,8 +3,7 @@ import About from 'components/About/About';
 import Contact from 'components/Contact/Contact';
 import Tech from 'components/Tech/Tech';
 import Work from 'components/Work/Work';
-import Cursor from 'global_components/Cursor/Cursor';
-import Layout from 'global_components/Layout/Layout';
+import Cursor from 'components/Cursor/Cursor';
 import { useMediaQ } from 'hooks/useMediaQ';
 import { createContext, useMemo } from 'react';
 // =========================
@@ -20,16 +19,14 @@ export default function Home() {
   const query = useMediaQ('min', 768);
 
   return (
-    <Layout>
-      <HomeContext.Provider value={value}>
-        <div>
-          <Work />
-          {query && <Tech />}
-          <About />
-          <Contact />
-        </div>
-        <Cursor />
-      </HomeContext.Provider>
-    </Layout>
+    <HomeContext.Provider value={value}>
+      <div>
+        <Work />
+        {query && <Tech />}
+        <About />
+        <Contact />
+      </div>
+      <Cursor />
+    </HomeContext.Provider>
   );
 }

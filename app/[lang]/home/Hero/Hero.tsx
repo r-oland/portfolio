@@ -1,5 +1,5 @@
 // Components==============
-import Anker from 'global_components/Anker/Anker';
+import Anker from 'components/Anker/Anker';
 import ChapterTitle from 'components/ChapterTitle/ChapterTitle';
 import { translate } from 'utils/translate';
 import Curl from './Curl/Curl';

@@ -1,5 +1,5 @@
 // Components==============
-import Canvas from 'experiments/Globe/Canvas';
+import Canvas from 'app/[lang]/experiments/globe/Canvas';
 // =========================
 
 export const metadata = {

@@ -1,9 +1,9 @@
 // Components==============
 import { user } from 'database/user';
 import { m } from 'framer-motion';
-import Anker from 'global_components/Anker/Anker';
+import Anker from 'components/Anker/Anker';
 import ChapterTitle from 'components/ChapterTitle/ChapterTitle';
-import Container from 'global_components/Container/Container';
+import Container from 'components/Container/Container';
 import { useLocale } from 'hooks/useLocale';
 import { useMediaQ } from 'hooks/useMediaQ';
 import { useStorage } from 'hooks/useStorage';
