@@ -10,7 +10,7 @@ export const inter = Inter({
 
 export const zenAntique = Zen_Antique({
   weight: '400',
-  variable: '--zen',
+  variable: '--font-zen',
   subsets: ['latin'],
   display: 'swap',
 });

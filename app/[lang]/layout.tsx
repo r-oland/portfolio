@@ -1,8 +1,7 @@
-import SmoothScroll from 'global_components/SmoothScroll';
-import CalculateAppHeight from 'global_components/Layout/CalculateAppHeight';
 import 'styles/App.scss';
 import { inter, zenAntique } from 'utils/font';
 import { getMetaDescription } from 'utils/getMetaDescription';
+import ClientWrapper from './layout/ClientWrapper';
 
 export async function generateMetadata({
   params: { lang },
@@ -71,15 +70,10 @@ export default function RootLayout({
   params: { lang: 'en' | 'nl' };
 }) {
   return (
-    <CalculateAppHeight>
-      <SmoothScroll>
-        <html
-          lang={lang}
-          className={`${inter.variable} ${zenAntique.variable}`}
-        >
-          <body>{children}</body>
-        </html>
-      </SmoothScroll>
-    </CalculateAppHeight>
+    <ClientWrapper lang={lang}>
+      <html lang={lang} className={`${inter.variable} ${zenAntique.variable}`}>
+        <body>{children}</body>
+      </html>
+    </ClientWrapper>
   );
 }

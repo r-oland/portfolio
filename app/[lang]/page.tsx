@@ -1,6 +1,6 @@
-import LocaleSwitcher from 'global_components/LocaleSwitcher/LocaleSwitcher';
 import { getMetaDescription } from 'utils/getMetaDescription';
-import Test from './home/Test';
+import styles from 'app/[lang]/home/Home.module.scss';
+import Hero from 'app/[lang]/home/Hero/Hero';
 
 export async function generateMetadata({
   params: { lang },
@@ -19,9 +19,8 @@ export default async function Page({
   params: { lang: 'en' | 'nl' };
 }) {
   return (
-    <div>
-      <Test {...params} />
-      <LocaleSwitcher {...params} />
+    <div className={styles.wrapper}>
+      <Hero {...params} />
     </div>
   );
 }

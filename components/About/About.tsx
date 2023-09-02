@@ -2,7 +2,7 @@
 import { user } from 'database/user';
 import { m } from 'framer-motion';
 import Anker from 'global_components/Anker/Anker';
-import ChapterTitle from 'global_components/ChapterTitle/ChapterTitle';
+import ChapterTitle from 'components/ChapterTitle/ChapterTitle';
 import Container from 'global_components/Container/Container';
 import { useLocale } from 'hooks/useLocale';
 import { useMediaQ } from 'hooks/useMediaQ';

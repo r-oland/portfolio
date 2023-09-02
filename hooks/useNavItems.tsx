@@ -1,10 +1,9 @@
 // Components==============
 import { AnkerType } from 'global_components/Anker/Anker';
-import { useMediaQ } from './useMediaQ';
 // =========================
 
-export default function useNavItems() {
-  const isDesktop = useMediaQ('min', 768);
+export default function useNavItems(lang: 'en' | 'nl') {
+  const isDesktop = true;
 
   const navItems = [
     {
@@ -29,5 +28,8 @@ export default function useNavItems() {
     },
   ];
 
-  return navItems;
+  return navItems.map((item) => ({
+    ...item,
+    name: item.name[lang],
+  }));
 }

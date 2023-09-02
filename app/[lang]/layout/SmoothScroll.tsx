@@ -1,5 +1,3 @@
-'use client';
-
 // Components==============
 import Lenis from '@studio-freight/lenis';
 import { createContext, useEffect, useMemo, useState } from 'react';

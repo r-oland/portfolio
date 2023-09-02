@@ -1,6 +1,6 @@
 // Components==============
 import { AnkerType } from 'global_components/Anker/Anker';
-import { SmoothScrollContext } from 'global_components/SmoothScroll';
+import { SmoothScrollContext } from 'app/[lang]/layout/SmoothScroll';
 import { useRouter } from 'next/router';
 import { useContext } from 'react';
 // =========================

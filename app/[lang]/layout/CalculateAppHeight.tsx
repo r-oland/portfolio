@@ -1,5 +1,3 @@
-'use client';
-
 // Components==============
 import React, { useEffect } from 'react';
 // =========================
