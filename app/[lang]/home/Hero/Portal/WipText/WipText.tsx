@@ -13,16 +13,14 @@ export default function WipText() {
   const { lang } = useContext(LangContext);
 
   return (
-    <>
-      <MotionDiv
-        className={styles.wrapper}
-        animate={{ opacity: visible ? 1 : 0, y: visible ? 0 : -15 }}
-        initial={{ opacity: 0, y: -15 }}
-        transition={{ delay: 0.25 }}
-        onTap={() => setVisible(false)}
-      >
-        <Image src={lang === 'en' ? enWipText : nlWipText} alt="wip" />
-      </MotionDiv>
-    </>
+    <MotionDiv
+      className={styles.wrapper}
+      animate={{ opacity: visible ? 1 : 0, y: visible ? 0 : -15 }}
+      initial={{ opacity: 0, y: -15 }}
+      transition={{ delay: 0.25 }}
+      onTap={() => setVisible(false)}
+    >
+      <Image src={lang === 'en' ? enWipText : nlWipText} alt="wip" />
+    </MotionDiv>
   );
 }
