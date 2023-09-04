@@ -1,5 +1,4 @@
 // Components==============
-import About from 'components/About/About';
 import Contact from 'components/Contact/Contact';
 import { createContext, useMemo } from 'react';
 // =========================
@@ -16,7 +15,6 @@ export default function Home() {
   return (
     <HomeContext.Provider value={value}>
       <div>
-        <About />
         <Contact />
       </div>
     </HomeContext.Provider>

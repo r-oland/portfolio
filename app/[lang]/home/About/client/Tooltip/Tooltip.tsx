@@ -1,3 +1,5 @@
+'use client';
+
 // Components==============
 import {
   faLaughSquint,
@@ -7,25 +9,28 @@ import {
 } from '@fortawesome/pro-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { user } from 'database/user';
-import { AnimatePresence, m } from 'framer-motion';
-import { useLocale } from 'hooks/useLocale';
-import React, { useState } from 'react';
+import { AnimatePresence } from 'framer-motion';
+import React, { useContext, useState } from 'react';
+import { LangContext } from 'app/[lang]/layout/ClientWrapper';
+import { MotionDiv, MotionSpan } from 'utils/clientMotion';
 import styles from './Tooltip.module.scss';
+import { AboutContext } from '../AboutContext';
 // =========================
 
-export default function Tooltip({
-  selected,
-  setSelected,
-  hasOpenedTooltip,
-  setHasOpenedTooltip,
-  type,
-}: {
-  selected: number;
-  setSelected: React.Dispatch<React.SetStateAction<number>>;
-  hasOpenedTooltip?: boolean;
-  setHasOpenedTooltip: React.Dispatch<React.SetStateAction<boolean>>;
-  type: 'text' | 'image';
-}) {
+export default function Tooltip({ type }: { type: 'text' | 'image' }) {
+  const {
+    setSelectedImage,
+    setSelectedText,
+    selectedImage,
+    selectedText,
+    hasOpenedTooltip,
+    setHasOpenedTooltip,
+  } = useContext(AboutContext);
+  const { lang } = useContext(LangContext);
+
+  const setSelected = type === 'image' ? setSelectedImage : setSelectedText;
+  const selected = type === 'image' ? selectedImage : selectedText;
+
   const [isOpen, setIsOpen] = useState(false);
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
@@ -33,12 +38,10 @@ export default function Tooltip({
     setSelected(currentPosition);
   }
 
-  const { locale } = useLocale();
-
   const content =
     type === 'image'
-      ? user.imageTitles[selected][locale]
-      : user.aboutTitles[selected][locale];
+      ? user.imageTitles[selected][lang]
+      : user.aboutTitles[selected][lang];
 
   const total = type === 'image' ? user.images.length : user.about.length;
   const barWidth = 125;
@@ -56,7 +59,7 @@ export default function Tooltip({
       }}
       onMouseLeave={() => setIsOpen(false)}
     >
-      <m.span
+      <MotionSpan
         initial={{ y: 0 }}
         whileInView={
           hasOpenedTooltip || type === 'image'
@@ -66,10 +69,10 @@ export default function Tooltip({
         transition={{ delay: 1, repeat: Infinity, repeatDelay: 4 }}
       >
         {content}
-      </m.span>
+      </MotionSpan>
       <AnimatePresence>
         {isOpen && (
-          <m.div
+          <MotionDiv
             className={`${styles.tooltip} ${
               type === 'image' ? styles.image : ''
             }`}
@@ -90,7 +93,7 @@ export default function Tooltip({
               onChange={handleChange}
             />
             <div className={styles.bar} />
-            <m.div
+            <MotionDiv
               className={styles.slider}
               initial={{ x }}
               animate={{ x }}
@@ -104,7 +107,7 @@ export default function Tooltip({
                 )
               }
             />
-          </m.div>
+          </MotionDiv>
         )}
       </AnimatePresence>
     </div>

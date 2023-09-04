@@ -1,0 +1,10 @@
+@import "styles/Variables";
+
+.text {
+  display: grid;
+  gap: $spacing4;
+
+  strong {
+    font-weight: $weight-bold;
+  }
+}

@@ -6,6 +6,7 @@ import DesktopNav from './home/Nav/DesktopNav/DesktopNav';
 import MobileNav from './home/Nav/MobileNav/MobileNav';
 import Work from './home/Work/Work';
 import Tech from './home/Tech/Tech';
+import About from './home/About/About';
 
 export async function generateMetadata({
   params: { lang },
@@ -31,6 +32,7 @@ export default async function Page({
         <Hero {...params} />
         <Work {...params} />
         <Tech {...params} />
+        <About {...params} />
       </div>
       <Cursor />
     </>
