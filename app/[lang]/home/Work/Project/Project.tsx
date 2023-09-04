@@ -31,13 +31,13 @@ export default function Project({
   left: boolean;
   lang: 'nl' | 'en';
 }) {
-  const ref = useRef(null); // TODO
+  const ref = useRef(null);
   const t = translate(lang);
-  const [selecteText, setSelecteText] = useState<SelectedTextType>('Project'); // TODO
+  const [selecteText, setSelecteText] = useState<SelectedTextType>('Project');
 
-  const isTablet = useMediaQ('min', 768); // TODO
-  const isDesktop = useMediaQ('min', 1024); // TODO
-  const inView = useInView(ref, { amount: 0.4, once: !isTablet }); // TODO
+  const isTablet = useMediaQ('min', 768);
+  const isDesktop = useMediaQ('min', 1024);
+  const inView = useInView(ref, { amount: 0.4, once: !isTablet });
   const isWorkInProgress = project.url === '';
 
   const variants = {

@@ -1,9 +1,10 @@
 // Components==============
 import { AnchorType } from 'components/Anchor/Anchor';
+import { useMediaQ } from './useMediaQ';
 // =========================
 
 export default function useNavItems(lang: 'en' | 'nl') {
-  const isDesktop = true;
+  const isDesktop = useMediaQ('min', 1024);
 
   const navItems = [
     {

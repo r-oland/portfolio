@@ -8,6 +8,7 @@
   grid-auto-flow: column;
   align-items: center;
   gap: $spacing1;
+  font-weight: $weight-semi-bold;
 
   @media screen and (min-width: $desktop-large) {
     color: $black;

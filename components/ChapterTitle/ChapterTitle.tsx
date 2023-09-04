@@ -1,3 +1,5 @@
+'use client';
+
 // Components==============
 import useNavItems from 'hooks/useNavItems';
 import styles from './ChapterTitle.module.scss';

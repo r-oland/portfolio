@@ -11,7 +11,7 @@ export async function generateMetadata({
   const title = 'Roland Branten';
   const color = '#3F6C5B';
   const colorLight = '#bdd3cc';
-  const domain = 'https://rolandbranten.nl';
+  const domain = `https://rolandbranten.${lang === 'en' ? 'com' : 'nl'}}`;
   const description = getMetaDescription(lang);
 
   return {
@@ -22,6 +22,7 @@ export async function generateMetadata({
     manifest: '/manifest.json',
     appleWebApp: { capable: true, title, statusBarStyle: 'default' },
     formatDetection: { telephone: false },
+    metadataBase: new URL(domain),
     alternates: {
       languages: {
         en: 'https://rolandbranten.com',
@@ -39,7 +40,7 @@ export async function generateMetadata({
       siteName: title,
       images: [
         {
-          url: `${domain}/apple-touch-icon.png`,
+          url: `${domain}/logo/apple-touch-icon.png`,
           width: 32,
           height: 32,
           alt: 'Roland Branten logo',
@@ -55,7 +56,7 @@ export async function generateMetadata({
       creator: '@rolandbranten',
       site: domain,
       images: {
-        url: `${domain}/android-chrome-192x192.png`,
+        url: `${domain}/logo/android-chrome-192x192.png`,
         alt: 'Roland Branten logo',
       },
     },
