@@ -1,9 +1,10 @@
 // Components==============
 import { ProjectType } from 'database/work';
-import { AnimatePresence, m } from 'framer-motion';
+import { AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { wrap } from 'popmotion';
+import { MotionImg } from 'utils/clientMotion';
 import styles from './Mobile.module.scss';
 // =========================
 
@@ -62,7 +63,7 @@ export default function Mobile({
   return (
     <div className={styles.wrapper}>
       <AnimatePresence initial={false} custom={direction}>
-        <m.img
+        <MotionImg
           key={page}
           src={url}
           alt={project.name}

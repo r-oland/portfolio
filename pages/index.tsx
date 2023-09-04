@@ -2,8 +2,6 @@
 import About from 'components/About/About';
 import Contact from 'components/Contact/Contact';
 import Tech from 'components/Tech/Tech';
-import Work from 'components/Work/Work';
-import Cursor from 'components/Cursor/Cursor';
 import { useMediaQ } from 'hooks/useMediaQ';
 import { createContext, useMemo } from 'react';
 // =========================
@@ -21,12 +19,10 @@ export default function Home() {
   return (
     <HomeContext.Provider value={value}>
       <div>
-        <Work />
         {query && <Tech />}
         <About />
         <Contact />
       </div>
-      <Cursor />
     </HomeContext.Provider>
   );
 }

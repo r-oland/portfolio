@@ -1,8 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 // Components==============
 import { ProjectType } from 'database/work';
-import { AnimatePresence, m } from 'framer-motion';
+import { AnimatePresence } from 'framer-motion';
 import { useEffect, useState } from 'react';
+import { MotionDiv, MotionImg } from 'utils/clientMotion';
 import styles from './Desktop.module.scss';
 // =========================
 
@@ -74,7 +75,7 @@ export default function Desktop({
   };
 
   return (
-    <m.div
+    <MotionDiv
       className={`${styles.wrapper} ${!left ? styles.reverse : ''}`}
       onClick={() => {
         const toRight = (
@@ -128,14 +129,14 @@ export default function Desktop({
       }}
     >
       <AnimatePresence>
-        <m.div
+        <MotionDiv
           key={image}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           className={styles['image-wrapper']}
         >
-          <m.img
+          <MotionImg
             src={url}
             alt={project.name}
             variants={{
@@ -156,7 +157,7 @@ export default function Desktop({
           />
           <div className={styles.left} />
           <div className={styles.right} />
-        </m.div>
+        </MotionDiv>
       </AnimatePresence>
       <div className={styles.bottom} />
       <div className={styles.side} />
@@ -166,6 +167,6 @@ export default function Desktop({
           <link rel="preload" as="image" href={nextUrl} />
         </>
       )}
-    </m.div>
+    </MotionDiv>
   );
 }

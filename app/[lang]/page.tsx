@@ -1,8 +1,10 @@
 import { getMetaDescription } from 'utils/getMetaDescription';
 import styles from 'app/[lang]/home/Home.module.scss';
 import Hero from 'app/[lang]/home/Hero/Hero';
+import Cursor from 'components/Cursor/Cursor';
 import DesktopNav from './home/Nav/DesktopNav/DesktopNav';
 import MobileNav from './home/Nav/MobileNav/MobileNav';
+import Work from './home/Work/Work';
 
 export async function generateMetadata({
   params: { lang },
@@ -26,7 +28,9 @@ export default async function Page({
       <MobileNav lang={params.lang} />
       <div className={styles.wrapper}>
         <Hero {...params} />
+        <Work {...params} />
       </div>
+      <Cursor />
     </>
   );
 }

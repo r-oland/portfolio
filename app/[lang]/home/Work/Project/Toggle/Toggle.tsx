@@ -1,7 +1,7 @@
 // Components==============
-import { SelectedTextType } from 'components/Work/Project/Project';
-import { m } from 'framer-motion';
+import { SelectedTextType } from 'app/[lang]/home/Work/Project/Project';
 import React from 'react';
+import { MotionDiv } from 'utils/clientMotion';
 import styles from './Toggle.module.scss';
 // =========================
 
@@ -30,7 +30,7 @@ export default function Toggle({
         </p>
       ))}
       <div className={styles.track} />
-      <m.div
+      <MotionDiv
         className={styles.toggle}
         initial={{ x: 0, scaleX: 1 }}
         animate={{

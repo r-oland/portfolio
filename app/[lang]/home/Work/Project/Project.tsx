@@ -1,3 +1,5 @@
+'use client';
+
 // Components==============
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import {
@@ -8,11 +10,12 @@ import {
 import { faArrowRight } from '@fortawesome/pro-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ProjectType } from 'database/work';
-import { m, useInView } from 'framer-motion';
-import Toggle from 'components/Toggle/Toggle';
-import { useLocale } from 'hooks/useLocale';
+import { useInView } from 'framer-motion';
+import Toggle from 'app/[lang]/home/Work/Project/Toggle/Toggle';
 import { useMediaQ } from 'hooks/useMediaQ';
 import { useRef, useState } from 'react';
+import { MotionA, MotionDiv } from 'utils/clientMotion';
+import { translate } from 'utils/translate';
 import ImageRender from './ImageRender/ImageRender';
 import styles from './Project.module.scss';
 // =========================
@@ -22,17 +25,19 @@ export type SelectedTextType = 'Project' | 'Role';
 export default function Project({
   project,
   left,
+  lang,
 }: {
   project: ProjectType;
   left: boolean;
+  lang: 'nl' | 'en';
 }) {
-  const ref = useRef(null);
-  const { locale, t } = useLocale();
-  const [selecteText, setSelecteText] = useState<SelectedTextType>('Project');
+  const ref = useRef(null); // TODO
+  const t = translate(lang);
+  const [selecteText, setSelecteText] = useState<SelectedTextType>('Project'); // TODO
 
-  const isTablet = useMediaQ('min', 768);
-  const isDesktop = useMediaQ('min', 1024);
-  const inView = useInView(ref, { amount: 0.4, once: !isTablet });
+  const isTablet = useMediaQ('min', 768); // TODO
+  const isDesktop = useMediaQ('min', 1024); // TODO
+  const inView = useInView(ref, { amount: 0.4, once: !isTablet }); // TODO
   const isWorkInProgress = project.url === '';
 
   const variants = {
@@ -55,7 +60,7 @@ export default function Project({
   const textOptions = Object.keys(project.description) as SelectedTextType[];
 
   return (
-    <m.div
+    <MotionDiv
       className={`${styles.wrapper} ${!left ? styles.reverse : ''}`}
       initial="initial"
       animate={inView ? 'animate' : 'initial'}
@@ -76,7 +81,7 @@ export default function Project({
               />
             </div>
             <p className={styles.description}>
-              {project.description[selecteText][locale]}
+              {project.description[selecteText][lang]}
             </p>
           </>
         ) : (
@@ -89,7 +94,7 @@ export default function Project({
                   marginBottom: i !== textOptions.length - 1 ? '0.5rem' : '',
                 }}
               >
-                {project.description[to][locale]}
+                {project.description[to][lang]}
               </p>
             ))}
           </>
@@ -129,7 +134,7 @@ export default function Project({
         {isWorkInProgress && !isTablet ? (
           <></>
         ) : (
-          <m.a
+          <MotionA
             className={styles.link}
             href={project.url}
             target="_blank"
@@ -151,10 +156,10 @@ export default function Project({
               </p>
             )}
             Visit site <FontAwesomeIcon icon={faArrowRight} />
-          </m.a>
+          </MotionA>
         )}
       </div>
       <ImageRender project={project} left={left} inView={inView} />
-    </m.div>
+    </MotionDiv>
   );
 }
