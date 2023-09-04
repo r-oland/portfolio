@@ -3,13 +3,13 @@ import { ranks, techItems } from 'database/tech';
 import Anchor from 'components/Anchor/Anchor';
 import ChapterTitle from 'components/ChapterTitle/ChapterTitle';
 import Container from 'components/Container/Container';
-import { useLocale } from 'hooks/useLocale';
 import Image from 'next/image';
+import { translate } from 'utils/translate';
 import styles from './Tech.module.scss';
 // =========================
 
-export default function Tech() {
-  const { locale, t } = useLocale();
+export default function Tech({ lang }: { lang: 'nl' | 'en' }) {
+  const t = translate(lang);
 
   return (
     <>
@@ -17,7 +17,12 @@ export default function Tech() {
       <div className={styles.wrapper}>
         <Container>
           <div className={styles.content}>
-            <ChapterTitle id={2} color="white" marginBottom="4rem" />
+            <ChapterTitle
+              id={2}
+              color="white"
+              marginBottom="4rem"
+              lang={lang}
+            />
             <h2>
               <span>
                 {t(
@@ -40,7 +45,7 @@ export default function Tech() {
                   <div key={rank.key} className={styles.rank}>
                     <p className={styles.description}>
                       <>
-                        <strong>{rank.key}</strong> {rank.description[locale]}
+                        <strong>{rank.key}</strong> {rank.description[lang]}
                       </>
                     </p>
                     <div className={styles.items}>

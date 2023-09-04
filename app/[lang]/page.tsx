@@ -5,6 +5,7 @@ import Cursor from 'components/Cursor/Cursor';
 import DesktopNav from './home/Nav/DesktopNav/DesktopNav';
 import MobileNav from './home/Nav/MobileNav/MobileNav';
 import Work from './home/Work/Work';
+import Tech from './home/Tech/Tech';
 
 export async function generateMetadata({
   params: { lang },
@@ -29,6 +30,7 @@ export default async function Page({
       <div className={styles.wrapper}>
         <Hero {...params} />
         <Work {...params} />
+        <Tech {...params} />
       </div>
       <Cursor />
     </>

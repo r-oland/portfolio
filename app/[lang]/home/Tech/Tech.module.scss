@@ -1,13 +1,15 @@
 @import "styles/Variables";
 
 .wrapper {
-  display: grid;
+  display: none;
+
   background-color: $green;
   color: $white;
   padding: $spacing10 0 $spacing13;
   margin-bottom: $spacing13;
 
   @media screen and (min-width: $tablet) {
+    display: grid;
     margin-bottom: $spacing14;
   }
 
