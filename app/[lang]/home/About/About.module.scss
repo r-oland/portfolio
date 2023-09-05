@@ -1,0 +1,17 @@
+@import "styles/Variables";
+
+.wrapper {
+  display: grid;
+  gap: $spacing12;
+  margin-bottom: $spacing13;
+  align-items: start;
+
+  @media screen and (min-width: $tablet) {
+    margin-bottom: $spacing15;
+    grid-template-columns: 1fr auto;
+  }
+
+  h2 {
+    margin-bottom: $spacing5;
+  }
+}
