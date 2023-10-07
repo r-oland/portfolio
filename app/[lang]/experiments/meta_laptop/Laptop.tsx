@@ -1,8 +1,6 @@
 import { animated, useSpring } from '@react-spring/three';
 import { Html, useGLTF } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
-import About from 'app/[lang]/home/About/About';
-import Tech from 'app/[lang]/home/Tech/Tech';
 import { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 import { GLTF } from 'three/examples/jsm/loaders/GLTFLoader';
@@ -110,16 +108,11 @@ export default function Model() {
                 style={{ display: screenTurnedOn ? 'block' : 'none' }}
                 rotation-x={-Math.PI / 2}
                 position={[0, 0.05, -0.09]}
+                distanceFactor={2.5}
                 transform
                 occlude
               >
-                <div
-                  className={styles.screen}
-                  onPointerDown={(e) => e.stopPropagation()}
-                >
-                  <Tech lang="en" />
-                  <About lang="en" />
-                </div>
+                <iframe src="https://rolandbranten.com" title="screen" />
               </Html>
             </mesh>
           </group>

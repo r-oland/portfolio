@@ -6,26 +6,15 @@
 }
 
 .screen-wrapper {
-  width: 332px;
-  height: 209px;
   background: #f0f0f0;
   border-radius: 1px;
   overflow-y: auto;
   padding: 0;
-  transform: translateY(4px);
-}
+  transform: translateY(15px);
 
-.screen {
-  width: 1113px;
-  height: 0px;
-  display: grid;
-
-  @supports (-moz-appearance: none) {
-    transform: scale(0.2987);
+  iframe {
+    width: 1329px;
+    height: 832px;
+    border: none;
   }
-
-  @supports not (-moz-appearance: none) {
-    zoom: 0.2985;
-  }
-  transform-origin: top left;
 }
