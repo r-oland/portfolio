@@ -1,10 +1,11 @@
+import { animated, useSpring } from '@react-spring/three';
 import { Html, useGLTF } from '@react-three/drei';
+import { useFrame } from '@react-three/fiber';
 import About from 'app/[lang]/home/About/About';
 import Tech from 'app/[lang]/home/Tech/Tech';
+import { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 import { GLTF } from 'three/examples/jsm/loaders/GLTFLoader';
-import { useFrame } from '@react-three/fiber';
-import { useRef } from 'react';
 import styles from './MetaLaptop.module.scss';
 
 type GLTFResult = GLTF & {
@@ -30,6 +31,25 @@ type GLTFResult = GLTF & {
 export default function Model() {
   const { nodes, materials } = useGLTF('/glb/mac.glb') as GLTFResult;
   const group = useRef<THREE.Group>(null);
+
+  const [screenIsOpen, setScreenIsOpen] = useState(false);
+  const [screenTurnedOn, setScreenTurnedOn] = useState(false);
+
+  const { rotateX } = useSpring({
+    rotateX: screenIsOpen ? -0.2 : Math.PI / 2,
+  });
+
+  useEffect(() => {
+    if (!screenIsOpen) {
+      setTimeout(() => {
+        setScreenIsOpen(true);
+      }, 1500);
+
+      setTimeout(() => {
+        setScreenTurnedOn(true);
+      }, 2000);
+    }
+  }, [screenIsOpen]);
 
   // Make it float
   useFrame((state) => {
@@ -58,40 +78,52 @@ export default function Model() {
     );
   });
 
+  // create black material for screen
+  const blackScreenMaterial = new THREE.MeshStandardMaterial({
+    color: '#000000',
+    metalness: 0,
+    roughness: 1,
+  });
+
   return (
     <group ref={group} dispose={null}>
       <group position={[0.002, -0.038, 0.414]} rotation={[0.014, 0, 0]}>
-        <group position={[0, 2.965, -0.13]} rotation={[Math.PI / 2, 0, 0]}>
-          <mesh
-            geometry={nodes.Cube008.geometry}
-            material={materials.aluminium}
-          />
-          <mesh
-            geometry={nodes.Cube008_1.geometry}
-            material={materials['matte.001']}
-          />
-          <mesh
-            geometry={nodes.Cube008_2.geometry}
-            material={materials['screen.001']}
-          >
-            {/* Drei's HTML component can "hide behind" canvas geometry */}
-            <Html
-              className={styles['screen-wrapper']}
-              rotation-x={-Math.PI / 2}
-              position={[0, 0.05, -0.09]}
-              transform
-              occlude
+        <animated.group rotation-x={rotateX}>
+          <group position={[0, 2.965, -0.13]} rotation={[Math.PI / 2, 0, 0]}>
+            <mesh
+              geometry={nodes.Cube008.geometry}
+              material={materials.aluminium}
+            />
+            <mesh
+              geometry={nodes.Cube008_1.geometry}
+              material={materials['matte.001']}
+            />
+            <mesh
+              geometry={nodes.Cube008_2.geometry}
+              material={
+                screenTurnedOn ? materials['screen.001'] : blackScreenMaterial
+              }
             >
-              <div
-                className={styles.screen}
-                onPointerDown={(e) => e.stopPropagation()}
+              {/* Drei's HTML component can "hide behind" canvas geometry */}
+              <Html
+                className={styles['screen-wrapper']}
+                style={{ display: screenTurnedOn ? 'block' : 'none' }}
+                rotation-x={-Math.PI / 2}
+                position={[0, 0.05, -0.09]}
+                transform
+                occlude
               >
-                <Tech lang="en" />
-                <About lang="en" />
-              </div>
-            </Html>
-          </mesh>
-        </group>
+                <div
+                  className={styles.screen}
+                  onPointerDown={(e) => e.stopPropagation()}
+                >
+                  <Tech lang="en" />
+                  <About lang="en" />
+                </div>
+              </Html>
+            </mesh>
+          </group>
+        </animated.group>
       </group>
       <mesh
         geometry={nodes.keyboard.geometry}
@@ -106,6 +138,10 @@ export default function Model() {
         <mesh
           geometry={nodes.Cube002_1.geometry}
           material={materials.trackpad}
+          onClick={() => {
+            setScreenIsOpen(false);
+            setScreenTurnedOn(false);
+          }}
         />
       </group>
       <mesh
