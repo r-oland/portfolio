@@ -20,6 +20,7 @@
     "@react-three/rapier-addons": "^3.0.1",
     "@studio-freight/lenis": "^1.0.19",
     "framer-motion": "^10.16.1",
+    "leva": "^0.9.35",
     "next": "13.4.19",
     "nodemailer": "^6.9.4",
     "popmotion": "^11.0.5",

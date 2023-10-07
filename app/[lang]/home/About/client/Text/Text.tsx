@@ -1,16 +1,14 @@
 'use client';
 
 // Components==============
-import React, { useContext } from 'react';
-import { LangContext } from 'app/[lang]/layout/ClientWrapper';
 import { user } from 'database/user';
-import styles from './Text.module.scss';
+import { useContext } from 'react';
 import { AboutContext } from '../AboutContext';
+import styles from './Text.module.scss';
 // =========================
 
-export default function Text() {
+export default function Text({ lang }: { lang: 'nl' | 'en' }) {
   const { selectedText } = useContext(AboutContext);
-  const { lang } = useContext(LangContext);
 
   return (
     <div className={styles.text}>

@@ -1,0 +1,31 @@
+@import "styles/Variables";
+
+.wrapper {
+  display: grid;
+  height: 100vh;
+}
+
+.screen-wrapper {
+  width: 334px;
+  height: 209px;
+  background: #f0f0f0;
+  border-radius: 0px 0px 3px 3px;
+  overflow-y: auto;
+  padding: 0;
+  transform: translateY(3px);
+}
+
+.screen {
+  width: 1113px;
+  height: 0px;
+  display: grid;
+
+  @supports (-moz-appearance: none) {
+    transform: scale(0.3);
+  }
+
+  @supports not (-moz-appearance: none) {
+    zoom: 0.3;
+  }
+  transform-origin: top left;
+}

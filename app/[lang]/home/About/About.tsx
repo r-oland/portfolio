@@ -21,12 +21,13 @@ export default function About({ lang }: { lang: 'nl' | 'en' }) {
         <div className={styles.wrapper}>
           <div>
             <h2>
-              {t('Time for a', 'Tijd voor een')} <Tooltip type="text" />{' '}
+              {t('Time for a', 'Tijd voor een')}{' '}
+              <Tooltip type="text" lang={lang} />{' '}
               {t('introduction', 'introductie')} <br />
-              {t('with', 'met')} <Tooltip type="image" />
+              {t('with', 'met')} <Tooltip type="image" lang={lang} />
             </h2>
             <Images variant="mobile" />
-            <Text />
+            <Text lang={lang} />
           </div>
           <Images variant="desktop" />
         </div>

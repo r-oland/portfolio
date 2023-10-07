@@ -11,13 +11,18 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { user } from 'database/user';
 import { AnimatePresence } from 'framer-motion';
 import React, { useContext, useState } from 'react';
-import { LangContext } from 'app/[lang]/layout/ClientWrapper';
 import { MotionDiv, MotionSpan } from 'utils/clientMotion';
 import styles from './Tooltip.module.scss';
 import { AboutContext } from '../AboutContext';
 // =========================
 
-export default function Tooltip({ type }: { type: 'text' | 'image' }) {
+export default function Tooltip({
+  type,
+  lang,
+}: {
+  type: 'text' | 'image';
+  lang: 'nl' | 'en';
+}) {
   const {
     setSelectedImage,
     setSelectedText,
@@ -26,7 +31,6 @@ export default function Tooltip({ type }: { type: 'text' | 'image' }) {
     hasOpenedTooltip,
     setHasOpenedTooltip,
   } = useContext(AboutContext);
-  const { lang } = useContext(LangContext);
 
   const setSelected = type === 'image' ? setSelectedImage : setSelectedText;
   const selected = type === 'image' ? selectedImage : selectedText;
