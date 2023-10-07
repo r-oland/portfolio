@@ -1,5 +1,6 @@
 // Components==============
 import Lenis from '@studio-freight/lenis';
+import { usePathname } from 'next/navigation';
 import { createContext, useEffect, useMemo, useState } from 'react';
 // =========================
 
@@ -12,11 +13,16 @@ export default function SmoothScroll({
 }: {
   children: React.ReactNode;
 }) {
+  const pathname = usePathname();
+
   const [lenis, setLenis] = useState({
     scrollTo: () => console.log('not mounted yet'),
   });
 
   useEffect(() => {
+    // Only enable for home page (not for experiments)
+    if (pathname !== '/') return;
+
     // initialize lenis
     const lenisEnitty = new Lenis({
       duration: 1.2,
@@ -35,7 +41,7 @@ export default function SmoothScroll({
 
     setLenis(lenisEnitty);
     requestAnimationFrame(raf);
-  }, []);
+  }, [pathname]);
 
   const value = useMemo(() => lenis, [lenis]);
 
