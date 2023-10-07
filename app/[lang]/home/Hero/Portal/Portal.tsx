@@ -15,7 +15,7 @@ type GLTFResult = GLTF & {
 };
 
 export default function Portal() {
-  const { nodes } = useGLTF('/portal.glb') as GLTFResult;
+  const { nodes } = useGLTF('/glb/portal.glb') as GLTFResult;
 
   const texture = useTexture('/Baked.jpg');
   texture.flipY = false;
@@ -49,4 +49,4 @@ export default function Portal() {
   );
 }
 
-useGLTF.preload('/portal.glb');
+useGLTF.preload('/glb/portal.glb');
