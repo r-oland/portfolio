@@ -40,8 +40,11 @@ export default function Project({
   const inView = useInView(ref, { amount: 0.4, once: !isTablet });
   const isWorkInProgress = project.url === '';
 
+  // Check if the component is being rendered within an iframe because mount animations don't get triggered in an iframe
+  const isIframe = window.parent !== window;
+
   const variants = {
-    initial: { x: left ? -100 : 100, opacity: 0 },
+    initial: { x: left ? -100 : 100, opacity: isIframe ? 1 : 0 },
     animate: { x: 0, opacity: 1 },
   };
 
