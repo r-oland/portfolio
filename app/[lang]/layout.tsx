@@ -1,7 +1,7 @@
 import 'styles/App.scss';
 import { inter, zenAntique } from 'utils/font';
 import { getMetaDescription } from 'utils/getMetaDescription';
-import ClientWrapper from './[lang]/layout/ClientWrapper';
+import ClientWrapper from './layout/ClientWrapper';
 
 export async function generateMetadata({
   params: { lang },
@@ -11,7 +11,7 @@ export async function generateMetadata({
   const title = 'Roland Branten';
   const color = '#3F6C5B';
   const colorLight = '#bdd3cc';
-  const domain = `https://rolandbranten.${lang === 'en' ? 'com' : 'nl'}}`;
+  const domain = `https://rolandbranten.${lang === 'en' ? 'com' : 'nl'}`;
   const description = getMetaDescription(lang);
 
   return {
@@ -65,7 +65,7 @@ export async function generateMetadata({
 
 export default function RootLayout({
   children,
-  params: { lang = 'en' },
+  params: { lang },
 }: {
   children: React.ReactNode;
   params: { lang: 'en' | 'nl' };

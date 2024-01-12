@@ -4,21 +4,22 @@
 import React from 'react';
 // =========================
 
-const dutchDomain = 'https://rolandbranten.nl';
-const englishDomain = 'http://rolandbranten.com';
+const dutchDomain = '.nl';
+const englishDomain = '.com';
 
-const redirected = () => {
+const redirect = () => {
   // get the current domain
   const currentDomain = window.location.origin;
 
   // get the current path
   const currentPath = window.location.pathname;
 
-  // redirect to the other domain with the current path
-  if (currentDomain.includes(dutchDomain))
-    window.location.href = englishDomain + currentPath;
+  const correctDomain = currentDomain.includes(dutchDomain)
+    ? englishDomain
+    : dutchDomain;
 
-  window.location.href = dutchDomain + currentPath;
+  // redirect to the other domain with the current path
+  window.location.href = `https://rolandbranten${correctDomain}${currentPath}`;
 };
 
 export default function SwitchLogic({
@@ -29,7 +30,7 @@ export default function SwitchLogic({
   className: string;
 }) {
   return (
-    <div onClick={() => redirected()} className={className}>
+    <div onClick={() => redirect()} className={className}>
       {children}
     </div>
   );

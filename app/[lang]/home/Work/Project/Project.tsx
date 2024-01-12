@@ -40,8 +40,10 @@ export default function Project({
   const inView = useInView(ref, { amount: 0.4, once: !isTablet });
   const isWorkInProgress = project.url === '';
 
-  const isIframe = window.parent !== window;
-  const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+  const isIframe = typeof window !== 'undefined' && window.parent !== window;
+  const isSafari =
+    typeof navigator !== 'undefined' &&
+    /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
   const animate = { x: 0, opacity: 1 };
 
   const variants = {
