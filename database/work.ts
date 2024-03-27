@@ -10,7 +10,6 @@ export type ProjectType = {
   endYear?: number;
   client: string;
   clientLink?: string;
-  color: string;
   github?: string;
   url: string;
   marketingUrl?: string;
@@ -38,7 +37,6 @@ export const projects: ProjectType[] = [
     endYear: 2024,
     client: 'Decathlon',
     url: 'https://www.decathlon.nl/',
-    color: '#f8f8f8',
     amountOfImages: 6,
   },
   // Klik
@@ -60,7 +58,6 @@ export const projects: ProjectType[] = [
     endYear: 2022,
     client: 'Studio Tast',
     clientLink: 'https://www.tast.studio/',
-    color: '#030626',
     url: 'https://klik.tast.cloud/',
     marketingUrl: 'https://klik.tast.tools',
     amountOfImages: 8,
@@ -85,7 +82,6 @@ export const projects: ProjectType[] = [
     endYear: 2022,
     client: 'Opdidakt',
     clientLink: 'https://opdidakt.nl/',
-    color: '#3edc89',
     url: 'https://spiekdigitaal.nl/inloggen',
     marketingUrl: 'https://opdidakt.nl/spiek-digitaal/',
     amountOfImages: 9,
@@ -110,7 +106,6 @@ export const projects: ProjectType[] = [
     endYear: 2022,
     client: 'Studio Tast',
     clientLink: 'https://www.tast.studio/',
-    color: '#0827E9',
     marketingUrl: 'https://groow.tast.tools',
     url: 'https://learntogroow.com',
     amountOfImages: 10,
@@ -132,7 +127,6 @@ export const projects: ProjectType[] = [
     },
     startYear: 2022,
     client: 'Passion project',
-    color: '#18e597',
     url: 'https://persistful.com/',
     github: 'https://github.com/r-oland/persistful',
     amountOfImages: 5,
@@ -155,7 +149,6 @@ export const projects: ProjectType[] = [
     startYear: 2020,
     endYear: 2020,
     client: 'Dust Media',
-    color: '#e1c598',
     github: 'https://github.com/DustMedia?tab=repositories',
     url: 'https://dustmedia.nl/',
     amountOfImages: 6,
@@ -180,7 +173,6 @@ export const projects: ProjectType[] = [
     clientLink: 'https://www.gildeopleidingen.nl/',
     marketingUrl:
       'https://www.gildeopleidingen.nl/studeren-bij-gilde/gilde-sportief/',
-    color: '#dd0069',
     url: '',
     amountOfImages: 1,
   },
