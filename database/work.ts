@@ -39,6 +39,29 @@ export const projects: ProjectType[] = [
     url: 'https://www.decathlon.nl/',
     amountOfImages: 6,
   },
+  // Gilde sport app
+  {
+    id: 'sport-app',
+    name: 'Gilde sport app',
+    functionality: 'App development',
+    description: {
+      Project: {
+        en: 'An app where students can track their health and see information about upcoming sport clinics. This is a work in progress! ',
+        nl: 'Een app waar studenten hun gezondheid kunnen bijhouden en informatie kunnen vinden over opkomende sport clinics. Dit is een work in progress! ',
+      },
+      Role: {
+        en: "I'm building the app from scratch using React Native. The app is currently in development and will be released in the near future.",
+        nl: 'Ik ben bezig met het opbouwen van de app in React Native. De app is momenteel in ontwikkeling en zal binnenkort worden uitgebracht.',
+      },
+    },
+    startYear: 2022,
+    endYear: 2023,
+    client: 'Gilde opleidingen',
+    clientLink: 'https://www.gildeopleidingen.nl/',
+    marketingUrl: 'https://www.tast.studio/portfolio/gilde',
+    url: '',
+    amountOfImages: 7,
+  },
   // Klik
   {
     id: 'klik',
@@ -152,28 +175,5 @@ export const projects: ProjectType[] = [
     github: 'https://github.com/DustMedia?tab=repositories',
     url: 'https://dustmedia.nl/',
     amountOfImages: 6,
-  },
-  // Gilde sport app
-  {
-    id: 'sport-app',
-    name: 'Gilde sport app',
-    functionality: 'App development',
-    description: {
-      Project: {
-        en: 'An app where students can track their health and see information about upcoming sport clinics. This is a work in progress! ',
-        nl: 'Een app waar studenten hun gezondheid kunnen bijhouden en informatie kunnen vinden over opkomende sport clinics. Dit is een work in progress! ',
-      },
-      Role: {
-        en: "I'm building the app from scratch using React Native. The app is currently in development and will be released in the near future.",
-        nl: 'Ik ben bezig met het opbouwen van de app in React Native. De app is momenteel in ontwikkeling en zal binnenkort worden uitgebracht.',
-      },
-    },
-    startYear: 2022,
-    endYear: 2023,
-    client: 'Gilde opleidingen',
-    clientLink: 'https://www.gildeopleidingen.nl/',
-    marketingUrl: 'https://www.tast.studio/portfolio/gilde',
-    url: '',
-    amountOfImages: 7,
   },
 ];
