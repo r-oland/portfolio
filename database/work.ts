@@ -19,6 +19,28 @@ export type ProjectType = {
 };
 
 export const projects: ProjectType[] = [
+  // Decathlon
+  {
+    id: 'decathlon',
+    name: 'Decathlon webshop',
+    functionality: 'Frontend developer',
+    description: {
+      Project: {
+        en: 'A web app that helps Decathlon employees to easily find and book a meeting room in their office.',
+        nl: 'Een web app die Decathlon medewerkers helpt om eenvoudig een vergaderruimte te vinden en te boeken op kantoor.',
+      },
+      Role: {
+        en: 'I built the frontend and backend from scratch. The backend was built using Node.js and MongoDB. The frontend was built using React.',
+        nl: 'Ik heb de frontend en backend van de grond af opgebouwd. De backend is gebouwd met Node.js en MongoDB. De frontend is gebouwd met React.',
+      },
+    },
+    startYear: 2023,
+    endYear: 2024,
+    client: 'Decathlon',
+    url: 'https://www.decathlon.nl/',
+    color: '#f8f8f8',
+    amountOfImages: 6,
+  },
   // Klik
   {
     id: 'klik',
