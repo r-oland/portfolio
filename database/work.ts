@@ -138,29 +138,6 @@ export const projects: ProjectType[] = [
     url: 'https://dustmedia.nl/',
     amountOfImages: 6,
   },
-  // Qblox
-  {
-    id: 'qblox',
-    name: 'Qblox',
-    functionality: 'Frontend - CMS',
-    description: {
-      Project: {
-        en: 'A marketing site for a quantum computing company. The goal was to provide a modular frontend so that the client can easily add and edit pages and content blocks.',
-        nl: 'Een marketing site voor een quantum computing bedrijf. Het doel was om een modulaire frontend op te zetten zodat de klant zelf eenvoudig content kan bewerken.',
-      },
-      Role: {
-        en: 'My role was to build a modular frontend that was able to recreate the design of the client. This was possible by creating a heavily customizable headless CMS.',
-        nl: 'Mijn rol was om een modulaire frontend op te zetten die in staat was om het ontwerp van de klant na te creëren. Dit is bereikt door een flexible headless CMS te maken.',
-      },
-    },
-    startYear: 2020,
-    endYear: 2020,
-    client: 'Qblox Quantum Computing',
-    color: '#00819d',
-    github: 'https://github.com/QbloxWebsiteAccount/Website',
-    url: 'https://qblox.com/',
-    amountOfImages: 8,
-  },
   // Gilde sport app
   {
     id: 'sport-app',
