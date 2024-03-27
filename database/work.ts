@@ -156,7 +156,7 @@ export const projects: ProjectType[] = [
   // Gilde sport app
   {
     id: 'sport-app',
-    name: 'Sport app (WIP)',
+    name: 'Gilde sport app',
     functionality: 'App development',
     description: {
       Project: {
@@ -169,11 +169,11 @@ export const projects: ProjectType[] = [
       },
     },
     startYear: 2022,
+    endYear: 2023,
     client: 'Gilde opleidingen',
     clientLink: 'https://www.gildeopleidingen.nl/',
-    marketingUrl:
-      'https://www.gildeopleidingen.nl/studeren-bij-gilde/gilde-sportief/',
+    marketingUrl: 'https://www.tast.studio/portfolio/gilde',
     url: '',
-    amountOfImages: 1,
+    amountOfImages: 7,
   },
 ];
