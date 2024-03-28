@@ -21,16 +21,16 @@ export const projects: ProjectType[] = [
   // Decathlon
   {
     id: 'decathlon',
-    name: 'Decathlon webshop',
-    functionality: 'Frontend developer',
+    name: 'Decathlon-NL webshop',
+    functionality: 'Frontend developer - Consultant',
     description: {
       Project: {
-        en: 'A web app that helps Decathlon employees to easily find and book a meeting room in their office.',
-        nl: 'Een web app die Decathlon medewerkers helpt om eenvoudig een vergaderruimte te vinden en te boeken op kantoor.',
+        en: 'Assisting the local front-end development team, working on the NL Decathlon webshop by giving advice and collaborating as a freelance consultant.',
+        nl: '',
       },
       Role: {
-        en: 'I built the frontend and backend from scratch. The backend was built using Node.js and MongoDB. The frontend was built using React.',
-        nl: 'Ik heb de frontend en backend van de grond af opgebouwd. De backend is gebouwd met Node.js en MongoDB. De frontend is gebouwd met React.',
+        en: 'Guiding the team in best practices, streamlining internal processes, improving dev experience, hiring new developers, and working in a sprint structure.',
+        nl: '',
       },
     },
     startYear: 2023,
@@ -43,15 +43,15 @@ export const projects: ProjectType[] = [
   {
     id: 'sport-app',
     name: 'Gilde sport app',
-    functionality: 'App development',
+    functionality: 'Native developer',
     description: {
       Project: {
-        en: 'An app where students can track their health and see information about upcoming sport clinics. This is a work in progress! ',
-        nl: 'Een app waar studenten hun gezondheid kunnen bijhouden en informatie kunnen vinden over opkomende sport clinics. Dit is een work in progress! ',
+        en: 'An app where students of the Gilde Education manage upcoming sport clinics and track their progress around sport and vitality activities with the help of data visualizations.',
+        nl: '',
       },
       Role: {
-        en: "I'm building the app from scratch using React Native. The app is currently in development and will be released in the near future.",
-        nl: 'Ik ben bezig met het opbouwen van de app in React Native. De app is momenteel in ontwikkeling en zal binnenkort worden uitgebracht.',
+        en: 'Being the lead mobile developer, building the app from scratch using React Native within a agile team of 4 working in a Kanban structure.',
+        nl: '',
       },
     },
     startYear: 2022,
