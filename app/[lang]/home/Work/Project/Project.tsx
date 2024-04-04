@@ -94,17 +94,16 @@ export default function Project({
           </>
         ) : (
           <>
-            {textOptions.map((to, i) => (
-              <p
-                key={to}
-                className={styles.description}
-                style={{
-                  marginBottom: i !== textOptions.length - 1 ? '0.5rem' : '',
-                }}
-              >
-                {project.description[to][lang]}
-              </p>
-            ))}
+            <p
+              className={styles.description}
+              style={{ marginBottom: '0.5rem' }}
+            >
+              {project.description.Project[lang]}
+            </p>
+            <b className={styles.role}>Role</b>
+            <p className={styles.description}>
+              {project.description.Role[lang]}
+            </p>
           </>
         )}
         <div className={styles.labels}>

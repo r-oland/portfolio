@@ -77,6 +77,11 @@
       margin-bottom: $spacing4;
     }
 
+    .role {
+      font-size: $font-small;
+      opacity: 0.8;
+    }
+
     .labels {
       display: grid;
       gap: $spacing2;
