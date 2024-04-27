@@ -1,4 +1,4 @@
-type RankKeyType = 'S' | 'A' | 'B' | 'D' | 'E';
+type RankKeyType = 'S' | 'A' | 'B' | 'D';
 
 export const ranks = [
   {
@@ -11,7 +11,7 @@ export const ranks = [
   {
     key: 'A' as RankKeyType,
     description: {
-      en: 'Could not live without them',
+      en: 'Could not go without these',
       nl: 'Ik zou niet zonder kunnen',
     },
   },
@@ -32,15 +32,8 @@ export const ranks = [
   {
     key: 'D' as RankKeyType,
     description: {
-      en: 'It was nice, but I found something else',
-      nl: 'Nice, maar ik heb iets anders gevonden',
-    },
-  },
-  {
-    key: 'E' as RankKeyType,
-    description: {
-      en: 'Sigh... Its complicated',
-      nl: 'hmm... Het is gecompliceerd',
+      en: 'great tech, but I prefer something else',
+      nl: 'Top, maar ik heb iets anders gevonden',
     },
   },
 ];
@@ -55,18 +48,15 @@ export const techItems = [
   { icon: '/tech/threejs.svg', rank: ranks[0].key, name: 'Three.js' },
   { icon: '/tech/d3.svg', rank: ranks[0].key, name: 'D3' },
   { icon: '/tech/react-spring.svg', rank: ranks[0].key, name: 'React spring' },
+  { icon: '/tech/pwa.svg', rank: ranks[0].key, name: 'Progressive Web App' },
   { icon: '/tech/blender.svg', rank: ranks[0].key, name: 'Blender' },
   // 1
   { icon: '/tech/typescript.svg', rank: ranks[1].key, name: 'Typescript' },
   { icon: '/tech/react.svg', rank: ranks[1].key, name: 'React (Native)' },
   { icon: '/tech/nextjs.svg', rank: ranks[1].key, name: 'Next.js' },
   { icon: '/tech/nodejs.svg', rank: ranks[1].key, name: 'Node.js' },
+  { icon: '/tech/svelte.svg', rank: ranks[1].key, name: 'Svelte' },
   { icon: '/tech/react-query.svg', rank: ranks[1].key, name: 'React query' },
-  {
-    icon: '/tech/visual-studio-code.svg',
-    rank: ranks[1].key,
-    name: 'Visual Studio Code',
-  },
   { icon: '/tech/eslint.svg', rank: ranks[1].key, name: 'Eslint' },
   { icon: '/tech/prettier.svg', rank: ranks[1].key, name: 'Prettier' },
   { icon: '/tech/vim.svg', rank: ranks[1].key, name: 'Vim' },
@@ -77,9 +67,13 @@ export const techItems = [
   { icon: '/tech/mongodb.svg', rank: ranks[2].key, name: 'Mongodb' },
   { icon: '/tech/mysql.svg', rank: ranks[2].key, name: 'MySql' },
   { icon: '/tech/webpack.svg', rank: ranks[2].key, name: 'Webpack' },
+  {
+    icon: '/tech/visual-studio-code.svg',
+    rank: ranks[2].key,
+    name: 'Visual Studio Code',
+  },
   { icon: '/tech/git.svg', rank: ranks[2].key, name: 'Git' },
   { icon: '/tech/npm.svg', rank: ranks[2].key, name: 'NPM' },
-  { icon: '/tech/illustrator.svg', rank: ranks[2].key, name: 'Illustrator' },
   // 3
   { icon: '/tech/firebase.svg', rank: ranks[3].key, name: 'Firebase' },
   { icon: '/tech/digitalocean.svg', rank: ranks[3].key, name: 'Digital Ocean' },
@@ -88,7 +82,7 @@ export const techItems = [
   { icon: '/tech/netlify.svg', rank: ranks[3].key, name: 'Netlify' },
   { icon: '/tech/sanity.svg', rank: ranks[3].key, name: 'Sanity' },
   { icon: '/tech/graphql.svg', rank: ranks[3].key, name: 'GraphQl' },
-  { icon: '/tech/laravel.svg', rank: ranks[3].key, name: 'Laravel' },
+  { icon: '/tech/illustrator.svg', rank: ranks[3].key, name: 'Illustrator' },
   // 4
   { icon: '/tech/redux.svg', rank: ranks[4].key, name: 'Redux' },
   { icon: '/tech/gatsby.svg', rank: ranks[4].key, name: 'Gatsby' },
@@ -99,8 +93,6 @@ export const techItems = [
   },
   { icon: '/tech/xd.svg', rank: ranks[4].key, name: 'XD' },
   { icon: '/tech/contentful.svg', rank: ranks[4].key, name: 'Contentful' },
-  // 5
-  { icon: '/tech/css.svg', rank: ranks[5].key, name: 'CSS' },
-  { icon: '/tech/html.svg', rank: ranks[5].key, name: 'HTML' },
-  { icon: '/tech/php.svg', rank: ranks[5].key, name: 'PHP' },
+  { icon: '/tech/php.svg', rank: ranks[4].key, name: 'PHP' },
+  { icon: '/tech/laravel.svg', rank: ranks[4].key, name: 'Laravel' },
 ];
