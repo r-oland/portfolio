@@ -1,4 +1,4 @@
-type RankKeyType = 'S' | 'A' | 'B' | 'D' | 'E';
+type RankKeyType = 'S' | 'A' | 'B' | 'D';
 
 export const ranks = [
   {
@@ -11,7 +11,7 @@ export const ranks = [
   {
     key: 'A' as RankKeyType,
     description: {
-      en: 'Could not live without them',
+      en: 'Could not go without these',
       nl: 'Ik zou niet zonder kunnen',
     },
   },
@@ -34,13 +34,6 @@ export const ranks = [
     description: {
       en: 'It was nice, but I found something else',
       nl: 'Nice, maar ik heb iets anders gevonden',
-    },
-  },
-  {
-    key: 'E' as RankKeyType,
-    description: {
-      en: 'Sigh... Its complicated',
-      nl: 'hmm... Het is gecompliceerd',
     },
   },
 ];
@@ -99,8 +92,5 @@ export const techItems = [
   },
   { icon: '/tech/xd.svg', rank: ranks[4].key, name: 'XD' },
   { icon: '/tech/contentful.svg', rank: ranks[4].key, name: 'Contentful' },
-  // 5
-  { icon: '/tech/css.svg', rank: ranks[5].key, name: 'CSS' },
-  { icon: '/tech/html.svg', rank: ranks[5].key, name: 'HTML' },
-  { icon: '/tech/php.svg', rank: ranks[5].key, name: 'PHP' },
+  { icon: '/tech/php.svg', rank: ranks[4].key, name: 'PHP' },
 ];
