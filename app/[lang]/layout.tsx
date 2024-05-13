@@ -1,6 +1,8 @@
 import 'styles/App.scss';
 import { inter, zenAntique } from 'utils/font';
 import { getMetaDescription } from 'utils/getMetaDescription';
+import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Analytics } from '@vercel/analytics/react';
 import ClientWrapper from './layout/ClientWrapper';
 
 export async function generateMetadata({
@@ -73,7 +75,11 @@ export default function RootLayout({
   return (
     <ClientWrapper lang={lang}>
       <html lang={lang} className={`${inter.variable} ${zenAntique.variable}`}>
-        <body>{children}</body>
+        <body>
+          {children}
+          <SpeedInsights />
+          <Analytics />
+        </body>
       </html>
     </ClientWrapper>
   );
