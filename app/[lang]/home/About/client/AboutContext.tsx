@@ -20,7 +20,7 @@ export default function AboutContextWrapper({
 }: {
   children: React.ReactNode;
 }) {
-  const [selectedText, setSelectedText] = useState(2);
+  const [selectedText, setSelectedText] = useState(1);
   const [selectedImage, setSelectedImage] = useState(0);
   const [hasOpenedTooltip, setHasOpenedTooltip] = useStorage(
     'has-opened-tooltip',
