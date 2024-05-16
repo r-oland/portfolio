@@ -1,6 +1,7 @@
 // Components==============
 import { useGLTF, useTexture } from '@react-three/drei';
 import { GLTF } from 'three/examples/jsm/loaders/GLTFLoader';
+import * as THREE from 'three';
 // =========================
 
 type GLTFResult = GLTF & {
@@ -15,7 +16,7 @@ type GLTFResult = GLTF & {
 };
 
 export default function Portal() {
-  const { nodes } = useGLTF('/glb/portal.glb') as GLTFResult;
+  const { nodes } = useGLTF('/glb/portal.glb') as unknown as GLTFResult;
 
   const texture = useTexture('/Baked.jpg');
   texture.flipY = false;
