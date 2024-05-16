@@ -61,9 +61,9 @@ export default function Project({
       ? project.startYear
       : `${project.startYear} - ${project.endYear}`
     : // only has start year
-    project.startYear === currentYear
-    ? project.startYear
-    : `${project.startYear} - ${currentYear}`;
+      project.startYear === currentYear
+      ? project.startYear
+      : `${project.startYear} - ${currentYear}`;
 
   const textOptions = Object.keys(project.description) as SelectedTextType[];
 
