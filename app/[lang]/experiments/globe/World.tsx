@@ -33,7 +33,9 @@ type GLTFResult = GLTF & {
 };
 
 export default function Model() {
-  const { nodes, materials } = useGLTF('/glb/world.glb') as GLTFResult;
+  const { nodes, materials } = useGLTF(
+    '/glb/world.glb'
+  ) as unknown as GLTFResult;
 
   const skateboard = useRef<RapierRigidBody>(null);
 

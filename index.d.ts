@@ -1,3 +1,1 @@
-declare module '@studio-freight/lenis' {
-  export default any;
-}
+declare module 'lenis/react';

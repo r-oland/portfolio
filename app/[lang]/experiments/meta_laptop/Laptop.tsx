@@ -27,7 +27,7 @@ type GLTFResult = GLTF & {
 };
 
 export default function Model() {
-  const { nodes, materials } = useGLTF('/glb/mac.glb') as GLTFResult;
+  const { nodes, materials } = useGLTF('/glb/mac.glb') as unknown as GLTFResult;
   const group = useRef<THREE.Group>(null);
 
   const [screenIsOpen, setScreenIsOpen] = useState(false);

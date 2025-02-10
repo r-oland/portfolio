@@ -3,7 +3,24 @@ import { inter, zenAntique } from 'utils/font';
 import { getMetaDescription } from 'utils/getMetaDescription';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/react';
+import { Viewport } from 'next';
 import ClientWrapper from './layout/ClientWrapper';
+
+const color = '#3F6C5B';
+const colorLight = '#bdd3cc';
+
+export const viewport: Viewport = {
+  // prevent zoom in on input focus
+  width: 'device-width',
+  height: 'device-height',
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+  themeColor: [
+    { media: '(max-width: 767px)', color },
+    { media: '(min-width: 768px)', color: colorLight },
+  ],
+};
 
 export async function generateMetadata({
   params: { lang },
@@ -11,15 +28,10 @@ export async function generateMetadata({
   params: { lang: 'en' | 'nl' };
 }) {
   const title = 'Roland Branten';
-  const color = '#3F6C5B';
-  const colorLight = '#bdd3cc';
   const domain = `https://rolandbranten.${lang === 'en' ? 'com' : 'nl'}`;
   const description = getMetaDescription(lang);
 
   return {
-    // prevent zoom in on input focus
-    viewport:
-      'width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;user-scalable=0;',
     applicationName: title,
     manifest: '/manifest.json',
     appleWebApp: { capable: true, title, statusBarStyle: 'default' },
@@ -31,10 +43,6 @@ export async function generateMetadata({
         nl: 'https://rolandbranten.nl',
       },
     },
-    themeColor: [
-      { media: '(max-width: 767px)', color },
-      { media: '(min-width: 768px)', color: colorLight },
-    ],
     openGraph: {
       title,
       description,
