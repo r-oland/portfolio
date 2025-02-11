@@ -4,9 +4,8 @@
 import { useInView } from 'framer-motion';
 import { Suspense, useRef } from 'react';
 import styles from '../Hero.module.scss';
-import PortalCanvas from './Canvas';
+import ParticleCanvas from './Canvas';
 import Loading from './Loading';
-import WipText from './WipText/WipText';
 // =========================
 
 export default function PortalSuspense() {
@@ -16,9 +15,8 @@ export default function PortalSuspense() {
 
   return (
     <div className={styles.render} ref={renderRef}>
-      <WipText />
       <Suspense fallback={<Loading />}>
-        <PortalCanvas inView={inView} />
+        <ParticleCanvas inView={inView} />
       </Suspense>
     </div>
   );

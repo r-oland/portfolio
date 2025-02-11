@@ -4,7 +4,7 @@ import ChapterTitle from 'components/ChapterTitle/ChapterTitle';
 import { translate } from 'utils/translate';
 import Curl from './Curl/Curl';
 import styles from './Hero.module.scss';
-import Particles from './Particles/Canvas';
+import Particles from './Particles/ParticlesSuspense';
 // =========================
 
 export default function Hero({ lang }: { lang: 'en' | 'nl' }) {

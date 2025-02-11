@@ -1,3 +1,5 @@
+'use client';
+
 // Components==============
 import { OrbitControls } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
@@ -16,13 +18,9 @@ const ConditionalPerf = dynamic(async () => {
   return Perf;
 });
 
-export default function PortalCanvas({ inView }: { inView: boolean }) {
+export default function PortalCanvas() {
   return (
-    <Canvas
-      flat
-      camera={{ fov: 25, position: [5, 4, 9] }}
-      frameloop={inView ? 'always' : 'never'}
-    >
+    <Canvas flat camera={{ fov: 25, position: [5, 4, 9] }}>
       {perfVisible && <ConditionalPerf position="top-left" deepAnalyze />}
       <Portal />
       <Fireflies />
