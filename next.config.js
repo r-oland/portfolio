@@ -1,5 +1,14 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
+  webpack(config) {
+    // Add raw-loader for .glsl, .vert, .frag files
+    config.module.rules.push({
+      test: /\.(glsl|vert|frag)$/i,
+      use: ['raw-loader'],
+    });
+
+    return config;
+  },
   async redirects() {
     return [
       {
