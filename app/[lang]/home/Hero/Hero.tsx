@@ -4,7 +4,7 @@ import ChapterTitle from 'components/ChapterTitle/ChapterTitle';
 import { translate } from 'utils/translate';
 import Curl from './Curl/Curl';
 import styles from './Hero.module.scss';
-import PortalSuspense from './Portal/PortalSuspense';
+import Particles from './Particles/Canvas';
 // =========================
 
 export default function Hero({ lang }: { lang: 'en' | 'nl' }) {
@@ -35,7 +35,7 @@ export default function Hero({ lang }: { lang: 'en' | 'nl' }) {
             <Curl />
           </div>
         </div>
-        <PortalSuspense />
+        <Particles />
       </div>
     </>
   );
