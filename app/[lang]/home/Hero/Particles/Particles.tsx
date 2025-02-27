@@ -5,7 +5,7 @@ import {
   extend,
   ReactThreeFiber,
 } from '@react-three/fiber';
-import { useMemo, useRef } from 'react';
+import { useMemo, useRef, useState } from 'react';
 import * as THREE from 'three';
 import { useFBO } from '@react-three/drei';
 import fragmentShader from './fragmentShader.glsl';
@@ -31,7 +31,7 @@ export default function FBOParticles() {
   const simulationMaterialRef =
     useRef() as React.MutableRefObject<THREE.ShaderMaterial>;
 
-  const scene = new THREE.Scene();
+  const [scene] = useState(new THREE.Scene());
   const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 1 / 2 ** 53, 1);
   const positions = new Float32Array([
     -1, -1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, 1, 0, -1, 1, 0,
