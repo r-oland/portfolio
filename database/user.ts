@@ -1,8 +1,9 @@
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/pro-solid-svg-icons';
-import polite from 'public/images/polite.jpg';
-import enthusiastic from 'public/images/enthusiastic.jpg';
-import huge from 'public/images/huge.jpg';
+import appropriate from 'public/images/appropriate.jpg';
+import climbing from 'public/images/climbing.jpg';
+import music from 'public/images/music.jpg';
+import dance from 'public/images/dance.jpg';
 
 export const user = {
   aboutTitles: [
@@ -18,8 +19,8 @@ export const user = {
         nl: 'Mijn naam is Roland en ik ben enthousiast over het creëren van interessante, complexe digitale ervaringen.',
       },
       {
-        en: 'Currently available for freelance work!',
-        nl: 'Momenteel beschikbaar voor freelance werk!',
+        en: 'Currently available for work!',
+        nl: 'Momenteel beschikbaar voor werk!',
       },
     ],
     // short
@@ -29,8 +30,8 @@ export const user = {
         nl: 'Mijn naam is Roland. Wat ik graag doe is unieke ideeën tot leven brengen en complexe problemen oplossen. De front-end is waar ik me het meest op mijn gemak voel, maar dat betekent niet dat ik wegloop van back-end development of ontwerpen.',
       },
       {
-        en: 'Currently based in Eindhoven and available for freelance work. Feel free to reach out if you have any questions or want to discuss availability!',
-        nl: 'Ik ben momenteel gevestigd in Eindhoven en beschikbaar voor freelance werk. Neem gerust contact op als je vragen hebt of de beschikbaarheid wilt bespreken!',
+        en: 'Currently based in Eindhoven and available for work. Feel free to reach out if you have any questions or want to discuss availability!',
+        nl: 'Ik ben momenteel gevestigd in Eindhoven en ben beschikbaar voor werk. Neem gerust contact op als je vragen hebt of de beschikbaarheid wilt bespreken!',
       },
     ],
     // Extensive
@@ -40,21 +41,22 @@ export const user = {
         nl: 'Mijn naam is Roland. Wat ik graag doe is unieke ideeën tot leven brengen en complexe problemen oplossen. De front-end is waar ik me het meest op mijn gemak voel, vooral met React.js, maar dat betekent niet dat ik wegloop van back-end development, native development, 3D-rendering of ontwerpen.',
       },
       {
-        en: "Outside of work, you'll find me making music, climbing, skateboarding, reading, working on side projects, or spending time with friends.",
-        nl: 'Buiten mijn werk om zie je me muziek maken, klimmen, skateboarden, lezen, aan side projects werken of tijd doorbreng met vrienden.',
+        en: "Outside of work, you'll find me making music, climbing, going away with my camper, reading, working on side projects, or spending time with friends.",
+        nl: 'Buiten mijn werk om zie je me muziek maken, klimmen, er even tussenuit gaan met mijn camper, lezen, aan side projects werken of tijd spenderen met vrienden.',
       },
       {
-        en: 'Currently based in Eindhoven and available for freelance work. Feel free to reach out if you have any questions or want to discuss availability!',
-        nl: 'Ik ben momenteel gevestigd in Eindhoven en beschikbaar voor freelance werk. Neem gerust contact op als je vragen hebt of de beschikbaarheid wilt bespreken!',
+        en: 'Currently based in Eindhoven and available for work. Feel free to reach out if you have any questions or want to discuss availability!',
+        nl: 'Ik ben momenteel gevestigd in Eindhoven en ben beschikbaar voor werk. Neem gerust contact op als je vragen hebt of de beschikbaarheid wilt bespreken!',
       },
     ],
   ],
   imageTitles: [
-    { en: 'a polite smile', nl: 'een beleefde lach' },
-    { en: 'an enthusiastic face', nl: 'een enthousiast gezicht' },
-    { en: 'a huge fake laugh', nl: 'een enorme nep lach' },
+    { en: 'a generic picture', nl: 'een generieke foto' },
+    { en: 'rock climbing', nl: 'geklim in de rotsen' },
+    { en: 'a bit of dancing', nl: 'wat gedans' },
+    { en: 'some music making', nl: 'een muziekje' },
   ],
-  images: [polite, enthusiastic, huge],
+  images: [appropriate, climbing, dance, music],
   contact: [
     {
       icon: faEnvelope,

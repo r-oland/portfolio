@@ -23,7 +23,7 @@ export default function About({ lang }: { lang: 'nl' | 'en' }) {
             <h2>
               {t('Time for a', 'Tijd voor een')} <Tooltip type="text" />{' '}
               {t('introduction', 'introductie')} <br />
-              {t('with', 'met')} <Tooltip type="image" />
+              {/* {t('accompanied by', 'met')} <Tooltip type="image" /> */}
             </h2>
             <Images variant="mobile" />
             <Text />

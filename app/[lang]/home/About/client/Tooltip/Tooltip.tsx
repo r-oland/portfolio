@@ -2,10 +2,10 @@
 
 // Components==============
 import {
-  faLaughSquint,
+  faChevronLeft,
+  faChevronRight,
   faMinusCircle,
   faPlusCircle,
-  faSmile,
 } from '@fortawesome/pro-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { user } from 'database/user';
@@ -82,7 +82,7 @@ export default function Tooltip({ type }: { type: 'text' | 'image' }) {
             style={{ left: type === 'text' ? -70 : -20 }}
           >
             <FontAwesomeIcon
-              icon={type === 'image' ? faSmile : faMinusCircle}
+              icon={type === 'image' ? faChevronLeft : faMinusCircle}
               onClick={() => setSelected((prev) => (prev === 0 ? 0 : prev - 1))}
             />
             <input
@@ -100,7 +100,7 @@ export default function Tooltip({ type }: { type: 'text' | 'image' }) {
               transition={{ type: 'spring', stiffness: 200, damping: 22 }}
             />
             <FontAwesomeIcon
-              icon={type === 'image' ? faLaughSquint : faPlusCircle}
+              icon={type === 'image' ? faChevronRight : faPlusCircle}
               onClick={() =>
                 setSelected((prev) =>
                   prev === total - 1 ? total - 1 : prev + 1
