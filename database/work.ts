@@ -37,7 +37,7 @@ export const projects: ProjectType[] = [
     endYear: 2025,
     client: 'Decathlon',
     url: 'https://www.decathlon.nl/',
-    amountOfImages: 6,
+    amountOfImages: 7,
   },
   // Gilde sport app
   {

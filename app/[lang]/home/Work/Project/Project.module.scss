@@ -11,6 +11,7 @@
   @media screen and (min-width: $desktop) {
     padding: $spacing8;
     gap: $spacing8;
+    height: 369px; // fixed height to make sure card aligns with images
 
     &.reverse {
       text-align: end;
@@ -59,6 +60,7 @@
     h1 {
       margin-bottom: $spacing6;
       color: $green;
+      line-height: 1;
     }
 
     .functionality {
