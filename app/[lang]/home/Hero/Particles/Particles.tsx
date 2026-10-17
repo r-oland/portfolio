@@ -9,12 +9,16 @@ import {
 import { useEffect, useMemo, useRef, useState } from 'react';
 import * as THREE from 'three';
 import { useFBO } from '@react-three/drei';
+import { MotionValue } from 'framer-motion';
 import fragmentShader from './fragmentShader.glsl';
 import vertexShader from './vertexShader.glsl';
 import SimulationMaterial from './SimulationMaterial';
 // =========================
 
 extend({ SimulationMaterial });
+
+// Approximate on-screen diameter of the particle cloud in world units
+const CLOUD_DIAMETER = 2.5;
 
 declare module '@react-three/fiber' {
   interface ThreeElements {
@@ -25,9 +29,13 @@ declare module '@react-three/fiber' {
   }
 }
 
-export default function FBOParticles() {
-  const size = 256;
-
+export default function FBOParticles({
+  size,
+  scrollProgress,
+}: {
+  size: number;
+  scrollProgress: MotionValue<number>;
+}) {
   const points = useRef() as React.MutableRefObject<THREE.Points>;
   const simulationMaterialRef =
     useRef() as React.MutableRefObject<THREE.ShaderMaterial>;
@@ -83,12 +91,37 @@ export default function FBOParticles() {
       uMousePush: { value: 0.33 },
       uMouseVariation: { value: 0.73 },
       uHighlight: { value: 0.42 },
+      uExplode: { value: 0 },
     }),
     []
   );
 
+  const { gl: renderer, camera: sceneCamera, size: canvasSize } = useThree();
+
+  // Zoom so the cloud fills a share of the canvas' shortest side. Small
+  // canvases get a bigger share, easing down to the desktop look on large ones.
+  useEffect(() => {
+    if (!(sceneCamera instanceof THREE.PerspectiveCamera)) return;
+
+    const shortestSide = Math.min(canvasSize.width, canvasSize.height);
+    const fill = THREE.MathUtils.mapLinear(
+      THREE.MathUtils.clamp(shortestSide, 400, 900),
+      400,
+      900,
+      0.95,
+      0.5
+    );
+    const distance = sceneCamera.position.length();
+    const visibleHeight =
+      2 * distance * Math.tan(THREE.MathUtils.degToRad(sceneCamera.fov / 2));
+    const aspect = canvasSize.width / canvasSize.height;
+
+    sceneCamera.zoom =
+      (fill * visibleHeight * Math.min(1, aspect)) / CLOUD_DIAMETER;
+    sceneCamera.updateProjectionMatrix();
+  }, [sceneCamera, canvasSize.width, canvasSize.height]);
+
   // Mouse interaction
-  const { gl: renderer } = useThree();
   const isHovering = useRef(false);
   const raycaster = useMemo(() => new THREE.Raycaster(), []);
   const smoothPointer = useMemo(() => new THREE.Vector2(), []);
@@ -121,6 +154,15 @@ export default function FBOParticles() {
     uniforms.uMouseStrength.value = THREE.MathUtils.lerp(
       uniforms.uMouseStrength.value,
       isHovering.current ? 1 : 0,
+      1 - Math.exp(-delta * 6)
+    );
+
+    // Explode over the first half of scrolling past the visual
+    const explodeProgress = Math.min(scrollProgress.get() / 0.5, 1);
+    const explodeTarget = 1 - (1 - explodeProgress) ** 2;
+    uniforms.uExplode.value = THREE.MathUtils.lerp(
+      uniforms.uExplode.value,
+      explodeTarget,
       1 - Math.exp(-delta * 6)
     );
 
