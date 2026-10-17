@@ -24,7 +24,7 @@ export default function Hero({ lang }: { lang: 'en' | 'nl' }) {
             />
             <h1>{t('I am', 'Ik ben')}</h1>
             <h3>
-              {t('a', 'een')} <span>front-end</span>{' '}
+              {t('a', 'een')} <span>full-stack</span>{' '}
               {t(
                 'developer who enjoys building unique experiences for creatives with taste',
                 'developer die graag unieke ervaringen bouwt voor creatives met smaak'
