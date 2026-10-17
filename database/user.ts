@@ -26,8 +26,8 @@ export const user = {
     // short
     [
       {
-        en: "My name is Roland. What I love doing is making unique ideas come to life and solving complex problems. The front-end is where I'm most comfortable but that doesn't mean that I shy away from back-end development or designing.",
-        nl: 'Mijn naam is Roland. Wat ik graag doe is unieke ideeën tot leven brengen en complexe problemen oplossen. De front-end is waar ik me het meest op mijn gemak voel, maar dat betekent niet dat ik wegloop van back-end development of ontwerpen.',
+        en: "My name is Roland. What I love doing is making unique ideas come to life and solving complex problems. As a full-stack developer I'm comfortable across the whole stack, from front-end to back-end, and I don't shy away from designing either.",
+        nl: 'Mijn naam is Roland. Wat ik graag doe is unieke ideeën tot leven brengen en complexe problemen oplossen. Als full-stack developer voel ik me thuis in de hele stack, van front-end tot back-end, en ik loop ook niet weg van ontwerpen.',
       },
       {
         en: 'Currently based in Eindhoven and available for work. Feel free to reach out if you have any questions or want to discuss availability!',
@@ -37,8 +37,8 @@ export const user = {
     // Extensive
     [
       {
-        en: "My name is Roland. What I love doing is making unique ideas come to life and solving complex problems. The front-end is where I'm most comfortable, especially with React.js, but that doesn't mean I shy away from back-end development, native development, 3D-rendering, or designing.",
-        nl: 'Mijn naam is Roland. Wat ik graag doe is unieke ideeën tot leven brengen en complexe problemen oplossen. De front-end is waar ik me het meest op mijn gemak voel, vooral met React.js, maar dat betekent niet dat ik wegloop van back-end development, native development, 3D-rendering of ontwerpen.',
+        en: "My name is Roland. What I love doing is making unique ideas come to life and solving complex problems. As a full-stack developer I'm comfortable across the whole stack, from front-end to back-end, and I don't shy away from native development, 3D-rendering, or designing either.",
+        nl: 'Mijn naam is Roland. Wat ik graag doe is unieke ideeën tot leven brengen en complexe problemen oplossen. Als full-stack developer voel ik me thuis in de hele stack, van front-end tot back-end, en ik loop ook niet weg van native development, 3D-rendering of ontwerpen.',
       },
       {
         en: "Outside of work, you'll find me making music, climbing, going away with my camper, reading, working on side projects, or spending time with friends.",

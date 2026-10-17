@@ -95,8 +95,12 @@ export default function FBOParticles() {
 
   useEffect(() => {
     const element = renderer.domElement;
-    const onEnter = () => (isHovering.current = true);
-    const onLeave = () => (isHovering.current = false);
+    const onEnter = () => {
+      isHovering.current = true;
+    };
+    const onLeave = () => {
+      isHovering.current = false;
+    };
 
     element.addEventListener('pointerenter', onEnter);
     element.addEventListener('pointerleave', onLeave);

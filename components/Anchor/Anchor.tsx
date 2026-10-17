@@ -2,7 +2,7 @@
 import styles from './Anchor.module.scss';
 // =========================
 
-export type AnchorType = 'introduction' | 'work' | 'tech' | 'about' | 'contact';
+export type AnchorType = 'introduction' | 'work' | 'about' | 'contact';
 
 export default function Anchor({
   id,
