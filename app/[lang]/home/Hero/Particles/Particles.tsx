@@ -2,10 +2,11 @@
 import {
   createPortal,
   useFrame,
+  useThree,
   extend,
   ReactThreeFiber,
 } from '@react-three/fiber';
-import { useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import * as THREE from 'three';
 import { useFBO } from '@react-three/drei';
 import fragmentShader from './fragmentShader.glsl';
@@ -75,12 +76,49 @@ export default function FBOParticles() {
       uPositions: {
         value: null,
       },
+      uRayOrigin: { value: new THREE.Vector3() },
+      uRayDirection: { value: new THREE.Vector3(0, 0, -1) },
+      uMouseStrength: { value: 0 },
+      uMouseRadius: { value: 1.43 },
+      uMousePush: { value: 0.33 },
+      uMouseVariation: { value: 0.73 },
+      uHighlight: { value: 0.42 },
     }),
     []
   );
 
-  useFrame((state) => {
+  // Mouse interaction
+  const { gl: renderer } = useThree();
+  const isHovering = useRef(false);
+  const raycaster = useMemo(() => new THREE.Raycaster(), []);
+  const smoothPointer = useMemo(() => new THREE.Vector2(), []);
+
+  useEffect(() => {
+    const element = renderer.domElement;
+    const onEnter = () => (isHovering.current = true);
+    const onLeave = () => (isHovering.current = false);
+
+    element.addEventListener('pointerenter', onEnter);
+    element.addEventListener('pointerleave', onLeave);
+    return () => {
+      element.removeEventListener('pointerenter', onEnter);
+      element.removeEventListener('pointerleave', onLeave);
+    };
+  }, [renderer]);
+
+  useFrame((state, delta) => {
     const { gl, clock } = state;
+
+    const ease = 1 - Math.exp(-delta * 8);
+    smoothPointer.lerp(state.pointer, ease);
+    raycaster.setFromCamera(smoothPointer, state.camera);
+    uniforms.uRayOrigin.value.copy(raycaster.ray.origin);
+    uniforms.uRayDirection.value.copy(raycaster.ray.direction);
+    uniforms.uMouseStrength.value = THREE.MathUtils.lerp(
+      uniforms.uMouseStrength.value,
+      isHovering.current ? 1 : 0,
+      1 - Math.exp(-delta * 6)
+    );
 
     gl.setRenderTarget(renderTarget);
     gl.clear();
