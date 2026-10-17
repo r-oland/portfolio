@@ -35,16 +35,13 @@ export default function DesktopNav({ lang }: { lang: 'en' | 'nl' }) {
       const heroStart = 0;
       const workStart =
         (document.getElementById('work')?.offsetTop || 0) - halfHeight;
-      const techStart =
-        (document.getElementById('tech')?.offsetTop || 0) - halfHeight;
       const aboutStart =
         (document.getElementById('about')?.offsetTop || 0) - halfHeight;
       const contactStart =
         (document.getElementById('contact')?.offsetTop || 0) - halfHeight;
 
       if (latest > heroStart && latest < workStart) setAnchor('introduction');
-      if (latest > workStart && latest < techStart) setAnchor('work');
-      if (latest > techStart && latest < aboutStart) setAnchor('tech');
+      if (latest > workStart && latest < aboutStart) setAnchor('work');
       if (latest > aboutStart && latest < contactStart) setAnchor('about');
       if (latest > contactStart) setAnchor('contact');
 

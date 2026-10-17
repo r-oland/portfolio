@@ -19,7 +19,7 @@ export default function Contact({ lang }: { lang: 'nl' | 'en' }) {
       <Anchor id="contact" />
       <div className={styles.wrapper}>
         <Container>
-          <ChapterTitle id={4} color="white" marginBottom="4rem" lang={lang} />
+          <ChapterTitle id={3} color="white" marginBottom="4rem" lang={lang} />
           <div className={styles.content}>
             <div>
               <h1>{t('Impressed already?', 'Al onder de indruk?')}</h1>

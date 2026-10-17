@@ -17,7 +17,7 @@ export default function About({ lang }: { lang: 'nl' | 'en' }) {
     <AboutContextWrapper>
       <Anchor id="about" lessMargin />
       <Container>
-        <ChapterTitle id={3} marginBottom="4rem" color="grey" lang={lang} />
+        <ChapterTitle id={2} marginBottom="4rem" color="grey" lang={lang} />
         <div className={styles.wrapper}>
           <div>
             <h2>
