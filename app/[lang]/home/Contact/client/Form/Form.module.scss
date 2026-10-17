@@ -28,6 +28,16 @@
     min-height: 200px;
   }
 
+  // Hidden from humans, filled in by bots
+  .honeypot {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+  }
+
   button {
     @media screen and (min-width: $phone) {
       width: 110px;

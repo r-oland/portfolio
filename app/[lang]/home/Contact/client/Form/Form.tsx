@@ -1,7 +1,7 @@
 'use client';
 
 // Components==============
-import { useContext } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import { faCheck, faSpinnerThird } from '@fortawesome/pro-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/Button/Button';
@@ -18,6 +18,13 @@ export default function Form() {
   const { lang } = useContext(LangContext);
   const t = translate(lang);
 
+  // Spam protection: honeypot field and time the form was opened
+  const [website, setWebsite] = useState('');
+  const startedAt = useRef(0);
+  useEffect(() => {
+    startedAt.current = Date.now();
+  }, []);
+
   return (
     <form
       className={styles.wrapper}
@@ -26,7 +33,12 @@ export default function Form() {
         setStatus('sending');
         fetch('/api/contact', {
           method: 'POST',
-          body: JSON.stringify({ email, message }),
+          body: JSON.stringify({
+            email,
+            message,
+            website,
+            startedAt: startedAt.current,
+          }),
         })
           .then((res) => {
             if (!res.ok) return setStatus('error');
@@ -59,7 +71,18 @@ export default function Form() {
           setMessage(e.target.value);
         }}
         placeholder="Write your message..."
+        minLength={10}
         required
+      />
+      <input
+        type="text"
+        name="website"
+        className={styles.honeypot}
+        value={website}
+        onChange={(e) => setWebsite(e.target.value)}
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
       />
       {status === 'error' && (
         <p className={styles.error}>
